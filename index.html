@@ -1,229 +1,1075 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nicu Constantin - AI Integration Specialist | LLM & Automation Solutions</title><meta name="description" content="Nicu Constantin - AI Integration Specialist, LLM & Automation Solutions, DevOps Engineer. Building intelligent automation systems for businesses across Europe."><meta property="og:title" content="Nicu Constantin - AI Integration Specialist"><meta property="og:description" content="Building the future with AI & Automation. 5+ years in DevOps, infrastructure automation, and software development."><meta property="og:type" content="website"><meta property="og:url" content="https://cnick26.github.io"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>NC</text></svg>"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0a0a0f;--card:#12121a;--card2:#1a1a2e;--accent:#6c63ff;--accent2:#00d4aa;--accent3:#ff6b6b;--text:#e4e4e7;--text2:#a1a1aa;--border:#27273a}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}::selection{background:var(--accent);color:#fff}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
-.bg-glow{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}.bg-glow::before,.bg-glow::after{content:'';position:absolute;border-radius:50%;filter:blur(120px);opacity:.12;animation:float 20s infinite}.bg-glow::before{width:600px;height:600px;background:var(--accent);top:-200px;left:-100px}.bg-glow::after{width:500px;height:500px;background:var(--accent2);bottom:-200px;right:-100px;animation-delay:-10s}@keyframes float{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(100px,50px) scale(1.1)}50%{transform:translate(-50px,100px) scale(.9)}75%{transform:translate(80px,-30px) scale(1.05)}}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}nav .nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}nav .logo{font-size:18px;font-weight:800;letter-spacing:-1px}nav .logo span{color:var(--accent)}nav .nav-links{display:flex;gap:28px;list-style:none}nav .nav-links a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}nav .nav-links a:hover{color:var(--accent)}nav .nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all .3s}nav .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(108,99,255,.3)}
-.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px}.hero-grid{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;width:100%}.hero-photo{width:220px;height:220px;border-radius:24px;overflow:hidden;border:3px solid var(--border);position:relative;background:var(--card)}.hero-photo img{width:100%;height:100%;object-fit:cover}.hero-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--accent);background:linear-gradient(135deg,var(--card),var(--card2))}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);color:var(--accent);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:32px;animation:fadeInUp .8s ease}.hero-badge::before{content:'';width:8px;height:8px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}.hero h1{font-size:clamp(48px,8vw,80px);font-weight:900;line-height:1;letter-spacing:-3px;margin-bottom:20px;animation:fadeInUp .8s ease .1s both}.hero h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero-subtitle{font-size:clamp(18px,2.5vw,24px);color:var(--text2);font-weight:400;max-width:650px;margin-bottom:32px;animation:fadeInUp .8s ease .2s both}.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px;animation:fadeInUp .8s ease .25s both}.hero-actions .btn-primary{padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}.hero-actions .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(108,99,255,.3)}.hero-actions .btn-secondary{padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px}.hero-actions .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}.hero-meta{display:flex;flex-wrap:wrap;gap:24px;animation:fadeInUp .8s ease .3s both}.hero-meta-item{display:flex;align-items:center;gap:8px;color:var(--text2);font-size:14px}.hero-meta-item svg{width:18px;height:18px;color:var(--accent)}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-section{padding:80px 0}.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}.section-label::before{content:'';width:24px;height:2px;background:var(--accent)}.section-title{font-size:clamp(32px,5vw,48px);font-weight:800;letter-spacing:-2px;margin-bottom:48px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.about-text{font-size:17px;color:var(--text2);line-height:1.8}.about-text p+p{margin-top:16px}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .3s ease}.stat-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 20px 40px rgba(108,99,255,.1)}.stat-number{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.stat-label{font-size:13px;color:var(--text2);margin-top:4px;font-weight:500}
-.projects-grid{display:grid;grid-template-columns:1fr;gap:32px}.project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;transition:all .3s ease;position:relative;overflow:hidden}.project-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 20px 40px rgba(108,99,255,.08)}.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .3s}.project-card:hover::before{opacity:1}.project-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:16px}.project-number{font-size:48px;font-weight:900;color:var(--card2);position:absolute;top:20px;right:32px;font-family:'JetBrains Mono',monospace;opacity:.5}.project-title{font-size:22px;font-weight:700;margin-bottom:4px}.project-subtitle{font-size:14px;color:var(--accent2);font-weight:600}.project-desc{color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:20px}.project-highlights{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}.project-highlights li{position:relative;padding-left:20px;color:var(--text2);font-size:14px;line-height:1.7;list-style:none}.project-highlights li::before{content:'▹';position:absolute;left:0;color:var(--accent)}.project-tech{display:flex;flex-wrap:wrap;gap:8px}.project-tech span{font-size:11px;font-weight:600;padding:4px 12px;border-radius:6px;background:rgba(108,99,255,.1);color:var(--accent);border:1px solid rgba(108,99,255,.2);font-family:'JetBrains Mono',monospace}
-.timeline{position:relative;padding-left:32px}.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent)}.timeline-item{position:relative;margin-bottom:40px;padding:28px;background:var(--card);border:1px solid var(--border);border-radius:16px;transition:all .3s ease}.timeline-item:hover{border-color:var(--accent);transform:translateX(8px);box-shadow:0 20px 40px rgba(108,99,255,.08)}.timeline-item::before{content:'';position:absolute;left:-39px;top:32px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--accent)}.timeline-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:8px}.timeline-role{font-size:18px;font-weight:700}.timeline-company{font-size:14px;color:var(--accent2);font-weight:600;margin-top:2px}.timeline-date{font-size:12px;color:var(--text2);background:var(--card2);padding:5px 12px;border-radius:8px;font-weight:500;white-space:nowrap}.timeline-desc{color:var(--text2);font-size:13px;line-height:1.8}.timeline-desc ul{list-style:none;padding:0}.timeline-desc ul li{position:relative;padding-left:20px;margin-bottom:4px}.timeline-desc ul li::before{content:'▹';position:absolute;left:0;color:var(--accent)}.timeline-tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.timeline-tech span{font-size:10px;font-weight:600;padding:3px 10px;border-radius:6px;background:rgba(108,99,255,.1);color:var(--accent);border:1px solid rgba(108,99,255,.2);font-family:'JetBrains Mono',monospace}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}.skill-category{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .3s ease}.skill-category:hover{border-color:var(--accent);transform:translateY(-4px)}.skill-category h3{font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}.skill-category h3 .icon{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px}.skill-tags{display:flex;flex-wrap:wrap;gap:8px}.skill-tag{font-size:12px;padding:6px 14px;border-radius:8px;background:var(--card2);color:var(--text2);border:1px solid var(--border);transition:all .2s ease;font-weight:500}.skill-tag:hover{color:var(--accent);border-color:var(--accent);background:rgba(108,99,255,.08)}
-.edu-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:500px;transition:all .3s ease}.edu-card:hover{border-color:var(--accent);transform:translateY(-4px)}.edu-card h3{font-size:20px;font-weight:700}.edu-card .degree{color:var(--accent2);font-weight:600;font-size:15px;margin-top:4px}.edu-card .year{color:var(--text2);font-size:13px;margin-top:4px}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}.service-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;transition:all .3s ease}.service-card:hover{border-color:var(--accent2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,212,170,.08)}.service-card .s-icon{font-size:32px;margin-bottom:16px}.service-card h3{font-size:16px;font-weight:700;margin-bottom:8px}.service-card p{font-size:13px;color:var(--text2)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.contact-text{font-size:17px;color:var(--text2);line-height:1.8;margin-bottom:32px}.contact-links{display:flex;flex-direction:column;gap:16px}.contact-link{display:flex;align-items:center;gap:16px;padding:20px 24px;background:var(--card);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);transition:all .3s ease}.contact-link:hover{border-color:var(--accent);transform:translateX(8px)}.contact-link svg{width:24px;height:24px;color:var(--accent);flex-shrink:0}.contact-link-label{font-size:12px;color:var(--text2);font-weight:500}.contact-link-value{font-size:16px;font-weight:600}
-.footer{padding:48px 0;border-top:1px solid var(--border);text-align:center}.footer p{color:var(--text2);font-size:14px}.footer .social-links{display:flex;justify-content:center;gap:16px;margin-top:20px}.footer .social-links a{width:44px;height:44px;border-radius:12px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);text-decoration:none;transition:all .3s}.footer .social-links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-@media(max-width:768px){.hero-grid{grid-template-columns:1fr}.hero-photo{width:160px;height:160px;margin:0 auto 32px}.about-grid,.contact-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.timeline{padding-left:24px}nav .nav-links{display:none}.stats-grid{grid-template-columns:1fr 1fr}}
-@media print{nav,.bg-glow,.hero-actions,.footer .social-links{display:none}body{background:#fff;color:#111}.hero{min-height:auto;padding:20px 0}}</style></head><body><div class="bg-glow"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicu Constantin, Senior AI Engineer. Claude Code, agents and automation.</title>
+<meta name="description" content="Nicu Constantin (Nick), senior AI engineer in Bucharest. I ship whole products with Claude Code and AI agents, and I train teams to do the same. Verified results, reference installations, service record.">
+<meta name="author" content="Nicu Constantin">
+<link rel="canonical" href="https://cnick26.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://cnick26.github.io/">
+<meta property="og:title" content="Nicu Constantin, Senior AI Engineer">
+<meta property="og:description" content="I ship whole products with Claude Code and AI agents, and I train teams to do the same. Bucharest, Romania.">
+<meta name="theme-color" content="#0E2A43">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E2A43'/%3E%3Cpath d='M4 4h24v24H4z' fill='none' stroke='%23E9EAE1' stroke-width='1.5'/%3E%3Cpath d='M4 22h24' stroke='%23E4571B' stroke-width='2.5'/%3E%3Ctext x='16' y='19' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='700' fill='%23E9EAE1' text-anchor='middle'%3ENC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,400..700&family=Martian+Mono:wdth,wght@75..112.5,300..700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --field:#0E2A43;
+  --field-deep:#071829;
+  --sheet:#E9EAE1;
+  --sheet-2:#DFE1D6;
+  --ink:#14181C;
+  --ink-2:#4E5A56;
+  --rule:#AEB6A8;
+  --rule-strong:#7E8A7C;
+  --signal:#E4571B;
+  --on-field:#C9D6E2;
+  --on-field-2:#8CA3B8;
+  --on-field-line:#1E4260;
 
-<nav><div class="nav-inner"><div class="logo">N<span>C</span></div><ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul><a href="#contact" class="nav-cta">Let's Talk</a></div></nav>
+  --sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'Martian Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
 
-<section class="hero"><div class="container"><div class="hero-grid"><div class="hero-content">
-<div class="hero-badge"><span>Open to opportunities</span></div>
-<h1>Nicu<br><span class="gradient">Constantin</span></h1>
-<p class="hero-subtitle">AI Integration Specialist &middot; LLM &amp; Automation Solutions &middot; DevOps Engineer</p>
-<div class="hero-actions">
-<a href="#contact" class="btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Get in Touch</a>
-<button onclick="window.print()" class="btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Download CV</button>
-</div>
-<div class="hero-meta">
-<div class="hero-meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Bucharest, Romania</div>
-<div class="hero-meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>8+ Years Experience</div>
-</div>
-</div>
-<div class="hero-photo"><div class="hero-photo-placeholder">NC</div></div>
-</div></div></section>
+  --rail:92px;
+  --sheet-max:1120px;
+  --pad:clamp(20px,4vw,56px);
+}
 
-<section id="about"><div class="container">
-<div class="section-label">About Me</div>
-<h2 class="section-title">Building the future<br>with AI &amp; Automation</h2>
-<div class="about-grid">
-<div class="about-text">
-<p>I help businesses integrate AI into their workflows to automate repetitive tasks and boost efficiency. With 5+ years in DevOps, infrastructure automation, and software development, I specialize in LLM integrations (OpenAI, Claude, custom models), workflow automation using n8n, Make, and custom Python solutions, CI/CD pipelines and cloud infrastructure (Docker, Azure, GitHub Actions), and building AI-powered tools for content, support, and operations.</p>
-<p>Through my freelance work with DeviDevs, I've delivered AI integration projects for clients across Europe, turning complex technical requirements into scalable, production-ready solutions. Currently managing IT infrastructure for 1000+ user enterprise environments while building intelligent automation systems on the side.</p>
-</div>
-<div class="stats-grid">
-<div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">Years in DevOps &amp; Automation</div></div>
-<div class="stat-card"><div class="stat-number">1000+</div><div class="stat-label">Enterprise Users Managed</div></div>
-<div class="stat-card"><div class="stat-number">40%</div><div class="stat-label">Manual Workload Reduced</div></div>
-<div class="stat-card"><div class="stat-number">10+</div><div class="stat-label">AI Projects Delivered</div></div>
-</div></div></div></section>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-<section id="projects"><div class="container">
-<div class="section-label">Selected Work</div>
-<h2 class="section-title">Projects &amp; Case Studies</h2>
-<div class="projects-grid">
+body{
+  background:var(--field);
+  color:var(--on-field);
+  font-family:var(--sans);
+  font-variation-settings:'wdth' 100,'wght' 400;
+  font-size:17px;
+  line-height:1.62;
+  padding-left:var(--rail);
+  overflow-x:hidden;
+}
 
-<div class="project-card">
-<div class="project-number">01</div>
-<div class="project-header"><div><div class="project-title">AI-Powered Client Communication Hub</div><div class="project-subtitle">Freelance &middot; Swedish Agency &middot; 2025</div></div></div>
-<div class="project-desc">Built a full-stack AI communication platform for a Swedish agency that centralizes all client interactions &mdash; phone calls, emails, WhatsApp, Facebook, and Instagram messages &mdash; into one intelligent hub. The system uses AI (integrated with ElevenLabs for voice and Vonage for telephony) to automatically answer calls, respond to messages, and schedule appointments for beauty salons, barbershops, and similar service businesses.</div>
-<ul class="project-highlights">
-<li>Developed with Lovable and Claude Code, creating a real-time dashboard for managing multi-channel communications</li>
-<li>Integrated ElevenLabs for natural AI voice responses on phone calls with selectable voice profiles</li>
-<li>Connected Vonage for SMS/calls and Meta APIs for WhatsApp, Facebook &amp; Instagram messaging</li>
-<li>Built smart scheduling that auto-books appointments directly into the business calendar</li>
-<li>Dual mode: fully automated AI responses or human-in-the-loop where AI generates drafts for review before sending</li>
-<li>Knowledge base upload system so the AI understands each business's specific context and services</li>
-</ul>
-<div class="project-tech"><span>Claude Code</span><span>Lovable</span><span>ElevenLabs</span><span>Vonage</span><span>Meta API</span><span>WhatsApp</span><span>Calendar API</span><span>AI/LLM</span></div>
-</div>
+/* Browser surfaces, themed from the palette */
+::selection{background:var(--signal);color:#fff}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+html{scrollbar-color:var(--rule-strong) var(--field-deep);scrollbar-width:thin}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--field-deep)}
+::-webkit-scrollbar-thumb{background:var(--rule-strong);border:3px solid var(--field-deep)}
+::-webkit-scrollbar-thumb:hover{background:var(--signal)}
 
-<div class="project-card">
-<div class="project-number">02</div>
-<div class="project-header"><div><div class="project-title">AI Email Marketing &amp; Campaign Automation Platform</div><div class="project-subtitle">Freelance &middot; DeviDevs &middot; 2024&ndash;2025</div></div></div>
-<div class="project-desc">Developed an AI-driven email marketing platform that generates complete campaigns &mdash; templates, newsletters, re-engagement sequences, and nurturing flows &mdash; all tailored to the client's niche using generative AI. The platform handles the full email lifecycle from content generation to delivery and analytics.</div>
-<ul class="project-highlights">
-<li>AI-generated campaign content customized per client niche: newsletters, re-engagement, nurturing, and outreach sequences</li>
-<li>Template system with AI-powered copy generation and visual editor for customization</li>
-<li>Integrated Amazon SES for high-volume email delivery with bounce/complaint handling</li>
-<li>Connected Zoho Mail for outreach campaigns with warm-up and deliverability optimization</li>
-<li>Campaign analytics dashboard with open rates, click tracking, and conversion metrics</li>
-</ul>
-<div class="project-tech"><span>Python</span><span>Generative AI</span><span>Amazon SES</span><span>Zoho Mail</span><span>REST APIs</span><span>Email Marketing</span></div>
-</div>
+a{color:inherit}
 
-<div class="project-card">
-<div class="project-number">03</div>
-<div class="project-header"><div><div class="project-title">Technical Lead Mentor &mdash; IoT Application Development</div><div class="project-subtitle">DeviDevs &amp; UTCB Partnership &middot; 2025</div></div></div>
-<div class="project-desc">Led a mentorship program in partnership with the Technical University of Civil Engineering Bucharest (UTCB), guiding 11 engineering students from the Faculty of Automation and Computer Science through the complete software development lifecycle of an IoT monitoring application.</div>
-<ul class="project-highlights">
-<li>Designed the full system architecture from scratch: Python/Flask backend, React frontend, ClickHouse time-series database</li>
-<li>Implemented CI/CD pipeline using Docker and GitHub Actions with automated Pytest validation on every pull request</li>
-<li>Coached students on Agile methodologies, managed sprints in Jira, and established formal code review processes</li>
-<li>Mentored 11 students through real-world software development, bridging the gap between academia and industry</li>
-</ul>
-<div class="project-tech"><span>Python</span><span>Flask</span><span>React</span><span>Docker</span><span>GitHub Actions</span><span>ClickHouse</span><span>Jira</span><span>Pytest</span></div>
-</div>
+/* ============================================================
+   RAIL: the fixed sheet edge. Persistent frame region.
+   ============================================================ */
+.rail{
+  position:fixed;inset:0 auto 0 0;width:var(--rail);z-index:40;
+  background:var(--field-deep);
+  border-right:1px solid var(--on-field-line);
+  display:flex;flex-direction:column;align-items:center;
+  padding:18px 0;
+}
+.rail__mark{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 100;
+  letter-spacing:.14em;color:var(--sheet);
+  border:1px solid var(--on-field-line);border-bottom:3px solid var(--signal);
+  padding:9px 8px 7px;line-height:1;
+}
+.rail__index{
+  list-style:none;margin:auto 0;display:flex;flex-direction:column;gap:2px;width:100%;
+}
+.rail__index a{
+  display:block;text-align:center;text-decoration:none;
+  font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 500,'wdth' 90;
+  color:var(--on-field-2);padding:7px 0;
+  border-left:3px solid transparent;
+  transition:color .18s ease,border-color .18s ease,background .18s ease;
+}
+.rail__index a:hover{color:var(--sheet);background:#0d2135}
+.rail__index a[aria-current="true"]{color:var(--sheet);border-left-color:var(--signal);background:#0d2135}
+.rail__foot{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 400,'wdth' 88;
+  color:var(--on-field-2);letter-spacing:.1em;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+}
 
-</div></div></section><section id="experience"><div class="container">
-<div class="section-label">Career Path</div>
-<h2 class="section-title">Experience</h2>
-<div class="timeline">
+/* ============================================================
+   SHEETS
+   ============================================================ */
+.stack{max-width:var(--sheet-max);margin:0 auto;padding:clamp(22px,3.6vw,44px) var(--pad) 0}
 
-<div class="timeline-item">
-<div class="timeline-header"><div><div class="timeline-role">AI Integration Specialist</div><div class="timeline-company">DeviDevs &middot; Freelance</div></div><div class="timeline-date">Jan 2022 &mdash; Jan 2026</div></div>
-<div class="timeline-desc"><ul>
-<li>Built custom LLM-powered automation workflows using OpenAI, LangChain, and RAG architectures</li>
-<li>Developed AI-driven chatbots and support systems reducing manual workload by 40%</li>
-<li>Created automated content pipelines and data processing solutions using Python, n8n, and Make</li>
-<li>Integrated third-party AI APIs into existing business systems for enterprise clients across Europe</li>
-</ul></div>
-<div class="timeline-tech"><span>Python</span><span>LangChain</span><span>OpenAI API</span><span>RAG</span><span>Docker</span><span>n8n</span><span>Make</span><span>Azure</span></div>
-</div>
+.sheet{
+  background:var(--sheet);color:var(--ink);
+  border:1px solid var(--rule-strong);
+  box-shadow:0 3px 9px -3px rgba(0,0,0,.42);
+  margin-bottom:clamp(22px,3.4vw,40px);
+  position:relative;
+}
+.sheet::before{
+  content:"";position:absolute;inset:5px;border:1px solid var(--rule);pointer-events:none;
+}
+.sheet__body{padding:clamp(22px,3.4vw,44px)}
 
-<div class="timeline-item">
-<div class="timeline-header"><div><div class="timeline-role">Senior IT Engineer</div><div class="timeline-company">Business Software Development &middot; Full-time</div></div><div class="timeline-date">May 2023 &mdash; Nov 2025</div></div>
-<div class="timeline-desc"><ul>
-<li>Administered Microsoft 365 for 1000+ users, automating provisioning and security workflows</li>
-<li>Engineered hybrid cloud solutions synchronizing on-premise AD with Azure AD</li>
-<li>Led cloud migration for 800+ users, automating the entire transition process</li>
-<li>Reduced onboarding time by 20% through automated provisioning workflows</li>
-<li>Provisioned 70+ devices with zero-touch deployment &mdash; 100% Day-One readiness</li>
-</ul></div>
-<div class="timeline-tech"><span>Microsoft 365</span><span>Azure AD</span><span>PowerShell</span><span>API Integration</span></div>
-</div>
+/* Clause head: number and title share one baseline rule */
+.clause__head{
+  display:flex;align-items:baseline;gap:clamp(12px,2vw,22px);
+  border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:clamp(18px,2.4vw,26px);
+}
+.clause__no{
+  font-family:var(--mono);font-size:clamp(13px,1.5vw,15px);
+  font-variation-settings:'wght' 700,'wdth' 100;
+  color:var(--signal);letter-spacing:.04em;flex:none;
+}
+.clause__title{
+  font-size:clamp(19px,2.5vw,27px);line-height:1.14;
+  font-variation-settings:'wght' 800,'wdth' 112;
+  letter-spacing:-.022em;text-transform:uppercase;text-wrap:balance;
+}
+.clause__note{
+  margin-left:auto;flex:none;
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 400,'wdth' 88;
+  color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase;
+}
+@media (max-width:640px){.clause__note{display:none}}
 
-<div class="timeline-item">
-<div class="timeline-header"><div><div class="timeline-role">E-commerce &amp; Web Operations Manager</div><div class="timeline-company">Standart Park SRL &middot; Full-time</div></div><div class="timeline-date">Nov 2020 &mdash; Sep 2022</div></div>
-<div class="timeline-desc"><ul>
-<li>Managed e-commerce website with frontend maintenance and regular updates</li>
-<li>Oversaw full lifecycle of online sales operations from acquisition to fulfillment</li>
-<li>Analyzed website performance and sales data to optimize customer journey</li>
-</ul></div>
-</div>
+.prose{max-width:70ch}
+.prose p+p{margin-top:.9em}
+.prose strong{font-variation-settings:'wght' 700,'wdth' 100}
 
-<div class="timeline-item">
-<div class="timeline-header"><div><div class="timeline-role">Supply Facility Center Supervisor</div><div class="timeline-company">Same Day Delivery Solutions LTD</div></div><div class="timeline-date">Oct 2017 &mdash; Oct 2020</div></div>
-<div class="timeline-desc"><ul>
-<li>Optimized fleet activity and delivery routes by analyzing operational data</li>
-<li>Key liaison between clients, subcontractors, and internal teams</li>
-<li>Progressed from Client Services Analyst to Solutions Analyst to Supervisor</li>
-</ul></div>
-</div>
+/* ============================================================
+   SHEET 1: TITLE BLOCK
+   ============================================================ */
+.title__bar{
+  background:var(--field-deep);color:var(--sheet);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:9px clamp(16px,2.4vw,26px);
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 90;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.title__bar span:last-child{color:var(--on-field-2);text-align:right}
 
-<div class="timeline-item">
-<div class="timeline-header"><div><div class="timeline-role">Outbound Sales &amp; Back-Office</div><div class="timeline-company">E-VALUE &middot; Full-time</div></div><div class="timeline-date">Apr 2016 &mdash; Oct 2017</div></div>
-<div class="timeline-desc"><ul>
-<li>Phone sales for Telekom services, then transitioned to back-office operations</li>
-</ul></div>
-</div>
+.title__main{
+  padding:clamp(24px,3.6vw,46px) clamp(22px,3.4vw,44px) clamp(18px,2.4vw,28px);
+  display:grid;gap:clamp(20px,3vw,38px);align-items:start;
+}
+@media (min-width:820px){
+  .title__main{grid-template-columns:minmax(0,1fr) 208px}
+}
+.plate{border:1px solid var(--rule-strong);padding:6px;background:#F1F2EB;max-width:208px}
+.plate img{display:block;width:100%;height:auto;filter:saturate(.9) contrast(1.03)}
+.plate figcaption{
+  margin-top:7px;font-family:var(--mono);font-size:11px;line-height:1.35;
+  font-variation-settings:'wght' 500,'wdth' 85;color:var(--ink-2);
+}
+.name{
+  font-size:clamp(2.35rem,7.4vw,5.1rem);line-height:.94;
+  font-variation-settings:'wght' 800,'wdth' 118;
+  letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance;
+}
+.designation{
+  margin-top:clamp(14px,1.8vw,20px);max-width:34ch;
+  font-size:clamp(1.02rem,1.7vw,1.32rem);line-height:1.35;
+  font-variation-settings:'wght' 500,'wdth' 100;
+  color:var(--ink);
+}
+.designation b{font-variation-settings:'wght' 700,'wdth' 100}
 
-<div class="timeline-item">
-<div class="timeline-header"><div><div class="timeline-role">Electrical Design Engineer</div><div class="timeline-company">ADCA SA</div></div><div class="timeline-date">Oct 2015 &mdash; Apr 2016</div></div>
-<div class="timeline-desc"><ul>
-<li>Designed electrical and sanitary systems for buildings using AutoCAD</li>
-</ul></div>
-</div>
+/* Title block grid, the way a drawing sheet is filled in */
+.tblock{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:2px solid var(--ink);
+}
+.tblock__cell{
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:11px clamp(12px,1.6vw,18px) 13px;min-width:0;
+}
+.tblock__cell:nth-child(4n){border-right:0}
+.tblock__k{
+  display:block;font-family:var(--mono);font-size:11px;
+  font-variation-settings:'wght' 500,'wdth' 85;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);margin-bottom:5px;
+}
+.tblock__v{
+  font-family:var(--mono);font-size:13px;line-height:1.35;
+  font-variation-settings:'wght' 600,'wdth' 92;color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.tblock__v--live{color:var(--signal);font-variation-settings:'wght' 700,'wdth' 92}
 
-</div></div></section><section id="skills"><div class="container">
-<div class="section-label">Tech Stack</div>
-<h2 class="section-title">Skills &amp; Technologies</h2>
-<div class="skills-grid">
-<div class="skill-category"><h3><span class="icon" style="background:rgba(108,99,255,.15)">&#x1F916;</span> AI &amp; ML</h3><div class="skill-tags">
-<span class="skill-tag">Generative AI</span><span class="skill-tag">LLMs</span><span class="skill-tag">LangChain</span><span class="skill-tag">RAG</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Claude</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">ElevenLabs</span>
-</div></div>
-<div class="skill-category"><h3><span class="icon" style="background:rgba(0,212,170,.15)">&#x2601;</span> Cloud &amp; DevOps</h3><div class="skill-tags">
-<span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Azure AD</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">Terraform</span><span class="skill-tag">CI/CD</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Amazon SES</span>
-</div></div>
-<div class="skill-category"><h3><span class="icon" style="background:rgba(255,107,107,.15)">&#x1F4BB;</span> Development</h3><div class="skill-tags">
-<span class="skill-tag">Python</span><span class="skill-tag">Flask</span><span class="skill-tag">React</span><span class="skill-tag">REST APIs</span><span class="skill-tag">PowerShell</span><span class="skill-tag">n8n</span><span class="skill-tag">Make</span><span class="skill-tag">Vonage</span><span class="skill-tag">Meta API</span>
-</div></div>
-<div class="skill-category"><h3><span class="icon" style="background:rgba(108,99,255,.15)">&#x1F3D7;</span> Infrastructure</h3><div class="skill-tags">
-<span class="skill-tag">Microsoft 365</span><span class="skill-tag">Active Directory</span><span class="skill-tag">Office 365 Admin</span><span class="skill-tag">VPN Config</span><span class="skill-tag">System Architecture</span>
-</div></div>
-<div class="skill-category"><h3><span class="icon" style="background:rgba(0,212,170,.15)">&#x1F3A8;</span> Design &amp; Tools</h3><div class="skill-tags">
-<span class="skill-tag">Figma</span><span class="skill-tag">UI/UX Design</span><span class="skill-tag">Adobe Photoshop</span><span class="skill-tag">WordPress</span><span class="skill-tag">Elementor</span><span class="skill-tag">Lovable</span>
-</div></div>
-<div class="skill-category"><h3><span class="icon" style="background:rgba(255,107,107,.15)">&#x1F4CB;</span> Management</h3><div class="skill-tags">
-<span class="skill-tag">Agile</span><span class="skill-tag">Project Management</span><span class="skill-tag">Jira</span><span class="skill-tag">Client Relations</span><span class="skill-tag">Business Development</span><span class="skill-tag">Technical Mentorship</span>
-</div></div>
-</div></div></section>
+/* The issued-by box carries the primary action */
+.issued{
+  grid-column:1 / -1;border-bottom:0;border-right:0;
+  background:var(--sheet-2);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  padding:clamp(14px,2vw,20px) clamp(12px,1.6vw,18px);
+}
+.issued__text{font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 500,'wdth' 88;
+  letter-spacing:.02em;color:var(--ink-2)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  background:var(--signal);color:#14181C;
+  padding:13px 22px;border:0;
+  font-family:var(--mono);font-size:13px;font-variation-settings:'wght' 700,'wdth' 95;
+  letter-spacing:.06em;
+  box-shadow:0 2px 0 0 #8f3410;
+  transition:transform .16s cubic-bezier(.2,.8,.3,1),box-shadow .16s cubic-bezier(.2,.8,.3,1),background .16s ease;
+}
+.btn:hover,.btn:focus-visible{background:#F2661F;transform:translateY(-2px);box-shadow:0 4px 0 0 #8f3410}
+.btn:active{transform:translateY(0);box-shadow:0 2px 0 0 #8f3410}
+.btn__ico{flex:none}
 
-<section id="education"><div class="container">
-<div class="section-label">Education</div>
-<h2 class="section-title">Academic Background</h2>
-<div class="edu-card">
-<h3>Technical University of Civil Engineering Bucharest &mdash; UTCB</h3>
-<div class="degree">Civil Engineering</div>
-<div class="year">Graduated Sep 2013</div>
-</div></div></section>
+/* ============================================================
+   FIG 1: the operating principle
+   ============================================================ */
+.fig{margin-top:clamp(20px,2.6vw,30px)}
+.fig__frame{
+  border:1px solid var(--rule);background:#F1F2EB;
+  padding:clamp(14px,2.2vw,26px) clamp(10px,2vw,26px);
+  background-image:linear-gradient(var(--sheet-2) 1px,transparent 1px),linear-gradient(90deg,var(--sheet-2) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.fig svg{width:100%;height:auto}
+.fig__cap{
+  margin-top:12px;font-family:var(--mono);font-size:12px;line-height:1.55;
+  font-variation-settings:'wght' 500,'wdth' 90;color:var(--ink-2);max-width:74ch;
+}
+.fig__cap b{color:var(--ink);font-variation-settings:'wght' 700,'wdth' 90}
 
-<section id="services"><div class="container">
-<div class="section-label">What I Offer</div>
-<h2 class="section-title">Services</h2>
-<div class="services-grid">
-<div class="service-card"><div class="s-icon">&#x1F916;</div><h3>AI Integration</h3><p>LLM-powered workflows, chatbots, and intelligent automation for your business</p></div>
-<div class="service-card"><div class="s-icon">&#x2699;</div><h3>Custom Software</h3><p>Full-stack applications built to your exact specifications</p></div>
-<div class="service-card"><div class="s-icon">&#x1F4AC;</div><h3>AI Communication Tools</h3><p>Multi-channel AI assistants for calls, email, WhatsApp &amp; social</p></div>
-<div class="service-card"><div class="s-icon">&#x1F4E7;</div><h3>Email Marketing Automation</h3><p>AI-generated campaigns, nurturing flows &amp; deliverability optimization</p></div>
-</div></div></section>
+.dg-box{fill:#fff;stroke:#14181C;stroke-width:1.6}
+.dg-box--key{fill:#E9EAE1;stroke-width:2.4}
+.dg-lbl{font-family:'Martian Mono',monospace;font-size:10.5px;font-weight:700;fill:#14181C;letter-spacing:.02em}
+.dg-sub{font-family:'Martian Mono',monospace;font-size:9px;font-weight:500;fill:#4E5A56}
+.dg-lbl2{font-family:'Martian Mono',monospace;font-size:11px;font-weight:700;fill:#14181C;letter-spacing:.01em}
+.dg-sub2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:500;fill:#4E5A56}
+.dg-fbl2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#E4571B;letter-spacing:.03em}
 
-<section id="contact"><div class="container">
-<div class="section-label">Get in Touch</div>
-<h2 class="section-title">Let's build<br>something great</h2>
-<div class="contact-grid">
-<div>
-<div class="contact-text">I'm always open to discussing new projects, consulting opportunities, or full-time positions in AI integration and automation. Whether you need to automate workflows, build intelligent tools, or scale your infrastructure &mdash; let's talk.</div>
-</div>
-<div class="contact-links">
-<a href="mailto:cniconstantin@gmail.com" class="contact-link">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-<div><div class="contact-link-label">Email</div><div class="contact-link-value">cniconstantin@gmail.com</div></div>
-</a>
-<a href="https://www.linkedin.com/in/nicu-constantin/" target="_blank" class="contact-link">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-<div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">linkedin.com/in/nicu-constantin</div></div>
-</a>
-<a href="https://github.com/cnick26" target="_blank" class="contact-link">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-<div><div class="contact-link-label">GitHub</div><div class="contact-link-value">github.com/cnick26</div></div>
-</a>
-</div></div></div></section>
+/* One figure, two settings: wide for a page, tall for a column */
+.fig .fig__wide{display:block}
+.fig .fig__tall{display:none}
+@media (max-width:720px){
+  .fig .fig__wide{display:none}
+  .fig .fig__tall{display:block}
+}
+.dg-path{fill:none;stroke:#14181C;stroke-width:1.6}
+.dg-feedback{fill:none;stroke:#E4571B;stroke-width:1.6;stroke-dasharray:5 4}
+.dg-fbl{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#E4571B;letter-spacing:.04em}
+.dg-head{fill:#14181C}
+.dg-head--sig{fill:#E4571B}
 
-<footer class="footer"><div class="container">
-<p>&copy; 2026 Nicu Constantin &middot; Built with passion, not templates</p>
-<div class="social-links">
-<a href="mailto:cniconstantin@gmail.com" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
-<a href="https://www.linkedin.com/in/nicu-constantin/" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-<a href="https://github.com/cnick26" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-</div></div></footer></body></html>
+.dg-pulse{fill:#E4571B}
+@media (prefers-reduced-motion:no-preference){
+  .dg-pulse{animation:travel 7s cubic-bezier(.45,0,.55,1) infinite}
+}
+@keyframes travel{
+  0%{offset-distance:0%;opacity:0}
+  4%{opacity:1}
+  92%{opacity:1}
+  100%{offset-distance:100%;opacity:0}
+}
+
+/* ============================================================
+   CLAUSE 3: measured values on a rule
+   ============================================================ */
+.meas{list-style:none;display:grid}
+.meas__row{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:7px;
+  border-top:1px solid var(--rule);padding:clamp(15px,2vw,20px) 0;
+}
+.meas__row:first-child{border-top:0;padding-top:0}
+.meas__row:last-child{padding-bottom:0}
+.meas__val{
+  display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  font-variation-settings:'wght' 800,'wdth' 108;
+  font-size:clamp(1.55rem,3.5vw,2.3rem);line-height:1;letter-spacing:-.03em;
+  color:var(--signal);
+}
+.meas__unit{
+  font-family:var(--mono);font-size:clamp(11px,1.3vw,13px);
+  font-variation-settings:'wght' 600,'wdth' 92;letter-spacing:.03em;
+  color:var(--ink);text-transform:none;
+}
+.meas__src{
+  font-family:var(--mono);font-size:11px;line-height:1.5;
+  font-variation-settings:'wght' 500,'wdth' 88;color:var(--ink-2);
+}
+.meas__src b{color:var(--ink);font-variation-settings:'wght' 700,'wdth' 88}
+@media (min-width:820px){
+  .meas__row{grid-template-columns:minmax(280px,.86fr) minmax(0,1.14fr);align-items:baseline;column-gap:clamp(24px,3.4vw,46px)}
+  .meas__row>.meas__src:last-child{grid-column:2}
+}
+
+/* ============================================================
+   CLAUSE 4: reference installations
+   ============================================================ */
+.ref{border-top:1px solid var(--rule);padding:clamp(20px,2.6vw,28px) 0}
+.ref:first-of-type{border-top:0;padding-top:0}
+.ref:last-of-type{padding-bottom:0}
+.ref__head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.ref__no{
+  font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 700,'wdth' 95;
+  color:var(--signal);flex:none
+}
+.ref__name{
+  font-size:clamp(1.06rem,2vw,1.36rem);line-height:1.16;
+  font-variation-settings:'wght' 800,'wdth' 108;letter-spacing:-.02em;
+}
+.ref__role{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 88;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--rule-strong);padding:4px 8px;line-height:1;
+}
+.ref__grid{display:grid;gap:clamp(12px,1.8vw,20px)}
+@media (min-width:860px){.ref__grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);column-gap:clamp(24px,3.4vw,48px)}}
+.ref__desc{font-size:16px;line-height:1.6;max-width:62ch}
+.ref__desc p+p{margin-top:.75em}
+.spec{border-top:1px solid var(--rule)}
+.spec__row{
+  display:grid;grid-template-columns:minmax(90px,.42fr) minmax(0,1fr);
+  gap:10px;border-bottom:1px solid var(--rule);padding:8px 0;
+}
+.spec__k{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 85;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);padding-top:2px;
+}
+.spec__v{font-family:var(--mono);font-size:12px;line-height:1.5;
+  font-variation-settings:'wght' 500,'wdth' 90;color:var(--ink);overflow-wrap:anywhere}
+.spec__v a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--signal);
+  text-decoration-thickness:2px;text-underline-offset:3px}
+.spec__v a:hover{color:var(--signal)}
+.spec__v--none{color:var(--ink-2)}
+
+/* ============================================================
+   CLAUSE 5: materials
+   ============================================================ */
+.mat{display:grid;gap:clamp(16px,2.2vw,26px)}
+@media (min-width:760px){.mat{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(26px,4vw,54px)}}
+.mat__group{border-top:2px solid var(--ink);padding-top:12px}
+.mat__k{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 88;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;display:block;
+}
+.mat__list{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.mat__list li{
+  font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 500,'wdth' 90;
+  border:1px solid var(--rule);padding:5px 9px;line-height:1.2;color:var(--ink);
+  background:#F1F2EB;
+}
+
+/* ============================================================
+   CLAUSE 6: service record
+   ============================================================ */
+.rec{list-style:none}
+.rec__item{
+  display:grid;gap:4px 20px;border-bottom:1px solid var(--rule);padding:14px 0;
+}
+.rec__item:last-child{border-bottom:0;padding-bottom:0}
+.rec__when{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 88;
+  letter-spacing:.06em;color:var(--signal);white-space:nowrap;
+}
+.rec__what{font-size:16px;font-variation-settings:'wght' 700,'wdth' 104;line-height:1.25}
+.rec__where{font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 88;color:var(--ink-2)}
+.rec__detail{font-size:15px;line-height:1.55;color:var(--ink-2);max-width:64ch}
+@media (min-width:760px){
+  .rec__item{grid-template-columns:170px minmax(0,1fr)}
+  .rec__when{grid-row:1 / span 3;padding-top:4px}
+}
+
+/* ============================================================
+   CLAUSE 8: conditions of issue + close
+   ============================================================ */
+.cond{list-style:none;display:grid;gap:11px;max-width:74ch}
+.cond li{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;
+  font-size:15px;line-height:1.55;
+}
+.cond__mk{
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 88;
+  color:var(--signal);letter-spacing:.08em;padding-top:4px;
+}
+
+.close{
+  margin-top:clamp(22px,3vw,34px);border-top:2px solid var(--ink);padding-top:clamp(20px,2.6vw,28px);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+}
+.close__line{font-size:clamp(1.05rem,2.2vw,1.4rem);line-height:1.25;
+  font-variation-settings:'wght' 800,'wdth' 108;letter-spacing:-.02em;max-width:22ch}
+.links{list-style:none;display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--rule-strong)}
+.links li+li{border-left:1px solid var(--rule-strong)}
+.links a{
+  display:block;text-decoration:none;padding:11px 15px;
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 90;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  transition:background .16s ease,color .16s ease;
+}
+.links a:hover,.links a:focus-visible{background:var(--ink);color:var(--sheet)}
+
+/* ============================================================
+   FOOT
+   ============================================================ */
+.foot{
+  max-width:var(--sheet-max);margin:0 auto;
+  padding:6px var(--pad) clamp(40px,6vw,72px);
+  display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 88;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--on-field-2);
+}
+
+/* ============================================================
+   ENTRANCE: one authored moment, sheets settle onto the field
+   ============================================================ */
+@media (prefers-reduced-motion:no-preference){
+  .sheet{opacity:0;transform:translateY(18px);
+    transition:opacity .62s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1)}
+  .sheet.is-in{opacity:1;transform:none}
+}
+
+/* ============================================================
+   RAIL COLLAPSE
+   ============================================================ */
+@media (max-width:900px){
+  body{padding-left:0;padding-top:46px}
+  .rail{
+    inset:0 0 auto 0;width:auto;height:46px;flex-direction:row;align-items:center;
+    padding:0 10px;border-right:0;border-bottom:1px solid var(--on-field-line);gap:10px;
+  }
+  .rail__mark{padding:6px 7px 5px;font-size:11px;border-bottom-width:2px}
+  .rail__index{
+    margin:0;flex-direction:row;gap:0;overflow-x:auto;flex:1;
+    scrollbar-width:none;
+  }
+  .rail__index::-webkit-scrollbar{display:none}
+  .rail__index a{
+    padding:6px 11px;border-left:0;border-bottom:3px solid transparent;font-size:11px;
+  }
+  .rail__index a[aria-current="true"]{border-bottom-color:var(--signal)}
+  .rail__foot{display:none}
+}
+@media (max-width:640px){
+  .tblock{grid-template-columns:repeat(2,1fr)}
+  .tblock__cell:nth-child(4n){border-right:1px solid var(--rule)}
+  .tblock__cell:nth-child(2n){border-right:0}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: a working engineer's record issued as a technical specification, where every claim carries a
+  number, a period and a source. It refuses the dev-portfolio hero: no big name over a gradient, no
+  icon-plus-heading card grid, no metric tiles.
+OWN-WORLD: deep drafting indigo field carrying the frame and rails, warm technical paper sheets bordered
+  like drawing sheets, revision orange reserved for measured values and the one action. Archivo expanded
+  for lettering, Martian Mono for every value, label and sheet metadata. Hairline rules, filled title
+  block cells, tick-marked measurement scales.
+STORY: the visitor understands within one viewport who this is, what he is available for, and how the
+  work is done; believes it because the record is specific and states its own limits; and mails him.
+FIRST VIEWPORT: sheet one is the title block. Status bar, name at display scale, designation, then a
+  filled grid of cells (location, availability, current work, rate basis, languages) closing with the
+  issued-by box that holds the mail action. Fig. 1 sits directly beneath, a block diagram of the
+  operating principle with an animated signal and a dashed feedback path.
+FORM: technical specification publication, candidate 7 of the grounded list, seed key cv2026.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict,
+  DESIGN.md, and every shipping raster carrying its provenance.
+-->
+
+<nav class="rail" aria-label="Clause index">
+  <span class="rail__mark">NC</span>
+  <ul class="rail__index">
+    <li><a href="#c1">1</a></li>
+    <li><a href="#c2">2</a></li>
+    <li><a href="#c3">3</a></li>
+    <li><a href="#c4">4</a></li>
+    <li><a href="#c5">5</a></li>
+    <li><a href="#c6">6</a></li>
+    <li><a href="#c7">7</a></li>
+    <li><a href="#c8">8</a></li>
+  </ul>
+  <span class="rail__foot">Issue 2026-08</span>
+</nav>
+
+<main class="stack">
+
+  <!-- ========== SHEET 1: TITLE BLOCK ========== -->
+  <section class="sheet" id="c1" aria-labelledby="name">
+    <div class="title__bar">
+      <span>Specification, personal record</span>
+      <span>Issue 2026-08-16 / supersedes 2026-01</span>
+    </div>
+
+    <div class="title__main">
+      <div class="title__text">
+        <h1 class="name" id="name">Nicu<br>Constantin</h1>
+        <p class="designation">
+          <b>Senior AI engineer.</b> I ship whole products with Claude Code and
+          AI agents, and I train teams to do the same.
+        </p>
+      </div>
+      <figure class="plate">
+        <img src="portrait.jpg" width="300" height="300" alt="Nicu Constantin" loading="eager" decoding="async">
+        <figcaption>The person you would be hiring</figcaption>
+      </figure>
+    </div>
+
+    <div class="tblock">
+      <div class="tblock__cell">
+        <span class="tblock__k">Based in</span>
+        <span class="tblock__v">Bucharest, Romania (EET)</span>
+      </div>
+      <div class="tblock__cell">
+        <span class="tblock__k">Status</span>
+        <span class="tblock__v tblock__v--live">Available for work</span>
+      </div>
+      <div class="tblock__cell">
+        <span class="tblock__k">Current</span>
+        <span class="tblock__v">Founding engineer, DeviDevs</span>
+      </div>
+      <div class="tblock__cell">
+        <span class="tblock__k">Languages</span>
+        <span class="tblock__v">English, Romanian</span>
+      </div>
+
+      <div class="tblock__cell">
+        <span class="tblock__k">Builds</span>
+        <span class="tblock__v">Agents, SaaS, automation, integrations</span>
+      </div>
+      <div class="tblock__cell">
+        <span class="tblock__k">Also teaches</span>
+        <span class="tblock__v">45+ students, 3 editions</span>
+      </div>
+      <div class="tblock__cell">
+        <span class="tblock__k">Works solo or leads</span>
+        <span class="tblock__v">Architecture to deployed product</span>
+      </div>
+      <div class="tblock__cell">
+        <span class="tblock__k">Engaged through</span>
+        <span class="tblock__v">Direct contract or Upwork</span>
+      </div>
+
+      <div class="tblock__cell issued">
+        <span class="issued__text">Issued by the subject. Questions go straight to him.</span>
+        <a class="btn" href="mailto:cniconstantin@gmail.com?subject=Project%20enquiry">
+          <svg class="btn__ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <rect x="1" y="3" width="14" height="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M1.6 3.6 8 8.6l6.4-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Email me
+        </a>
+      </div>
+    </div>
+
+    <div class="sheet__body" style="padding-top:0">
+      <figure class="fig">
+        <div class="fig__frame">
+          <svg class="fig__wide" viewBox="0 0 900 232" role="img" aria-labelledby="figtitle figdesc">
+            <title id="figtitle">How the work gets done</title>
+            <desc id="figdesc">A request enters an agent, which decides what to do. The agent calls
+              deterministic scripts, which execute. The scripts produce a working product. A dashed
+              feedback path runs from the product back to the agent, labelled checked against reality.</desc>
+
+            <!-- boxes -->
+            <rect class="dg-box" x="4" y="46" width="104" height="56"/>
+            <text class="dg-lbl" x="56" y="70" text-anchor="middle">WHAT YOU</text>
+            <text class="dg-lbl" x="56" y="82" text-anchor="middle">ASKED FOR</text>
+
+            <rect class="dg-box dg-box--key" x="188" y="34" width="184" height="80"/>
+            <text class="dg-lbl" x="280" y="66" text-anchor="middle">THE AGENT DECIDES</text>
+            <text class="dg-sub" x="280" y="82" text-anchor="middle">plans, reads, chooses</text>
+            <text class="dg-sub" x="280" y="94" text-anchor="middle">the next step</text>
+
+            <rect class="dg-box dg-box--key" x="424" y="34" width="184" height="80"/>
+            <text class="dg-lbl" x="516" y="66" text-anchor="middle">SCRIPTS EXECUTE</text>
+            <text class="dg-sub" x="516" y="82" text-anchor="middle">same input, same output,</text>
+            <text class="dg-sub" x="516" y="94" text-anchor="middle">every single time</text>
+
+            <rect class="dg-box" x="660" y="46" width="112" height="56"/>
+            <text class="dg-lbl" x="716" y="70" text-anchor="middle">A PRODUCT</text>
+            <text class="dg-lbl" x="716" y="82" text-anchor="middle">THAT RUNS</text>
+
+            <!-- signal path -->
+            <path class="dg-path" d="M108 74 H180"/>
+            <path class="dg-head" d="M180 69 l10 5 -10 5 z"/>
+            <path class="dg-path" d="M372 74 H416"/>
+            <path class="dg-head" d="M416 69 l10 5 -10 5 z"/>
+            <path class="dg-path" d="M608 74 H652"/>
+            <path class="dg-head" d="M652 69 l10 5 -10 5 z"/>
+
+            <!-- feedback path -->
+            <path class="dg-feedback" d="M716 102 V166 H280 V122"/>
+            <path class="dg-head--sig" d="M275 122 l5 -10 5 10 z"/>
+            <text class="dg-fbl" x="498" y="182" text-anchor="middle">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
+
+            <!-- travelling pulse -->
+            <circle class="dg-pulse" r="4.5" cx="0" cy="0"
+              style="offset-path:path('M108 74 H716 V166 H280 V122');offset-rotate:0deg"/>
+
+            <!-- sheet ticks -->
+            <path class="dg-path" d="M8 210 H892" stroke-width="1" stroke="#AEB6A8"/>
+            <text class="dg-sub" x="8" y="226">FIG. 1</text>
+            <text class="dg-sub" x="892" y="226" text-anchor="end">OPERATING PRINCIPLE</text>
+          </svg>
+
+          <!-- Same figure, reset for a narrow column, the way a sheet reprints it -->
+          <svg class="fig__tall" viewBox="0 0 320 408" role="img" aria-labelledby="figtitle2 figdesc2">
+            <title id="figtitle2">How the work gets done</title>
+            <desc id="figdesc2">A request enters an agent, which decides what to do. The agent calls
+              deterministic scripts, which execute. The scripts produce a working product. A dashed
+              feedback path runs from the product back to the agent, labelled checked against reality.</desc>
+
+            <rect class="dg-box" x="76" y="6" width="168" height="40"/>
+            <text class="dg-lbl2" x="160" y="24" text-anchor="middle">WHAT YOU</text>
+            <text class="dg-lbl2" x="160" y="37" text-anchor="middle">ASKED FOR</text>
+
+            <path class="dg-path" d="M160 46 V60"/>
+            <path class="dg-head" d="M155 60 l5 10 5 -10 z"/>
+
+            <rect class="dg-box dg-box--key" x="44" y="70" width="232" height="64"/>
+            <text class="dg-lbl2" x="160" y="92" text-anchor="middle">THE AGENT DECIDES</text>
+            <text class="dg-sub2" x="160" y="108" text-anchor="middle">plans, reads, chooses</text>
+            <text class="dg-sub2" x="160" y="121" text-anchor="middle">the next step</text>
+
+            <path class="dg-path" d="M160 134 V148"/>
+            <path class="dg-head" d="M155 148 l5 10 5 -10 z"/>
+
+            <rect class="dg-box dg-box--key" x="44" y="158" width="232" height="64"/>
+            <text class="dg-lbl2" x="160" y="180" text-anchor="middle">SCRIPTS EXECUTE</text>
+            <text class="dg-sub2" x="160" y="196" text-anchor="middle">same input, same output,</text>
+            <text class="dg-sub2" x="160" y="209" text-anchor="middle">every single time</text>
+
+            <path class="dg-path" d="M160 222 V236"/>
+            <path class="dg-head" d="M155 236 l5 10 5 -10 z"/>
+
+            <rect class="dg-box" x="76" y="246" width="168" height="40"/>
+            <text class="dg-lbl2" x="160" y="264" text-anchor="middle">A PRODUCT</text>
+            <text class="dg-lbl2" x="160" y="277" text-anchor="middle">THAT RUNS</text>
+
+            <path class="dg-feedback" d="M160 286 V318 H22 V102 H34"/>
+            <path class="dg-head--sig" d="M34 97 l10 5 -10 5 z"/>
+            <text class="dg-fbl2" x="176" y="338" text-anchor="middle">CHECKED AGAINST REALITY</text>
+            <text class="dg-fbl2" x="176" y="350" text-anchor="middle">BEFORE IT SHIPS</text>
+
+            <circle class="dg-pulse dg-pulse--tall" r="4" cx="0" cy="0"
+              style="offset-path:path('M160 26 V286 V318 H22 V102 H44');offset-rotate:0deg"/>
+
+            <path class="dg-path" d="M6 380 H314" stroke-width="1" stroke="#AEB6A8"/>
+            <text class="dg-sub2" x="6" y="396">FIG. 1</text>
+            <text class="dg-sub2" x="314" y="396" text-anchor="end">OPERATING PRINCIPLE</text>
+          </svg>
+        </div>
+        <figcaption class="fig__cap">
+          <b>Fig. 1. The operating principle.</b> The agent decides, the scripts execute, and the result
+          is checked before it ships. Reliability is held in code, not in prompts. This is why the work
+          below is repeatable rather than a lucky demo.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========== 2. SCOPE ========== -->
+  <section class="sheet" id="c2" aria-labelledby="c2h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">2</span>
+        <h2 class="clause__title" id="c2h">Scope</h2>
+        <span class="clause__note">What I take on</span>
+      </div>
+      <div class="prose">
+        <p>I build agent systems that do real work: a multi-tenant SaaS that runs a client's email
+        marketing, a scraping pipeline that finds and scores leads, a transcriber that never sends
+        audio off the machine. Architecture to deployed product, usually alone, sometimes leading.</p>
+        <p>I am not a chatbot builder and not a prompt writer. The difference shows in Fig. 1: a
+        conversation is not a system, and a system is what a business can depend on.</p>
+        <p>The second thing I sell is teaching. I have run three editions of an internship program at
+        the university I graduated from, and the people who finished it now ship with these tools.
+        If your team needs to work this way, that is the same job from the other side.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. VERIFIED PERFORMANCE ========== -->
+  <section class="sheet" id="c3" aria-labelledby="c3h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">3</span>
+        <h2 class="clause__title" id="c3h">Verified performance</h2>
+        <span class="clause__note">Value / period / source</span>
+      </div>
+      <ul class="meas">
+        <li class="meas__row">
+          <span class="meas__val">43<span class="meas__unit">percent of a shop's orders</span></span>
+          <span class="meas__src">Orders attributable to the email flows I built, over the measured
+          period. Client is a cosmetics e-commerce brand, named on request with their consent.</span>
+          <span class="meas__src"><b>Source:</b> ClevMail platform reporting, about 3 months in 2026.</span>
+        </li>
+        <li class="meas__row">
+          <span class="meas__val">44<span class="meas__unit">percent open rate, 10,000+ emails</span></span>
+          <span class="meas__src">Delivered for the same brand in the same period, through flows,
+          broadcasts and win-back sequences.</span>
+          <span class="meas__src"><b>Source:</b> ClevMail platform reporting.</span>
+        </li>
+        <li class="meas__row">
+          <span class="meas__val">763<span class="meas__unit">of 767 commits are mine</span></span>
+          <span class="meas__src">On the ClevMail repository. I say primary builder because the
+          repository says so, not because it sounds good.</span>
+          <span class="meas__src"><b>Source:</b> git history, counted 2026-08-06.</span>
+        </li>
+        <li class="meas__row">
+          <span class="meas__val">45+<span class="meas__unit">students taught, 3 editions</span></span>
+          <span class="meas__src">Internship program I designed and ran at the Technical University of
+          Civil Engineering Bucharest, teaching students to ship real applications with AI tooling.</span>
+          <span class="meas__src"><b>Source:</b> program records, 2025 to 2026.</span>
+        </li>
+        <li class="meas__row">
+          <span class="meas__val">7 of 7<span class="meas__unit">passed, 2 hired</span></span>
+          <span class="meas__src">The February to April 2026 edition: 19 sessions, 98.5 percent
+          attendance, 177 stories at about 95 percent velocity, 357+ commits, 4 AI applications
+          shipped live.</span>
+          <span class="meas__src"><b>Source:</b> program board and repositories.</span>
+        </li>
+        <li class="meas__row">
+          <span class="meas__val">87<span class="meas__unit">hours transcribed, zero API cost</span></span>
+          <span class="meas__src">95 recordings put through a batch Whisper pipeline on a local GPU,
+          part of the private infrastructure I run daily: 4 agent systems, 106 deterministic execution
+          scripts, a searchable note base with fully offline hybrid retrieval.</span>
+          <span class="meas__src"><b>Source:</b> own systems, counted 2026-07-05.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== 4. REFERENCE INSTALLATIONS ========== -->
+  <section class="sheet" id="c4" aria-labelledby="c4h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">4</span>
+        <h2 class="clause__title" id="c4h">Reference installations</h2>
+        <span class="clause__note">Built and running</span>
+      </div>
+
+      <article class="ref">
+        <div class="ref__head">
+          <span class="ref__no">4.1</span>
+          <h3 class="ref__name">ClevMail</h3>
+          <span class="ref__role">Primary builder</span>
+        </div>
+        <div class="ref__grid">
+          <div class="ref__desc">
+            <p>A multi-tenant email marketing platform where every client gets an AI agent that learns
+            their business. Welcome, abandoned cart and post-purchase flows, broadcast campaigns, a form
+            builder with double opt-in, consent-tag targeting for GDPR, automatic deactivation on soft
+            bounces, and rendering per client.</p>
+            <p>I designed it and wrote almost all of it. It is live and it sells for the people using it.</p>
+          </div>
+          <div class="spec">
+            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Email marketing SaaS, one AI agent per tenant</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, FastAPI, React, Postgres, Anthropic, Vercel, Render</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">See clause 3, rows 1 to 3</span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://clevmail.ro" rel="noopener">clevmail.ro</a> (Romanian only)</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ref">
+        <div class="ref__head">
+          <span class="ref__no">4.2</span>
+          <h3 class="ref__name">University internship program</h3>
+          <span class="ref__role">Designed and ran it</span>
+        </div>
+        <div class="ref__grid">
+          <div class="ref__desc">
+            <p>Three editions at the Technical University of Civil Engineering Bucharest, my own alma
+            mater. Students arrive knowing how to write code and leave having shipped a working
+            application with AI tooling, under sprints, code review and a real board.</p>
+            <p>One edition ran the full lifecycle of an IoT monitoring application with eleven students:
+            architecture from scratch, a CI pipeline with automated tests on every pull request, and
+            Agile practice that was not a simulation.</p>
+          </div>
+          <div class="spec">
+            <div class="spec__row"><span class="spec__k">Role</span><span class="spec__v">Internship tutor and technical lead</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Claude Code, Python, Flask, React, ClickHouse, Docker, GitHub Actions, Pytest, Jira</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">45+ taught, 4 applications shipped live, 2 hired</span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Student work, not mine to publish</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ref">
+        <div class="ref__head">
+          <span class="ref__no">4.3</span>
+          <h3 class="ref__name">MeetScribe</h3>
+          <span class="ref__role">Sole builder</span>
+        </div>
+        <div class="ref__grid">
+          <div class="ref__desc">
+            <p>Meeting transcription that runs entirely on a local GPU. Nothing leaves the machine, which
+            is the whole point: the recordings it handles are ones no cloud service should ever see.</p>
+            <p>Live transcription during the call, then an automatic high quality second pass when the
+            session ends, then summaries and action items per meeting. I use it in production for
+            teaching sessions and business meetings.</p>
+          </div>
+          <div class="spec">
+            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Private real-time transcription and meeting notes</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, faster-whisper, local GPU, Claude Code</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">87 hours processed at zero API cost</span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Private repository, demo on request</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ref">
+        <div class="ref__head">
+          <span class="ref__no">4.4</span>
+          <h3 class="ref__name">Herbal supplements storefront</h3>
+          <span class="ref__role">Sole developer</span>
+        </div>
+        <div class="ref__grid">
+          <div class="ref__desc">
+            <p>A full storefront rebuild on Sylius for a live shop with real revenue, under contract and
+            on my own. Templates, product taxonomy, content architecture, Stripe payments, and a
+            checkout that takes consent properly instead of pretending to.</p>
+            <p>The content moved into editable blocks so the owner changes his own copy without paying a
+            developer for every comma.</p>
+          </div>
+          <div class="spec">
+            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">E-commerce storefront redesign</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Sylius, Symfony, PHP, Twig, Stripe</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Shop sells daily in production</span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Client site now runs a different theme. Screenshots on request</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ref">
+        <div class="ref__head">
+          <span class="ref__no">4.5</span>
+          <h3 class="ref__name">Lead generation pipeline</h3>
+          <span class="ref__role">Built it</span>
+        </div>
+        <div class="ref__grid">
+          <div class="ref__desc">
+            <p>Eight sources scraped, deduplicated, scored, and geocoded by a three pass vote, landing in
+            a sheet the sales side actually opens. The kind of unglamorous system that replaces a person
+            copying rows by hand.</p>
+          </div>
+          <div class="spec">
+            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Scrape, enrich, verify, score, deliver</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, Playwright, Google Sheets API</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Qualified leads, verified before they reach a human</span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Private repository</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ref">
+        <div class="ref__head">
+          <span class="ref__no">4.6</span>
+          <h3 class="ref__name">DeviDevs agency site</h3>
+          <span class="ref__role">Frontend, team product</span>
+        </div>
+        <div class="ref__grid">
+          <div class="ref__desc">
+            <p>The site of the studio I co-founded. The frontend is mine, the product is the team's, and
+            saying which is which is the point of this whole document.</p>
+          </div>
+          <div class="spec">
+            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Bilingual marketing site</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Next.js, TypeScript, React, Tailwind</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Live, English and Romanian</span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://devidevs.com" rel="noopener">devidevs.com</a></span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== 5. MATERIALS ========== -->
+  <section class="sheet" id="c5" aria-labelledby="c5h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">5</span>
+        <h2 class="clause__title" id="c5h">Materials</h2>
+        <span class="clause__note">Used in the work above</span>
+      </div>
+      <div class="mat">
+        <div class="mat__group">
+          <span class="mat__k">Agents and AI</span>
+          <ul class="mat__list">
+            <li>Claude Code</li><li>Anthropic API</li><li>OpenAI API</li><li>Agent architecture</li>
+            <li>Retrieval</li><li>Local Whisper</li><li>Prompt to script handoff</li>
+          </ul>
+        </div>
+        <div class="mat__group">
+          <span class="mat__k">Backend</span>
+          <ul class="mat__list">
+            <li>Python</li><li>FastAPI</li><li>Flask</li><li>PHP</li><li>Symfony</li><li>Sylius</li>
+            <li>Node.js</li><li>Postgres</li><li>ClickHouse</li><li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="mat__group">
+          <span class="mat__k">Frontend</span>
+          <ul class="mat__list">
+            <li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind</li><li>HTML and CSS</li>
+            <li>Interface design</li><li>Figma</li>
+          </ul>
+        </div>
+        <div class="mat__group">
+          <span class="mat__k">Running it</span>
+          <ul class="mat__list">
+            <li>Docker</li><li>GitHub Actions</li><li>Vercel</li><li>Render</li><li>Azure</li>
+            <li>Microsoft 365</li><li>PowerShell</li><li>Playwright</li><li>n8n</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. SERVICE RECORD ========== -->
+  <section class="sheet" id="c6" aria-labelledby="c6h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">6</span>
+        <h2 class="clause__title" id="c6h">Service record</h2>
+        <span class="clause__note">Most recent first</span>
+      </div>
+      <ul class="rec">
+        <li class="rec__item">
+          <span class="rec__when">2024 to present</span>
+          <span class="rec__what">Founding engineer</span>
+          <span class="rec__where">DeviDevs Technologies, Bucharest</span>
+          <span class="rec__detail">Primary builder of the company's SaaS product, plus client delivery
+          on agents, automation and integration work. Freelance engagements run in parallel.</span>
+        </li>
+        <li class="rec__item">
+          <span class="rec__when">2023 to 2025</span>
+          <span class="rec__what">Senior IT engineer, infrastructure and automation</span>
+          <span class="rec__where">Aviation, legal and travel clients</span>
+          <span class="rec__detail">Microsoft 365 for more than 1,000 users. Hybrid directory
+          synchronisation, a cloud migration covering more than 800 users, provisioning automated end to
+          end, and 70+ devices deployed with zero touch.</span>
+        </li>
+        <li class="rec__item">
+          <span class="rec__when">2020 to 2022</span>
+          <span class="rec__what">E-commerce and web operations manager</span>
+          <span class="rec__where">Standart Park</span>
+          <span class="rec__detail">Ran the online sales operation end to end, from the storefront to
+          fulfilment, and maintained the site itself.</span>
+        </li>
+        <li class="rec__item">
+          <span class="rec__when">2017 to 2020</span>
+          <span class="rec__what">Supply facility supervisor</span>
+          <span class="rec__where">Same Day Delivery Solutions</span>
+          <span class="rec__detail">Started as an analyst and finished running the centre. Optimised
+          fleet activity and delivery routes on operational data, and held the line between clients,
+          subcontractors and internal teams.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== 7. QUALIFICATION ========== -->
+  <section class="sheet" id="c7" aria-labelledby="c7h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">7</span>
+        <h2 class="clause__title" id="c7h">Qualification</h2>
+        <span class="clause__note">Where the engineering came from</span>
+      </div>
+      <div class="ref__grid">
+        <div class="ref__desc">
+          <p>Automation and applied informatics: control systems, signals, and the habit of drawing a
+          system before building it. Fig. 1 at the top of this sheet is that training showing through,
+          and it is why my agent work looks like a control loop rather than a chat window.</p>
+          <p>I now teach in the same faculty I graduated from.</p>
+        </div>
+        <div class="spec">
+          <div class="spec__row"><span class="spec__k">Degree</span><span class="spec__v">BEng, Automation and Applied Informatics</span></div>
+          <div class="spec__row"><span class="spec__k">Institution</span><span class="spec__v">Technical University of Civil Engineering Bucharest</span></div>
+          <div class="spec__row"><span class="spec__k">Years</span><span class="spec__v">2013 to 2017</span></div>
+          <div class="spec__row"><span class="spec__k">Since</span><span class="spec__v">Internship tutor at the same faculty</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. CONDITIONS OF ISSUE ========== -->
+  <section class="sheet" id="c8" aria-labelledby="c8h">
+    <div class="sheet__body">
+      <div class="clause__head">
+        <span class="clause__no">8</span>
+        <h2 class="clause__title" id="c8h">Conditions of issue</h2>
+        <span class="clause__note">Read before you judge the repos</span>
+      </div>
+      <ul class="cond">
+        <li><span class="cond__mk">8.1</span><span>Almost every repository on this account is private,
+          because the code belongs to clients and to a company. The contribution graph is real work; the
+          empty repository list is a contract, not a gap. Ask for a walkthrough or a screen share and you
+          will see the actual thing running.</span></li>
+        <li><span class="cond__mk">8.2</span><span>Client names are withheld unless the client has agreed.
+          Every figure in clause 3 comes from a system I can open in front of you.</span></li>
+        <li><span class="cond__mk">8.3</span><span>Team work is labelled team work and solo work is
+          labelled solo. Where I wrote almost all of something, clause 3 gives the commit count instead
+          of an adjective.</span></li>
+        <li><span class="cond__mk">8.4</span><span>This sheet carries its issue date. If you are reading it
+          long after that date, ask me what has changed rather than trusting it.</span></li>
+      </ul>
+
+      <div class="close">
+        <p class="close__line">Tell me what you need built.</p>
+        <ul class="links">
+          <li><a href="mailto:cniconstantin@gmail.com?subject=Project%20enquiry">Email</a></li>
+          <li><a href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a></li>
+          <li><a href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/cnick26" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Nicu Constantin, Bucharest</span>
+  <span>Issue 2026-08-16</span>
+  <span>Hand built, no template</span>
+</footer>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail__index a'));
+  var sheets = Array.prototype.slice.call(document.querySelectorAll('.sheet'));
+  if (!('IntersectionObserver' in window)) {
+    sheets.forEach(function(s){ s.classList.add('is-in'); });
+    return;
+  }
+
+  // Sheets settle onto the field once, then stay put.
+  var reveal = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('is-in'); reveal.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+  sheets.forEach(function(s){ reveal.observe(s); });
+
+  // Clause index follows the sheet you are reading.
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      links.forEach(function(a){
+        a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false');
+      });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sheets.forEach(function(s){ spy.observe(s); });
+})();
+</script>
+</body>
+</html>
