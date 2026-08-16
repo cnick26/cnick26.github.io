@@ -1,4 +1,9 @@
 node_modules/
-.impeccable/review/
-.impeccable/mocks/
-.impeccable/hook.cache.json
+
+# Working documents. They stay on disk, they never ship: this repo is the only
+# public one on the account, so anything committed here is the first thing a
+# visitor reads. These name the claims that are soft and the proof that is
+# missing, which is exactly what must not sit next to the claims themselves.
+PRODUCT.md
+DESIGN.md
+.impeccable/

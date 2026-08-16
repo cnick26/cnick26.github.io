@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nicu Constantin, Senior AI Engineer. Claude Code, agents and automation.</title>
-<meta name="description" content="Nicu Constantin (Nick), senior AI engineer in Bucharest. I ship whole products with Claude Code and AI agents, and I train teams to do the same. Verified results, reference installations, service record.">
+<title>Nicu Constantin, Senior AI Engineer. Agents and automation.</title>
+<meta name="description" content="Senior AI engineer in Bucharest. I build AI agents and take them to production, and I train teams to build the same way. Every number here has a source.">
 <meta name="author" content="Nicu Constantin">
 <link rel="canonical" href="https://cnick26.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://cnick26.github.io/">
 <meta property="og:title" content="Nicu Constantin, Senior AI Engineer">
-<meta property="og:description" content="I ship whole products with Claude Code and AI agents, and I train teams to do the same. Bucharest, Romania.">
+<meta property="og:description" content="I build AI agents and take them to production, and I train teams to build the same way. Bucharest, Romania.">
 <meta property="og:image" content="https://cnick26.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nicu Constantin, senior AI engineer, Bucharest. Available for work.">
+<meta property="og:image:alt" content="Nicu Constantin, senior AI engineer, Bucharest.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nicu Constantin, Senior AI Engineer">
-<meta name="twitter:description" content="I ship whole products with Claude Code and AI agents, and I train teams to do the same.">
+<meta name="twitter:description" content="I build AI agents and take them to production, and I train teams to build the same way.">
 <meta name="twitter:image" content="https://cnick26.github.io/og.png">
 <meta name="theme-color" content="#0E2A43">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E2A43'/%3E%3Cpath d='M4 4h24v24H4z' fill='none' stroke='%23E9EAE1' stroke-width='1.5'/%3E%3Cpath d='M4 22h24' stroke='%23E4571B' stroke-width='2.5'/%3E%3Ctext x='16' y='19' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='700' fill='%23E9EAE1' text-anchor='middle'%3ENC%3C/text%3E%3C/svg%3E">
@@ -38,6 +38,7 @@
   --rule:#AEB6A8;
   --rule-strong:#7E8A7C;
   --signal:#E4571B;
+  --signal-ink:#B23C0A;
   --on-field:#C9D6E2;
   --on-field-2:#8CA3B8;
   --on-field-line:#1E4260;
@@ -75,6 +76,9 @@ html{scrollbar-color:var(--rule-strong) var(--field-deep);scrollbar-width:thin}
 ::-webkit-scrollbar-thumb:hover{background:var(--signal)}
 
 a{color:inherit}
+.skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--signal);color:#14181C;
+  padding:12px 18px;font-family:var(--mono);font-size:12px;text-decoration:none}
+.skip:focus{left:8px;top:8px}
 
 /* ============================================================
    RAIL: the fixed sheet edge. Persistent frame region.
@@ -97,8 +101,8 @@ a{color:inherit}
 }
 .rail__index a{
   display:block;text-align:center;text-decoration:none;
-  font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 500,'wdth' 90;
-  color:var(--on-field-2);padding:7px 0;
+  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 82;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--on-field-2);padding:9px 2px;
   border-left:3px solid transparent;
   transition:color .18s ease,border-color .18s ease,background .18s ease;
 }
@@ -114,6 +118,7 @@ a{color:inherit}
    SHEETS
    ============================================================ */
 .stack{max-width:var(--sheet-max);margin:0 auto;padding:clamp(22px,3.6vw,44px) var(--pad) 0}
+@media (min-width:1213px){.stack,.foot{transform:translateX(calc(var(--rail) / -2))}}
 
 .sheet{
   background:var(--sheet);color:var(--ink);
@@ -135,7 +140,7 @@ a{color:inherit}
 .clause__no{
   font-family:var(--mono);font-size:clamp(13px,1.5vw,15px);
   font-variation-settings:'wght' 700,'wdth' 100;
-  color:var(--signal);letter-spacing:.04em;flex:none;
+  color:var(--signal-ink);letter-spacing:.04em;flex:none;
 }
 .clause__title{
   font-size:clamp(19px,2.5vw,27px);line-height:1.14;
@@ -169,9 +174,10 @@ a{color:inherit}
   padding:clamp(24px,3.6vw,46px) clamp(22px,3.4vw,44px) clamp(18px,2.4vw,28px);
   display:grid;gap:clamp(20px,3vw,38px);align-items:start;
 }
-@media (min-width:820px){
+@media (min-width:1160px){
   .title__main{grid-template-columns:minmax(0,1fr) 208px}
 }
+.title__text{min-width:0}
 .plate{border:1px solid var(--rule-strong);padding:6px;background:#F1F2EB;max-width:208px}
 .plate img{display:block;width:100%;height:auto;filter:saturate(.9) contrast(1.03)}
 .plate figcaption{
@@ -179,7 +185,7 @@ a{color:inherit}
   font-variation-settings:'wght' 500,'wdth' 85;color:var(--ink-2);
 }
 .name{
-  font-size:clamp(2.35rem,7.4vw,5.1rem);line-height:.94;
+  font-size:clamp(1.95rem,7.4vw,5.1rem);line-height:.94;
   font-variation-settings:'wght' 800,'wdth' 118;
   letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance;
 }
@@ -211,9 +217,10 @@ a{color:inherit}
   font-variation-settings:'wght' 600,'wdth' 92;color:var(--ink);
   overflow-wrap:anywhere;
 }
-.tblock__v--live{color:var(--signal);font-variation-settings:'wght' 700,'wdth' 92}
+.tblock__v--live{color:var(--signal-ink);font-variation-settings:'wght' 700,'wdth' 92}
 
 /* The issued-by box carries the primary action */
+.actions{display:flex;flex-wrap:wrap;gap:10px}
 .issued{
   grid-column:1 / -1;border-bottom:0;border-right:0;
   background:var(--sheet-2);
@@ -234,6 +241,8 @@ a{color:inherit}
 .btn:hover,.btn:focus-visible{background:#F2661F;transform:translateY(-2px);box-shadow:0 4px 0 0 #8f3410}
 .btn:active{transform:translateY(0);box-shadow:0 2px 0 0 #8f3410}
 .btn__ico{flex:none}
+.btn.btn--alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule-strong)}
+.btn.btn--alt:hover,.btn.btn--alt:focus-visible{background:var(--ink);color:var(--sheet);box-shadow:none;transform:translateY(-2px)}
 
 /* ============================================================
    FIG 1: the operating principle
@@ -258,7 +267,7 @@ a{color:inherit}
 .dg-sub{font-family:'Martian Mono',monospace;font-size:9px;font-weight:500;fill:#4E5A56}
 .dg-lbl2{font-family:'Martian Mono',monospace;font-size:11px;font-weight:700;fill:#14181C;letter-spacing:.01em}
 .dg-sub2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:500;fill:#4E5A56}
-.dg-fbl2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#E4571B;letter-spacing:.03em}
+.dg-fbl2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#B23C0A;letter-spacing:.03em}
 
 /* One figure, two settings: wide for a page, tall for a column */
 .fig .fig__wide{display:block}
@@ -269,7 +278,7 @@ a{color:inherit}
 }
 .dg-path{fill:none;stroke:#14181C;stroke-width:1.6}
 .dg-feedback{fill:none;stroke:#E4571B;stroke-width:1.6;stroke-dasharray:5 4}
-.dg-fbl{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#E4571B;letter-spacing:.04em}
+.dg-fbl{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#B23C0A;letter-spacing:.04em}
 .dg-head{fill:#14181C}
 .dg-head--sig{fill:#E4571B}
 
@@ -324,7 +333,7 @@ a{color:inherit}
 .ref__head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
 .ref__no{
   font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 700,'wdth' 95;
-  color:var(--signal);flex:none
+  color:var(--signal-ink);flex:none
 }
 .ref__name{
   font-size:clamp(1.06rem,2vw,1.36rem);line-height:1.16;
@@ -382,7 +391,7 @@ a{color:inherit}
 .rec__item:last-child{border-bottom:0;padding-bottom:0}
 .rec__when{
   font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 88;
-  letter-spacing:.06em;color:var(--signal);white-space:nowrap;
+  letter-spacing:.06em;color:var(--signal-ink);white-space:nowrap;
 }
 .rec__what{font-size:16px;font-variation-settings:'wght' 700,'wdth' 104;line-height:1.25}
 .rec__where{font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 88;color:var(--ink-2)}
@@ -402,7 +411,7 @@ a{color:inherit}
 }
 .cond__mk{
   font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 88;
-  color:var(--signal);letter-spacing:.08em;padding-top:4px;
+  color:var(--signal-ink);letter-spacing:.08em;padding-top:4px;
 }
 
 .close{
@@ -436,9 +445,9 @@ a{color:inherit}
    ENTRANCE: one authored moment, sheets settle onto the field
    ============================================================ */
 @media (prefers-reduced-motion:no-preference){
-  .sheet{opacity:0;transform:translateY(18px);
+  html.js .sheet{opacity:0;transform:translateY(18px);
     transition:opacity .62s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1)}
-  .sheet.is-in{opacity:1;transform:none}
+  html.js .sheet.is-in{opacity:1;transform:none}
 }
 
 /* ============================================================
@@ -468,41 +477,52 @@ a{color:inherit}
   .tblock__cell:nth-child(2n){border-right:0}
   body{font-size:16px}
 }
+
+/* ============================================================
+   PRINT: a CV gets printed, and the screen version wastes toner,
+   hides content behind the fixed rail, and drops four of six contact routes.
+   ============================================================ */
+@media print{
+  @page{margin:14mm 12mm}
+  html.js .sheet{opacity:1 !important;transform:none !important}
+  body{background:#fff;color:#14181C;padding:0;font-size:10.5pt;line-height:1.45}
+  .rail,.btn,.plate figcaption{display:none}
+  .stack,.foot{transform:none;max-width:none;margin:0;padding:0}
+  .sheet{border:1px solid #999;box-shadow:none;margin:0 0 6mm;break-inside:avoid;page-break-inside:avoid}
+  .sheet::before{display:none}
+  .sheet__body,.title__main{padding:5mm 6mm}
+  .title__bar{background:#fff;color:#14181C;border-bottom:1.5pt solid #14181C;padding:2mm 6mm}
+  .title__bar span:last-child{color:#14181C}
+  .issued{background:#fff}
+  .name{font-size:30pt}
+  .plate{max-width:34mm}
+  .fig__frame{background:#fff;background-image:none}
+  .clause__head,.ref,.rec__item,.meas__row,.spec__row{break-inside:avoid;page-break-inside:avoid}
+  .clause__head{break-after:avoid;page-break-after:avoid}
+  .ref__head,.rec__what{break-after:avoid;page-break-after:avoid}
+  /* On paper a link is only useful if it carries its address */
+  .spec__v a::after,.links a::after{content:" (" attr(href) ")";font-size:8.5pt;word-break:break-all}
+  .links{border-color:#999}
+  .links a{padding:2mm 3mm}
+  .foot{color:#14181C}
+}
 </style>
 </head>
 <body>
-<!--
-DIRECTION CONTRACT
-THESIS: a working engineer's record issued as a technical specification, where every claim carries a
-  number, a period and a source. It refuses the dev-portfolio hero: no big name over a gradient, no
-  icon-plus-heading card grid, no metric tiles.
-OWN-WORLD: deep drafting indigo field carrying the frame and rails, warm technical paper sheets bordered
-  like drawing sheets, revision orange reserved for measured values and the one action. Archivo expanded
-  for lettering, Martian Mono for every value, label and sheet metadata. Hairline rules, filled title
-  block cells, tick-marked measurement scales.
-STORY: the visitor understands within one viewport who this is, what he is available for, and how the
-  work is done; believes it because the record is specific and states its own limits; and mails him.
-FIRST VIEWPORT: sheet one is the title block. Status bar, name at display scale with the designation
-  under it, a hairline-framed portrait plate holding the right column, then a filled grid of cells
-  (location, availability, current work, languages) closing with the issued-by box that holds the mail
-  action. Fig. 1 sits directly beneath, a block diagram of the operating principle with an animated
-  signal and a dashed feedback path, reset vertically below 720px.
-FORM: technical specification publication, candidate 7 of the grounded list, seed key cv2026.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict,
-  DESIGN.md, and every shipping raster carrying its provenance.
--->
+<script>document.documentElement.className+=" js";</script>
 
+<a class="skip" href="#c1">Skip to the record</a>
 <nav class="rail" aria-label="Clause index">
   <span class="rail__mark">NC</span>
   <ul class="rail__index">
-    <li><a href="#c1">1</a></li>
-    <li><a href="#c2">2</a></li>
-    <li><a href="#c3">3</a></li>
-    <li><a href="#c4">4</a></li>
-    <li><a href="#c5">5</a></li>
-    <li><a href="#c6">6</a></li>
-    <li><a href="#c7">7</a></li>
-    <li><a href="#c8">8</a></li>
+    <li><a href="#c1">Who</a></li>
+    <li><a href="#c2">Scope</a></li>
+    <li><a href="#c3">Numbers</a></li>
+    <li><a href="#c4">Work</a></li>
+    <li><a href="#c5">Stack</a></li>
+    <li><a href="#c6">Record</a></li>
+    <li><a href="#c7">Study</a></li>
+    <li><a href="#c8">Terms</a></li>
   </ul>
   <span class="rail__foot">Issue 2026-08</span>
 </nav>
@@ -520,13 +540,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <div class="title__text">
         <h1 class="name" id="name">Nicu<br>Constantin</h1>
         <p class="designation">
-          <b>Senior AI engineer.</b> I ship whole products with Claude Code and
-          AI agents, and I train teams to do the same.
+          <b>Senior AI engineer.</b> I build AI agents and the software around
+          them, from the first drawing to a product running in production.
         </p>
       </div>
       <figure class="plate">
         <img src="portrait.jpg" width="300" height="300" alt="Nicu Constantin" loading="eager" decoding="async">
-        <figcaption>The person you would be hiring</figcaption>
+        <figcaption>Nicu Constantin. I do the work myself.</figcaption>
       </figure>
     </div>
 
@@ -553,7 +573,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <span class="tblock__v">Agents, SaaS, automation, integrations</span>
       </div>
       <div class="tblock__cell">
-        <span class="tblock__k">Also teaches</span>
+        <span class="tblock__k">Also tutors</span>
         <span class="tblock__v">45+ students, 3 editions</span>
       </div>
       <div class="tblock__cell">
@@ -566,14 +586,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
 
       <div class="tblock__cell issued">
-        <span class="issued__text">Issued by the subject. Questions go straight to him.</span>
-        <a class="btn" href="mailto:cniconstantin@gmail.com?subject=Project%20enquiry">
+        <span class="issued__text">Write to me directly. You get me, and not an account manager.</span>
+        <span class="actions">
+        <a class="btn" href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">
           <svg class="btn__ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <rect x="1" y="3" width="14" height="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M1.6 3.6 8 8.6l6.4-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M2 5v4a3 3 0 0 0 6 0V5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M8 8.4c.9 2.3 2 3.4 3.3 3.4a2.7 2.7 0 1 0 0-5.4c-1.5 0-2.6 1.2-3.3 3.4" fill="none" stroke="currentColor" stroke-width="1.7"/>
           </svg>
+          Hire me on Upwork
+        </a>
+        <a class="btn btn--alt" id="mailbtn" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">
           Email me
         </a>
+        </span>
       </div>
     </div>
 
@@ -676,9 +701,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           </svg>
         </div>
         <figcaption class="fig__cap">
-          <b>Fig. 1. The operating principle.</b> The agent decides, the scripts execute, and the result
-          is checked before it ships. Reliability is held in code, not in prompts. This is why the work
-          below is repeatable rather than a lucky demo.
+          <b>Fig. 1. The operating principle.</b> The agent decides, the scripts execute, and the
+          result is checked before it ships. Reliability lives in code. That is what makes the work
+          below repeatable and not a lucky demo.
         </figcaption>
       </figure>
     </div>
@@ -693,14 +718,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <span class="clause__note">What I take on</span>
       </div>
       <div class="prose">
-        <p>I build agent systems that do real work: a multi-tenant SaaS that runs a client's email
-        marketing, a scraping pipeline that finds and scores leads, a transcriber that never sends
-        audio off the machine. Architecture to deployed product, usually alone, sometimes leading.</p>
-        <p>I am not a chatbot builder and not a prompt writer. The difference shows in Fig. 1: a
-        conversation is not a system, and a system is what a business can depend on.</p>
-        <p>The second thing I sell is teaching. I have run three editions of an internship program at
-        the university I graduated from, and the people who finished it now ship with these tools.
-        If your team needs to work this way, that is the same job from the other side.</p>
+        <p>I build agent systems that do real work. A multi-tenant SaaS that runs a client's email
+        marketing. A phone agent that books into a live calendar. A scraping pipeline that finds and
+        scores leads. A transcriber that never sends audio off the machine. Architecture to deployed
+        product, usually alone, sometimes leading a small team.</p>
+        <p>A chat window answers questions. These systems read your data, call your APIs, decide what
+        to do next, and write the result back where your business already uses it. Fig. 1 shows the
+        shape of it.</p>
+        <p>The second thing I sell is teaching. I have tutored three editions of an internship program
+        at the university where I studied. What I teach is the layer under the tool: skills,
+        deterministic hooks, subagents, MCP, context engineering. That layer moves between harnesses,
+        which is why the course ran on opencode while my own work runs on Claude Code. If your team
+        needs to work this way, that is the same job from the other side.</p>
       </div>
     </div>
   </section>
@@ -716,9 +745,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <ul class="meas">
         <li class="meas__row">
           <span class="meas__val">43<span class="meas__unit">percent of a shop's orders</span></span>
-          <span class="meas__src">Orders attributable to the email flows I built, over the measured
-          period. Client is a cosmetics e-commerce brand, named on request with their consent.</span>
-          <span class="meas__src"><b>Source:</b> ClevMail platform reporting, about 3 months in 2026.</span>
+          <span class="meas__src">Orders that came through the email system I built, over the measured
+          period. The client is a cosmetics e-commerce brand, named on request with their consent.</span>
+          <span class="meas__src"><b>Source:</b> ClevMail platform reporting, orders with an email
+          touch, about 3 months in 2026.</span>
         </li>
         <li class="meas__row">
           <span class="meas__val">44<span class="meas__unit">percent open rate, 10,000+ emails</span></span>
@@ -728,28 +758,21 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </li>
         <li class="meas__row">
           <span class="meas__val">763<span class="meas__unit">of 767 commits are mine</span></span>
-          <span class="meas__src">On the ClevMail repository. I say primary builder because the
-          repository says so, not because it sounds good.</span>
+          <span class="meas__src">On the ClevMail repository, which I designed and wrote. The other
+          two contributors have four commits between them.</span>
           <span class="meas__src"><b>Source:</b> git history, counted 2026-08-06.</span>
         </li>
         <li class="meas__row">
-          <span class="meas__val">45+<span class="meas__unit">students taught, 3 editions</span></span>
-          <span class="meas__src">Internship program I designed and ran at the Technical University of
-          Civil Engineering Bucharest, teaching students to ship real applications with AI tooling.</span>
-          <span class="meas__src"><b>Source:</b> program records, 2025 to 2026.</span>
-        </li>
-        <li class="meas__row">
-          <span class="meas__val">7 of 7<span class="meas__unit">passed, 2 hired</span></span>
-          <span class="meas__src">The February to April 2026 edition: 19 sessions, 98.5 percent
-          attendance, 177 stories at about 95 percent velocity, 357+ commits, 4 AI applications
-          shipped live.</span>
-          <span class="meas__src"><b>Source:</b> program board and repositories.</span>
+          <span class="meas__val">7 of 7<span class="meas__unit">recommended for promotion, 2 hired</span></span>
+          <span class="meas__src">The February to April 2026 internship edition, 7 students in 4 teams.
+          19 sessions, 98.5 percent attendance, 177 stories, 357+ commits, 4 AI applications shipped
+          live. Across three editions I have tutored more than 45 students.</span>
+          <span class="meas__src"><b>Source:</b> program records and student repositories, 2025 to 2026.</span>
         </li>
         <li class="meas__row">
           <span class="meas__val">87<span class="meas__unit">hours transcribed, zero API cost</span></span>
-          <span class="meas__src">95 recordings put through a batch Whisper pipeline on a local GPU,
-          part of the private infrastructure I run daily: 4 agent systems, 106 deterministic execution
-          scripts, a searchable note base with fully offline hybrid retrieval.</span>
+          <span class="meas__src">95 recordings through a batch Whisper pipeline on a local GPU.
+          Nothing went to an API, because this is material that must not leave the machine.</span>
           <span class="meas__src"><b>Source:</b> own systems, counted 2026-07-05.</span>
         </li>
       </ul>
@@ -774,14 +797,17 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div class="ref__grid">
           <div class="ref__desc">
             <p>A multi-tenant email marketing platform where every client gets an AI agent that learns
-            their business. Welcome, abandoned cart and post-purchase flows, broadcast campaigns, a form
-            builder with double opt-in, consent-tag targeting for GDPR, automatic deactivation on soft
-            bounces, and rendering per client.</p>
-            <p>I designed it and wrote almost all of it. It is live and it sells for the people using it.</p>
+            their business. Welcome, abandoned cart and post-purchase flows. Broadcast campaigns and a
+            signup form builder with double opt-in. GDPR consent handled by tag, so a client only mails
+            people who agreed. Bad addresses are switched off automatically.</p>
+            <p>I designed it and wrote almost all of it. It went self-service in production on 11 June
+            2026: 63 commits, 5 migrations, no merge regressions. Before public signup I ran an
+            adversarial audit against my own product and closed an access-control hole on the reports
+            endpoint. It is live, and the businesses on it are selling through it.</p>
           </div>
           <div class="spec">
             <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Email marketing SaaS, one AI agent per tenant</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, FastAPI, React, Postgres, Anthropic, Vercel, Render</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, FastAPI, React, Postgres, Google Vertex AI (Gemini), Vercel, Render</span></div>
             <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">See clause 3, rows 1 to 3</span></div>
             <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://clevmail.ro" rel="noopener">clevmail.ro</a> (Romanian only)</span></div>
           </div>
@@ -792,21 +818,21 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div class="ref__head">
           <span class="ref__no">4.2</span>
           <h3 class="ref__name">University internship program</h3>
-          <span class="ref__role">Designed and ran it</span>
+          <span class="ref__role">Tutor and technical lead</span>
         </div>
         <div class="ref__grid">
           <div class="ref__desc">
-            <p>Three editions at the Technical University of Civil Engineering Bucharest, my own alma
-            mater. Students arrive knowing how to write code and leave having shipped a working
-            application with AI tooling, under sprints, code review and a real board.</p>
-            <p>One edition ran the full lifecycle of an IoT monitoring application with eleven students:
-            architecture from scratch, a CI pipeline with automated tests on every pull request, and
-            Agile practice that was not a simulation.</p>
+            <p>Three editions at the Technical University of Civil Engineering Bucharest, where I studied.
+            Students arrive knowing how to write code and leave having shipped a working application with
+            AI tooling, under sprints, code review and a real ticket board. Agile practice that was not a
+            simulation.</p>
+            <p>The teaching is paid work under contract. Seven of the juniors asked to keep working with
+            me after their edition ended, which is the number I would look at if I were hiring me.</p>
           </div>
           <div class="spec">
-            <div class="spec__row"><span class="spec__k">Role</span><span class="spec__v">Internship tutor and technical lead</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Claude Code, Python, Flask, React, ClickHouse, Docker, GitHub Actions, Pytest, Jira</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">45+ taught, 4 applications shipped live, 2 hired</span></div>
+            <div class="spec__row"><span class="spec__k">Role</span><span class="spec__v">Internship tutor across three editions</span></div>
+            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Next.js, TypeScript, Supabase, Vercel, Render, Gemini CLI, opencode, BMAD, Jira</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">45+ tutored, 4 applications shipped live, 2 hired</span></div>
             <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Student work, not mine to publish</span></div>
           </div>
         </div>
@@ -816,22 +842,21 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div class="ref__head">
           <span class="ref__no">4.3</span>
           <h3 class="ref__name">Multichannel hub with a phone agent</h3>
-          <span class="ref__role">Sole developer</span>
+          <span class="ref__role">Freelance build</span>
         </div>
         <div class="ref__grid">
           <div class="ref__desc">
             <p>Built for small businesses in Sweden. Every social and messaging channel landed in one
             hub, and the agent either answered on its own or wrote a draft for a human to approve,
             switchable per business.</p>
-            <p>The part that makes it an agent rather than a chatbot: it picked up the phone and spoke
-            Swedish, checked real availability before it answered, and wrote the booking into the live
-            calendar. It behaved differently inside and outside working hours, and it answered from a
-            company knowledge base that stayed up to date.</p>
+            <p>It picked up the phone and spoke Swedish. Before it answered, it checked the real calendar,
+            and it wrote the booking straight in. It behaved differently inside and outside working
+            hours, and it answered from a company knowledge base that stayed current.</p>
           </div>
           <div class="spec">
             <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Multichannel inbox, voice agent, live calendar booking</span></div>
             <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Voice AI, telephony and messaging APIs, calendar API, per-client knowledge base</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Delivered under contract to working businesses</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Delivered under contract</span></div>
             <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Client system, not mine to publish. Walkthrough on request</span></div>
           </div>
         </div>
@@ -847,14 +872,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <div class="ref__desc">
             <p>Meeting transcription that runs entirely on a local GPU. Nothing leaves the machine, which
             is the whole point: the recordings it handles are ones no cloud service should ever see.</p>
-            <p>Live transcription during the call, then an automatic high quality second pass when the
-            session ends, then summaries and action items per meeting. I use it in production for
+            <p>It records both sides locally, then runs a high quality transcription pass when the
+            session ends, then writes the summary and the action items. I use it in production for
             teaching sessions and business meetings.</p>
           </div>
           <div class="spec">
             <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Private real-time transcription and meeting notes</span></div>
             <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, faster-whisper, local GPU, Claude Code</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">87 hours processed at zero API cost</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">In daily use for meetings and teaching sessions</span></div>
             <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Private repository, demo on request</span></div>
           </div>
         </div>
@@ -870,14 +895,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <div class="ref__desc">
             <p>A full storefront rebuild on Sylius for a live shop with real revenue, under contract and
             on my own. Templates, product taxonomy, content architecture, Stripe payments, and a
-            checkout that takes consent properly instead of pretending to.</p>
+            checkout that records consent properly.</p>
             <p>The content moved into editable blocks so the owner changes his own copy without paying a
             developer for every comma.</p>
           </div>
           <div class="spec">
             <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">E-commerce storefront redesign</span></div>
             <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Sylius, Symfony, PHP, Twig, Stripe</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Shop sells daily in production</span></div>
+            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Delivered and live for the client</span></div>
             <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Client site now runs a different theme. Screenshots on request</span></div>
           </div>
         </div>
@@ -912,14 +937,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
         <div class="ref__grid">
           <div class="ref__desc">
-            <p>The site of the studio I co-founded. The frontend is mine, the product is the team's, and
-            saying which is which is the point of this whole document.</p>
+            <p>The site of the studio where I am founding engineer. I built the frontend. The product is
+            the team's.</p>
           </div>
           <div class="spec">
             <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Bilingual marketing site</span></div>
             <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Next.js, TypeScript, React, Tailwind</span></div>
             <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Live, English and Romanian</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://devidevs.com" rel="noopener">devidevs.com</a></span></div>
+            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://devidevs-agency.com/en" rel="noopener">devidevs-agency.com/en</a></span></div>
           </div>
         </div>
       </article>
@@ -938,7 +963,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div class="mat__group">
           <span class="mat__k">Agents and AI</span>
           <ul class="mat__list">
-            <li>Claude Code</li><li>Anthropic API</li><li>OpenAI API</li><li>Agent architecture</li>
+            <li>Claude Code</li><li>opencode</li><li>Anthropic API</li><li>Google Vertex AI</li><li>Agent architecture</li>
             <li>Retrieval</li><li>Local Whisper</li><li>Voice agents</li>
           </ul>
         </div>
@@ -1003,8 +1028,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="rec__what">Supply facility supervisor</span>
           <span class="rec__where">Same Day Delivery Solutions</span>
           <span class="rec__detail">Started as an analyst and finished running the centre. Optimised
-          fleet activity and delivery routes on operational data, and held the line between clients,
-          subcontractors and internal teams.</span>
+          fleet activity and delivery routes on operational data, and was the single point of contact
+          between clients, subcontractors and internal teams.</span>
         </li>
       </ul>
     </div>
@@ -1021,15 +1046,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <div class="ref__grid">
         <div class="ref__desc">
           <p>Automation and applied informatics: control systems, signals, and the habit of drawing a
-          system before building it. Fig. 1 at the top of this sheet is that training showing through,
-          and it is why my agent work looks like a control loop rather than a chat window.</p>
-          <p>I now teach in the same faculty I graduated from.</p>
+          system before building it. Fig. 1 on sheet 1 comes straight out of that training. An agent
+          with a feedback path is a control loop.</p>
+          <p>I am back in the same faculty now, on the other side of the room.</p>
         </div>
         <div class="spec">
-          <div class="spec__row"><span class="spec__k">Degree</span><span class="spec__v">BEng, Automation and Applied Informatics</span></div>
+          <div class="spec__row"><span class="spec__k">Studied</span><span class="spec__v">Automation and Applied Informatics</span></div>
           <div class="spec__row"><span class="spec__k">Institution</span><span class="spec__v">Technical University of Civil Engineering Bucharest</span></div>
           <div class="spec__row"><span class="spec__k">Years</span><span class="spec__v">2013 to 2017</span></div>
-          <div class="spec__row"><span class="spec__k">Since</span><span class="spec__v">Internship tutor at the same faculty</span></div>
+          <div class="spec__row"><span class="spec__k">Back there as</span><span class="spec__v">Internship tutor, 3 editions, 2025 to 2026</span></div>
         </div>
       </div>
     </div>
@@ -1044,23 +1069,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <span class="clause__note">Read before you judge the repos</span>
       </div>
       <ul class="cond">
-        <li><span class="cond__mk">8.1</span><span>Almost every repository on this account is private,
-          because the code belongs to clients and to a company. The contribution graph is real work; the
-          empty repository list is a contract, not a gap. Ask for a walkthrough or a screen share and you
-          will see the actual thing running.</span></li>
-        <li><span class="cond__mk">8.2</span><span>Client names are withheld unless the client has agreed.
+        <li><span class="cond__mk">8.1</span><span>The code on this account belongs to clients and to a
+          company, so most of it is private. The contribution graph is the real work. Ask for a
+          walkthrough or a screen share and I will show you the running system.</span></li>
+        <li><span class="cond__mk">8.2</span><span>Client names are withheld until the client agrees.
           Every figure in clause 3 comes from a system I can open in front of you.</span></li>
         <li><span class="cond__mk">8.3</span><span>Team work is labelled team work and solo work is
-          labelled solo. Where I wrote almost all of something, clause 3 gives the commit count instead
-          of an adjective.</span></li>
-        <li><span class="cond__mk">8.4</span><span>This sheet carries its issue date. If you are reading it
-          long after that date, ask me what has changed rather than trusting it.</span></li>
+          labelled solo. Where I wrote almost all of something, clause 3 gives the commit count.</span></li>
       </ul>
 
       <div class="close">
         <p class="close__line">Tell me what you need built.</p>
         <ul class="links">
-          <li><a href="mailto:cniconstantin@gmail.com?subject=Project%20enquiry">Email</a></li>
+          <li><a id="maillink" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">Email</a></li>
           <li><a href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a></li>
           <li><a href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/cnick26" rel="noopener">GitHub</a></li>
@@ -1073,10 +1094,21 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <footer class="foot">
   <span>Nicu Constantin, Bucharest</span>
   <span>Issue 2026-08-16</span>
-  <span>Hand built, no template</span>
 </footer>
 
 <script>
+(function(){
+  // The address is assembled here so a harvester reading the raw HTML does not get it.
+  // Without JavaScript both links still work: they fall back to the LinkedIn profile.
+  var user = ['cni','constantin'].join('');
+  var host = ['gmail','com'].join('.');
+  var href = 'mail' + 'to:' + user + '@' + host + '?subject=Project%20enquiry';
+  ['mailbtn','maillink'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) { el.setAttribute('href', href); el.removeAttribute('rel'); }
+  });
+})();
+
 (function(){
   var links = Array.prototype.slice.call(document.querySelectorAll('.rail__index a'));
   var sheets = Array.prototype.slice.call(document.querySelectorAll('.sheet'));
