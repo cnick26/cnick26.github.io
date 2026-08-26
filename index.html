@@ -19,1070 +19,758 @@
 <meta name="twitter:title" content="Nicu Constantin, Senior AI Engineer">
 <meta name="twitter:description" content="I build AI agents and take them to production, and I train teams to build the same way.">
 <meta name="twitter:image" content="https://cnick26.github.io/og.png">
-<meta name="theme-color" content="#0E2A43">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E2A43'/%3E%3Cpath d='M4 4h24v24H4z' fill='none' stroke='%23E9EAE1' stroke-width='1.5'/%3E%3Cpath d='M4 22h24' stroke='%23E4571B' stroke-width='2.5'/%3E%3Ctext x='16' y='19' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='700' fill='%23E9EAE1' text-anchor='middle'%3ENC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#141513">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141513'/%3E%3Crect x='3.5' y='3.5' width='25' height='25' fill='none' stroke='%23D5D1C7'/%3E%3Crect x='6.5' y='6.5' width='19' height='19' fill='none' stroke='%23D5D1C7' stroke-width='0.6'/%3E%3Cpath d='M6.5 24.5h19' stroke='%238C2B21' stroke-width='1.6'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='12' fill='%23D5D1C7' text-anchor='middle'%3ENC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,400..700&family=Martian+Mono:wdth,wght@75..112.5,300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..800&family=EB+Garamond:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   TOKENS
+   THE AUTHOR'S FRONTISPIECE
+   Tokens read off the approved comp, .impeccable/mocks/comp-1-centred.png.
+   Square corners everywhere. No elevation, no shadow, no glow.
    ============================================================ */
 :root{
-  --field:#0E2A43;
-  --field-deep:#071829;
-  --sheet:#E9EAE1;
-  --sheet-2:#DFE1D6;
-  --ink:#14181C;
-  --ink-2:#4E5A56;
-  --rule:#AEB6A8;
-  --rule-strong:#7E8A7C;
-  --signal:#E4571B;
-  --signal-ink:#B23C0A;
-  --on-field:#C9D6E2;
-  --on-field-2:#8CA3B8;
-  --on-field-line:#1E4260;
-
-  --sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
-  --mono:'Martian Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
-
-  --rail:92px;
-  --sheet-max:1120px;
-  --pad:clamp(20px,4vw,56px);
+  --ground:#141513;
+  --ground-2:#1D1E1D;
+  --rule:#3B3A36;
+  --ink:#D5D1C7;
+  --ink-2:#9D978D;
+  --signal:#8C2B21;      /* printer's vermilion, rules and marks only */
+  --signal-ink:#CF5B41;  /* the same red opened up until it clears 4.5:1 on the ground */
+  --measure:34rem;
+  --band:min(100% - 2.5rem, 60rem);
+  --display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --text:"EB Garamond",Georgia,"Times New Roman",serif;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{
-  background:var(--field);
-  color:var(--on-field);
-  font-family:var(--sans);
-  font-variation-settings:'wdth' 100,'wght' 400;
-  font-size:17px;
-  line-height:1.62;
-  padding-left:var(--rail);
-  overflow-x:hidden;
-}
-
-/* Browser surfaces, themed from the palette */
-::selection{background:var(--signal);color:#fff}
-:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
-html{scrollbar-color:var(--rule-strong) var(--field-deep);scrollbar-width:thin}
-::-webkit-scrollbar{width:12px;height:12px}
-::-webkit-scrollbar-track{background:var(--field-deep)}
-::-webkit-scrollbar-thumb{background:var(--rule-strong);border:3px solid var(--field-deep)}
-::-webkit-scrollbar-thumb:hover{background:var(--signal)}
-
-a{color:inherit}
-.skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--signal);color:#14181C;
-  padding:12px 18px;font-family:var(--mono);font-size:12px;text-decoration:none}
-.skip:focus{left:8px;top:8px}
-
-/* ============================================================
-   RAIL: the fixed sheet edge. Persistent frame region.
-   ============================================================ */
-.rail{
-  position:fixed;inset:0 auto 0 0;width:var(--rail);z-index:40;
-  background:var(--field-deep);
-  border-right:1px solid var(--on-field-line);
-  display:flex;flex-direction:column;align-items:center;
-  padding:18px 0;
-}
-.rail__mark{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 100;
-  letter-spacing:.14em;color:var(--sheet);
-  border:1px solid var(--on-field-line);border-bottom:3px solid var(--signal);
-  padding:9px 8px 7px;line-height:1;
-}
-.rail__index{
-  list-style:none;margin:auto 0;display:flex;flex-direction:column;gap:2px;width:100%;
-}
-.rail__index a{
-  display:block;text-align:center;text-decoration:none;
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 82;
-  letter-spacing:.05em;text-transform:uppercase;color:var(--on-field-2);padding:9px 2px;
-  border-left:3px solid transparent;
-  transition:color .18s ease,border-color .18s ease,background .18s ease;
-}
-.rail__index a:hover{color:var(--sheet);background:#0d2135}
-.rail__index a[aria-current="true"]{color:var(--sheet);border-left-color:var(--signal);background:#0d2135}
-.rail__foot{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 400,'wdth' 88;
-  color:var(--on-field-2);letter-spacing:.1em;
-  writing-mode:vertical-rl;transform:rotate(180deg);
-}
-
-/* ============================================================
-   SHEETS
-   ============================================================ */
-.stack{max-width:var(--sheet-max);margin:0 auto;padding:clamp(22px,3.6vw,44px) var(--pad) 0}
-@media (min-width:1213px){.stack,.foot{transform:translateX(calc(var(--rail) / -2))}}
-
-.sheet{
-  background:var(--sheet);color:var(--ink);
-  border:1px solid var(--rule-strong);
-  box-shadow:0 3px 9px -3px rgba(0,0,0,.42);
-  margin-bottom:clamp(22px,3.4vw,40px);
-  position:relative;
-}
-.sheet::before{
-  content:"";position:absolute;inset:5px;border:1px solid var(--rule);pointer-events:none;
-}
-.sheet__body{padding:clamp(22px,3.4vw,44px)}
-
-/* Clause head: number and title share one baseline rule */
-.clause__head{
-  display:flex;align-items:baseline;gap:clamp(12px,2vw,22px);
-  border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:clamp(18px,2.4vw,26px);
-}
-.clause__no{
-  font-family:var(--mono);font-size:clamp(13px,1.5vw,15px);
-  font-variation-settings:'wght' 700,'wdth' 100;
-  color:var(--signal-ink);letter-spacing:.04em;flex:none;
-}
-.clause__title{
-  font-size:clamp(19px,2.5vw,27px);line-height:1.14;
-  font-variation-settings:'wght' 800,'wdth' 112;
-  letter-spacing:-.022em;text-transform:uppercase;text-wrap:balance;
-}
-.clause__note{
-  margin-left:auto;flex:none;
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 400,'wdth' 88;
-  color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase;
-}
-@media (max-width:640px){.clause__note{display:none}}
-
-.prose{max-width:70ch}
-.prose p+p{margin-top:.9em}
-.prose strong{font-variation-settings:'wght' 700,'wdth' 100}
-
-/* ============================================================
-   SHEET 1: TITLE BLOCK
-   ============================================================ */
-.title__bar{
-  background:var(--field-deep);color:var(--sheet);
-  display:flex;justify-content:space-between;align-items:center;gap:16px;
-  padding:9px clamp(16px,2.4vw,26px);
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 90;
-  letter-spacing:.12em;text-transform:uppercase;
-}
-.title__bar span:last-child{color:var(--on-field-2);text-align:right}
-
-.title__main{
-  padding:clamp(24px,3.6vw,46px) clamp(22px,3.4vw,44px) clamp(18px,2.4vw,28px);
-  display:grid;gap:clamp(20px,3vw,38px);align-items:start;
-}
-@media (min-width:1160px){
-  .title__main{grid-template-columns:minmax(0,1fr) 208px}
-}
-.title__text{min-width:0}
-.plate{border:1px solid var(--rule-strong);padding:6px;background:#F1F2EB;max-width:208px}
-.plate img{display:block;width:100%;height:auto;filter:saturate(.9) contrast(1.03)}
-.plate figcaption{
-  margin-top:7px;font-family:var(--mono);font-size:11px;line-height:1.35;
-  font-variation-settings:'wght' 500,'wdth' 85;color:var(--ink-2);
-}
-.name{
-  font-size:clamp(1.95rem,7.4vw,5.1rem);line-height:.94;
-  font-variation-settings:'wght' 800,'wdth' 118;
-  letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance;
-}
-.designation{
-  margin-top:clamp(14px,1.8vw,20px);max-width:34ch;
-  font-size:clamp(1.02rem,1.7vw,1.32rem);line-height:1.35;
-  font-variation-settings:'wght' 500,'wdth' 100;
+  margin:0;
+  background-color:var(--ground);
+  background-image:url(assets/paper.webp);
+  background-repeat:repeat;
+  background-size:340px 340px;
   color:var(--ink);
+  font-family:var(--text);
+  font-size:clamp(1.02rem,.96rem + .3vw,1.15rem);
+  line-height:1.62;
+  font-variant-ligatures:common-ligatures;
+  text-rendering:optimizeLegibility;
 }
-.designation b{font-variation-settings:'wght' 700,'wdth' 100}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:inherit}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--signal-ink);outline-offset:3px}
 
-/* Title block grid, the way a drawing sheet is filled in */
-.tblock{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border-top:2px solid var(--ink);
-}
-.tblock__cell{
-  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:11px clamp(12px,1.6vw,18px) 13px;min-width:0;
-}
-.tblock__cell:nth-child(4n){border-right:0}
-.tblock__k{
-  display:block;font-family:var(--mono);font-size:11px;
-  font-variation-settings:'wght' 500,'wdth' 85;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);margin-bottom:5px;
-}
-.tblock__v{
-  font-family:var(--mono);font-size:13px;line-height:1.35;
-  font-variation-settings:'wght' 600,'wdth' 92;color:var(--ink);
-  overflow-wrap:anywhere;
-}
-.tblock__v--live{color:var(--signal-ink);font-variation-settings:'wght' 700,'wdth' 92}
+.band{width:var(--band);margin-inline:auto}
+.measure{max-width:var(--measure)}
 
-/* The issued-by box carries the primary action */
-.actions{display:flex;flex-wrap:wrap;gap:10px}
-.issued{
-  grid-column:1 / -1;border-bottom:0;border-right:0;
-  background:var(--sheet-2);
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
-  padding:clamp(14px,2vw,20px) clamp(12px,1.6vw,18px);
+/* ---------- running head ---------- */
+.head{
+  border-bottom:1px solid var(--rule);
 }
-.issued__text{font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 500,'wdth' 88;
-  letter-spacing:.02em;color:var(--ink-2)}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
-  background:var(--signal);color:#14181C;
-  padding:13px 22px;border:0;
-  font-family:var(--mono);font-size:13px;font-variation-settings:'wght' 700,'wdth' 95;
-  letter-spacing:.06em;
-  box-shadow:0 2px 0 0 #8f3410;
-  transition:transform .16s cubic-bezier(.2,.8,.3,1),box-shadow .16s cubic-bezier(.2,.8,.3,1),background .16s ease;
+.head__in{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:.85rem 0;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);
 }
-.btn:hover,.btn:focus-visible{background:#F2661F;transform:translateY(-2px);box-shadow:0 4px 0 0 #8f3410}
-.btn:active{transform:translateY(0);box-shadow:0 2px 0 0 #8f3410}
-.btn__ico{flex:none}
-.btn.btn--alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule-strong)}
-.btn.btn--alt:hover,.btn.btn--alt:focus-visible{background:var(--ink);color:var(--sheet);box-shadow:none;transform:translateY(-2px)}
+.head__in span:last-child{text-align:right}
 
-/* ============================================================
-   FIG 1: the operating principle
-   ============================================================ */
-.fig{margin-top:clamp(20px,2.6vw,30px)}
-.fig__frame{
-  border:1px solid var(--rule);background:#F1F2EB;
-  padding:clamp(14px,2.2vw,26px) clamp(10px,2vw,26px);
-  background-image:linear-gradient(var(--sheet-2) 1px,transparent 1px),linear-gradient(90deg,var(--sheet-2) 1px,transparent 1px);
-  background-size:22px 22px;
-}
-.fig svg{width:100%;height:auto}
-.fig__cap{
-  margin-top:12px;font-family:var(--mono);font-size:12px;line-height:1.55;
-  font-variation-settings:'wght' 500,'wdth' 90;color:var(--ink-2);max-width:74ch;
-}
-.fig__cap b{color:var(--ink);font-variation-settings:'wght' 700,'wdth' 90}
+.skip{position:absolute;left:-9999px}
+.skip:focus{position:static;display:inline-block;margin:.6rem 0 0 1rem;color:var(--ink)}
 
-.dg-box{fill:#fff;stroke:#14181C;stroke-width:1.6}
-.dg-box--key{fill:#E9EAE1;stroke-width:2.4}
-.dg-lbl{font-family:'Martian Mono',monospace;font-size:10.5px;font-weight:700;fill:#14181C;letter-spacing:.02em}
-.dg-sub{font-family:'Martian Mono',monospace;font-size:9px;font-weight:500;fill:#4E5A56}
-.dg-lbl2{font-family:'Martian Mono',monospace;font-size:11px;font-weight:700;fill:#14181C;letter-spacing:.01em}
-.dg-sub2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:500;fill:#4E5A56}
-.dg-fbl2{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#B23C0A;letter-spacing:.03em}
+/* ---------- frontispiece ---------- */
+.front{padding:clamp(2.2rem,6vw,4.5rem) 0 clamp(2.6rem,7vw,5rem);text-align:center}
 
-/* One figure, two settings: wide for a page, tall for a column */
-.fig .fig__wide{display:block}
-.fig .fig__tall{display:none}
-@media (max-width:720px){
-  .fig .fig__wide{display:none}
-  .fig .fig__tall{display:block}
+.plate{
+  position:relative;
+  width:min(78vw,26rem);
+  margin:0 auto clamp(1.4rem,4vw,2.4rem);
+  aspect-ratio:1;
 }
-.dg-path{fill:none;stroke:#14181C;stroke-width:1.6}
-.dg-feedback{fill:none;stroke:#E4571B;stroke-width:1.6;stroke-dasharray:5 4}
-.dg-fbl{font-family:'Martian Mono',monospace;font-size:9px;font-weight:700;fill:#B23C0A;letter-spacing:.04em}
-.dg-head{fill:#14181C}
-.dg-head--sig{fill:#E4571B}
+.plate__face{
+  position:absolute;
+  left:19.92%;top:19.92%;width:60.16%;height:60.16%;
+  background-image:url(assets/portrait-frames.webp);
+  background-repeat:no-repeat;
+  /* 13 frames laid out in one horizontal strip */
+  background-size:1300% 100%;
+  background-position:calc(var(--frame,6) * (100% / 12)) 0;
+}
+.plate__frame{position:absolute;inset:0;width:100%;height:100%}
 
-.dg-pulse{fill:#E4571B}
-@media (prefers-reduced-motion:no-preference){
-  .dg-pulse{animation:travel 7s cubic-bezier(.45,0,.55,1) infinite}
+.name{
+  font-family:var(--display);
+  font-weight:500;
+  font-optical-sizing:none;
+  font-variation-settings:"opsz" 15,"wght" 560;
+  font-size:clamp(2.1rem,8.4vw,4.6rem);
+  line-height:.98;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+  margin-bottom:.5rem;
 }
-@keyframes travel{
-  0%{offset-distance:0%;opacity:0}
-  4%{opacity:1}
-  92%{opacity:1}
-  100%{offset-distance:100%;opacity:0}
+.role{
+  color:var(--signal-ink);
+  font-size:clamp(.95rem,.9rem + .25vw,1.08rem);
+  letter-spacing:.015em;
+}
+.standfirst{
+  margin:1.5rem auto 0;
+  max-width:31rem;
+  color:var(--ink-2);
+  font-size:1.05rem;
+}
+.front__rule{
+  width:min(100%,31rem);
+  margin:clamp(1.6rem,4vw,2.4rem) auto;
+  border:0;border-top:1px solid var(--rule);
 }
 
-/* ============================================================
-   CLAUSE 3: measured values on a rule
-   ============================================================ */
-.meas{list-style:none;display:grid}
-.meas__row{
-  display:grid;grid-template-columns:minmax(0,1fr);gap:7px;
-  border-top:1px solid var(--rule);padding:clamp(15px,2vw,20px) 0;
+/* ---------- cartouche, the one action ---------- */
+.cartouche{
+  position:relative;
+  display:inline-block;
+  padding:.95rem 2.5rem;
+  color:var(--ink);
+  text-decoration:none;
+  font-size:.78rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  border:1px solid var(--ink);
+  background:transparent;
+  transition:color .18s linear,background-color .18s linear;
 }
-.meas__row:first-child{border-top:0;padding-top:0}
-.meas__row:last-child{padding-bottom:0}
-.meas__val{
-  display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
-  font-variation-settings:'wght' 800,'wdth' 108;
-  font-size:clamp(1.55rem,3.5vw,2.3rem);line-height:1;letter-spacing:-.03em;
-  color:var(--signal);
+.cartouche::before{
+  content:"";position:absolute;inset:4px;border:1px solid var(--ink);opacity:.55;
 }
-.meas__unit{
-  font-family:var(--mono);font-size:clamp(11px,1.3vw,13px);
-  font-variation-settings:'wght' 600,'wdth' 92;letter-spacing:.03em;
-  color:var(--ink);text-transform:none;
+.cartouche__corner{position:absolute;width:15px;height:15px;color:var(--ink)}
+.cartouche__corner--tl{top:-1px;left:-1px}
+.cartouche__corner--tr{top:-1px;right:-1px;transform:scaleX(-1)}
+.cartouche__corner--bl{bottom:-1px;left:-1px;transform:scaleY(-1)}
+.cartouche__corner--br{bottom:-1px;right:-1px;transform:scale(-1)}
+.cartouche:hover,.cartouche:focus-visible{background:var(--ink);color:var(--ground)}
+.cartouche:hover .cartouche__corner,.cartouche:focus-visible .cartouche__corner{color:var(--ground)}
+
+/* ---------- spine labels ---------- */
+.spines{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;
+  margin-top:clamp(1.6rem,4vw,2.4rem);
 }
-.meas__src{
-  font-family:var(--mono);font-size:11px;line-height:1.5;
-  font-variation-settings:'wght' 500,'wdth' 88;color:var(--ink-2);
+.spine{
+  position:relative;
+  display:block;
+  padding:.5rem 1.1rem;
+  border:1px solid var(--rule);
+  color:var(--ink-2);
+  text-decoration:none;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  transition:color .18s linear,border-color .18s linear;
 }
-.meas__src b{color:var(--ink);font-variation-settings:'wght' 700,'wdth' 88}
-@media (min-width:820px){
-  .meas__row{grid-template-columns:minmax(280px,.86fr) minmax(0,1.14fr);align-items:baseline;column-gap:clamp(24px,3.4vw,46px)}
-  .meas__row>.meas__src:last-child{grid-column:2}
+.spine::before{content:"";position:absolute;inset:3px;border:1px solid var(--rule);opacity:.5}
+.spine:hover,.spine:focus-visible{color:var(--ink);border-color:var(--ink)}
+
+/* ---------- plates, the sections ---------- */
+.plate-sec{padding:clamp(2.8rem,7vw,4.6rem) 0;border-top:1px solid var(--rule)}
+.plate-sec__head{margin-bottom:clamp(1.6rem,4vw,2.4rem)}
+.plate-sec__no{
+  font-family:var(--text);
+  font-size:max(11.5px,.44em);letter-spacing:.2em;color:var(--signal-ink);
+  text-transform:uppercase;
+  margin-right:.85em;vertical-align:.16em;
+  font-variation-settings:normal;
+}
+.plate-sec__title{
+  font-family:var(--display);
+  font-weight:500;
+  font-optical-sizing:none;
+  font-variation-settings:"opsz" 14,"wght" 520;
+  font-size:clamp(1.55rem,4.2vw,2.35rem);
+  line-height:1.1;
+  letter-spacing:.01em;
+}
+.plate-sec__sub{
+  margin-top:.5rem;color:var(--ink-2);font-style:italic;font-size:1rem;
+}
+.prose p + p{margin-top:1.05rem}
+.prose{color:var(--ink)}
+
+/* ---------- particulars ---------- */
+.particulars{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0 3rem;
+  border-top:1px solid var(--rule);
+}
+.particulars div{
+  padding:.85rem 0;
+  border-bottom:1px solid var(--rule);
+  display:flex;gap:1.5rem;align-items:baseline;justify-content:space-between;
+}
+.particulars dt,.particulars .k{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
+  flex:0 0 auto;
+}
+.particulars dd,.particulars .v{margin:0;text-align:right}
+@media (min-width:46em){
+  .particulars{grid-template-columns:1fr 1fr}
 }
 
-/* ============================================================
-   CLAUSE 4: reference installations
-   ============================================================ */
-.ref{border-top:1px solid var(--rule);padding:clamp(20px,2.6vw,28px) 0}
-.ref:first-of-type{border-top:0;padding-top:0}
-.ref:last-of-type{padding-bottom:0}
-.ref__head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
-.ref__no{
-  font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 700,'wdth' 95;
-  color:var(--signal-ink);flex:none
+/* ---------- figure ---------- */
+.figure{margin:clamp(1.8rem,4vw,2.6rem) 0 0;border-top:1px solid var(--rule);padding-top:1.4rem}
+.figure svg{width:100%;height:auto}
+.figure__tall{display:none}
+@media (max-width:44em){
+  .figure__wide{display:none}
+  .figure__tall{display:block;max-width:22rem;margin-inline:auto}
 }
-.ref__name{
-  font-size:clamp(1.06rem,2vw,1.36rem);line-height:1.16;
-  font-variation-settings:'wght' 800,'wdth' 108;letter-spacing:-.02em;
+.figure figcaption{
+  margin-top:1rem;color:var(--ink-2);font-size:.95rem;font-style:italic;max-width:var(--measure);
 }
-.ref__role{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 88;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
-  border:1px solid var(--rule-strong);padding:4px 8px;line-height:1;
-}
-.ref__grid{display:grid;gap:clamp(12px,1.8vw,20px)}
-@media (min-width:860px){.ref__grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);column-gap:clamp(24px,3.4vw,48px)}}
-.ref__desc{font-size:16px;line-height:1.6;max-width:62ch}
-.ref__desc p+p{margin-top:.75em}
-.spec{border-top:1px solid var(--rule)}
-.spec__row{
-  display:grid;grid-template-columns:minmax(90px,.42fr) minmax(0,1fr);
-  gap:10px;border-bottom:1px solid var(--rule);padding:8px 0;
-}
-.spec__k{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 85;
-  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);padding-top:2px;
-}
-.spec__v{font-family:var(--mono);font-size:12px;line-height:1.5;
-  font-variation-settings:'wght' 500,'wdth' 90;color:var(--ink);overflow-wrap:anywhere}
-.spec__v a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--signal);
-  text-decoration-thickness:2px;text-underline-offset:3px}
-.spec__v a:hover{color:var(--signal)}
-.spec__v--none{color:var(--ink-2)}
-
-/* ============================================================
-   CLAUSE 5: materials
-   ============================================================ */
-.mat{display:grid;gap:clamp(16px,2.2vw,26px)}
-@media (min-width:760px){.mat{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(26px,4vw,54px)}}
-.mat__group{border-top:2px solid var(--ink);padding-top:12px}
-.mat__k{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 88;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;display:block;
-}
-.mat__list{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-.mat__list li{
-  font-family:var(--mono);font-size:12px;font-variation-settings:'wght' 500,'wdth' 90;
-  border:1px solid var(--rule);padding:5px 9px;line-height:1.2;color:var(--ink);
-  background:#F1F2EB;
+.fig-tag{
+  font-family:var(--text);
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);
+  margin-bottom:.8rem;
 }
 
-/* ============================================================
-   CLAUSE 6: service record
-   ============================================================ */
-.rec{list-style:none}
-.rec__item{
-  display:grid;gap:4px 20px;border-bottom:1px solid var(--rule);padding:14px 0;
+/* ---------- verified numbers ---------- */
+.records{border-top:1px solid var(--rule)}
+.record{padding:1.6rem 0;border-bottom:1px solid var(--rule)}
+.record__value{
+  font-family:var(--display);
+  font-weight:500;
+  font-optical-sizing:none;
+  font-variation-settings:"opsz" 14,"wght" 520;
+  font-size:clamp(1.5rem,4vw,2.1rem);
+  line-height:1.15;
+  margin-bottom:.55rem;
 }
-.rec__item:last-child{border-bottom:0;padding-bottom:0}
-.rec__when{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 88;
-  letter-spacing:.06em;color:var(--signal-ink);white-space:nowrap;
-}
-.rec__what{font-size:16px;font-variation-settings:'wght' 700,'wdth' 104;line-height:1.25}
-.rec__where{font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 88;color:var(--ink-2)}
-.rec__detail{font-size:15px;line-height:1.55;color:var(--ink-2);max-width:64ch}
-@media (min-width:760px){
-  .rec__item{grid-template-columns:170px minmax(0,1fr)}
-  .rec__when{grid-row:1 / span 3;padding-top:4px}
-}
-
-/* ============================================================
-   CLAUSE 8: conditions of issue + close
-   ============================================================ */
-.cond{list-style:none;display:grid;gap:11px;max-width:74ch}
-.cond li{
-  display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;
-  font-size:15px;line-height:1.55;
-}
-.cond__mk{
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 700,'wdth' 88;
-  color:var(--signal-ink);letter-spacing:.08em;padding-top:4px;
+.record__body{max-width:var(--measure);color:var(--ink)}
+.record__source{
+  margin-top:.7rem;
+  color:var(--signal-ink);
+  font-size:.82rem;letter-spacing:.02em;
 }
 
-.close{
-  margin-top:clamp(22px,3vw,34px);border-top:2px solid var(--ink);padding-top:clamp(20px,2.6vw,28px);
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+/* ---------- works ---------- */
+.works{border-top:1px solid var(--rule)}
+.work{padding:2rem 0;border-bottom:1px solid var(--rule)}
+.work__no{
+  font-family:var(--text);
+  font-size:max(11.5px,.46em);letter-spacing:.2em;color:var(--ink-2);text-transform:uppercase;
+  margin-right:.9em;vertical-align:.16em;
+  font-variation-settings:normal;
 }
-.close__line{font-size:clamp(1.05rem,2.2vw,1.4rem);line-height:1.25;
-  font-variation-settings:'wght' 800,'wdth' 108;letter-spacing:-.02em;max-width:22ch}
-.links{list-style:none;display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--rule-strong)}
-.links li+li{border-left:1px solid var(--rule-strong)}
-.links a{
-  display:block;text-decoration:none;padding:11px 15px;
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 600,'wdth' 90;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
-  transition:background .16s ease,color .16s ease;
+.work__title{
+  font-family:var(--display);font-weight:500;
+  font-optical-sizing:none;font-variation-settings:"opsz" 14,"wght" 520;
+  font-size:clamp(1.35rem,3.4vw,1.85rem);line-height:1.15;
 }
-.links a:hover,.links a:focus-visible{background:var(--ink);color:var(--sheet)}
-
-/* ============================================================
-   FOOT
-   ============================================================ */
-.foot{
-  max-width:var(--sheet-max);margin:0 auto;
-  padding:6px var(--pad) clamp(40px,6vw,72px);
-  display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;
-  font-family:var(--mono);font-size:11px;font-variation-settings:'wght' 500,'wdth' 88;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--on-field-2);
+.work__role{
+  margin-top:.35rem;color:var(--signal-ink);
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
 }
-
-/* ============================================================
-   ENTRANCE: one authored moment, sheets settle onto the field
-   ============================================================ */
-@media (prefers-reduced-motion:no-preference){
-  html.js .sheet{opacity:0;transform:translateY(18px);
-    transition:opacity .62s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1)}
-  html.js .sheet.is-in{opacity:1;transform:none}
+.work__body{margin-top:1rem;max-width:var(--measure)}
+.work__body p + p{margin-top:1rem}
+.work__facts{margin-top:1.3rem;border-top:1px solid var(--rule)}
+.work__facts > div{
+  display:grid;grid-template-columns:9rem 1fr;gap:1rem;
+  padding:.6rem 0;border-bottom:1px solid var(--rule);
 }
-
-/* ============================================================
-   RAIL COLLAPSE
-   ============================================================ */
-@media (max-width:900px){
-  body{padding-left:0;padding-top:46px}
-  .rail{
-    inset:0 0 auto 0;width:auto;height:46px;flex-direction:row;align-items:center;
-    padding:0 10px;border-right:0;border-bottom:1px solid var(--on-field-line);gap:10px;
-  }
-  .rail__mark{padding:6px 7px 5px;font-size:11px;border-bottom-width:2px}
-  .rail__index{
-    margin:0;flex-direction:row;gap:0;overflow-x:auto;flex:1;
-    scrollbar-width:none;
-  }
-  .rail__index::-webkit-scrollbar{display:none}
-  .rail__index a{
-    padding:6px 11px;border-left:0;border-bottom:3px solid transparent;font-size:11px;
-  }
-  .rail__index a[aria-current="true"]{border-bottom-color:var(--signal)}
-  .rail__foot{display:none}
+.work__facts dt{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
+  padding-top:.28rem;
 }
-@media (max-width:640px){
-  .tblock{grid-template-columns:repeat(2,1fr)}
-  .tblock__cell:nth-child(4n){border-right:1px solid var(--rule)}
-  .tblock__cell:nth-child(2n){border-right:0}
-  body{font-size:16px}
+.work__facts dd{margin:0}
+@media (max-width:34em){
+  .work__facts > div{grid-template-columns:1fr;gap:.15rem}
+}
+/* Catalogue entry: the prose keeps its measure and the facts sit beside it,
+   so the band is filled instead of leaving half the plate empty. */
+@media (min-width:62em){
+  .work__cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:0 3rem;align-items:start;margin-top:1.1rem}
+  .work__cols .work__body{margin-top:0}
+  .work__cols .work__facts{margin-top:0;border-top:1px solid var(--rule)}
+  .work__cols .work__facts > div{grid-template-columns:7rem 1fr;gap:.8rem}
 }
 
-/* ============================================================
-   PRINT: a CV gets printed, and the screen version wastes toner,
-   hides content behind the fixed rail, and drops four of six contact routes.
-   ============================================================ */
-@media print{
-  @page{margin:14mm 12mm}
-  html.js .sheet{opacity:1 !important;transform:none !important}
-  body{background:#fff;color:#14181C;padding:0;font-size:10.5pt;line-height:1.45}
-  .rail,.btn,.plate figcaption{display:none}
-  .stack,.foot{transform:none;max-width:none;margin:0;padding:0}
-  .sheet{border:1px solid #999;box-shadow:none;margin:0 0 6mm;break-inside:avoid;page-break-inside:avoid}
-  .sheet::before{display:none}
-  .sheet__body,.title__main{padding:5mm 6mm}
-  .title__bar{background:#fff;color:#14181C;border-bottom:1.5pt solid #14181C;padding:2mm 6mm}
-  .title__bar span:last-child{color:#14181C}
-  .issued{background:#fff}
-  .name{font-size:30pt}
-  .plate{max-width:34mm}
-  .fig__frame{background:#fff;background-image:none}
-  .clause__head,.ref,.rec__item,.meas__row,.spec__row{break-inside:avoid;page-break-inside:avoid}
-  .clause__head{break-after:avoid;page-break-after:avoid}
-  .ref__head,.rec__what{break-after:avoid;page-break-after:avoid}
-  /* On paper a link is only useful if it carries its address */
-  .spec__v a::after,.links a::after{content:" (" attr(href) ")";font-size:8.5pt;word-break:break-all}
-  .links{border-color:#999}
-  .links a{padding:2mm 3mm}
-  .foot{color:#14181C}
+/* ---------- materials ---------- */
+.materials{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));
+  gap:0;border-top:1px solid var(--rule);
+}
+.materials section{padding:1.3rem 0;border-bottom:1px solid var(--rule)}
+@media (min-width:46em){
+  .materials section:nth-child(odd){padding-right:2rem}
+  .materials section:nth-child(even){padding-left:2rem}
+}
+.materials h3{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
+  margin-bottom:.6rem;
+}
+.materials p{color:var(--ink)}
+
+/* ---------- service record ---------- */
+.service{border-top:1px solid var(--rule)}
+.post{padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.post__years{
+  font-size:.72rem;letter-spacing:.2em;color:var(--ink-2);text-transform:uppercase;
+  display:block;margin-bottom:.45rem;
+}
+@media (min-width:62em){
+  .post{display:grid;grid-template-columns:11rem 1fr;gap:0 2.5rem}
+  .post__years{grid-row:1 / span 3;margin-bottom:0;padding-top:.42rem}
+  .post__title,.post__org,.post__body{grid-column:2}
+}
+.post__title{font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1.2}
+.post__org{margin-top:.2rem;color:var(--signal-ink);font-size:.94rem;font-style:italic}
+.post__body{margin-top:.7rem;max-width:var(--measure);color:var(--ink-2)}
+
+/* ---------- conditions ---------- */
+.conditions{border-top:1px solid var(--rule);counter-reset:cond}
+.conditions li{
+  display:grid;grid-template-columns:3.4rem 1fr;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid var(--rule);
+  max-width:calc(var(--measure) + 4.4rem);
+}
+.conditions li::before{
+  counter-increment:cond;content:"VIII." counter(cond);
+  font-size:.72rem;letter-spacing:.14em;color:var(--ink-2);padding-top:.35rem;
+}
+
+/* ---------- colophon ---------- */
+.colophon{
+  border-top:1px solid var(--rule);
+  padding:clamp(2.8rem,7vw,4.4rem) 0 clamp(2.4rem,6vw,3.4rem);
+  text-align:center;
+}
+.colophon__line{
+  font-family:var(--display);
+  font-optical-sizing:none;font-variation-settings:"opsz" 14,"wght" 520;
+  font-size:clamp(1.4rem,4vw,2rem);
+  font-weight:500;
+  margin-bottom:1.9rem;
+}
+.colophon__links{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin:1.8rem 0 2rem;
+}
+.fleuron{width:7.5rem;height:auto;margin:0 auto 1.4rem;color:var(--rule)}
+.imprint{
+  color:var(--ink-2);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;
+}
+
+/* ---------- prose links ---------- */
+.prose a,.work__facts a,.conditions a{
+  color:var(--ink);
+  text-decoration:underline;
+  text-decoration-color:var(--signal);
+  text-decoration-thickness:1px;
+  text-underline-offset:.22em;
+}
+.prose a:hover,.work__facts a:hover,.conditions a:hover{text-decoration-color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
 }
 </style>
 </head>
 <body>
-<script>document.documentElement.className+=" js";</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="corner" viewBox="0 0 15 15"><path fill="currentColor" d="M0 0h15v1.3H1.3V15H0Z"/><path fill="currentColor" d="M3.4 3.4h4.6v.95H4.35v3.65h-.95Z"/><circle fill="currentColor" cx="5.6" cy="5.6" r=".95"/></symbol></svg>
 
-<a class="skip" href="#c1">Skip to the record</a>
-<nav class="rail" aria-label="Clause index">
-  <span class="rail__mark">NC</span>
-  <ul class="rail__index">
-    <li><a href="#c1">Who</a></li>
-    <li><a href="#c2">Scope</a></li>
-    <li><a href="#c3">Numbers</a></li>
-    <li><a href="#c4">Work</a></li>
-    <li><a href="#c5">Stack</a></li>
-    <li><a href="#c6">Record</a></li>
-    <li><a href="#c7">Study</a></li>
-    <li><a href="#c8">Terms</a></li>
-  </ul>
-  <span class="rail__foot">Issue 2026-08</span>
-</nav>
+<a class="skip" href="#argument">Skip to the text</a>
 
-<main class="stack">
+<header class="head">
+  <div class="band head__in">
+    <span>Nicu Constantin</span>
+    <span>Bucharest, Romania</span>
+  </div>
+</header>
 
-  <!-- ========== SHEET 1: TITLE BLOCK ========== -->
-  <section class="sheet" id="c1" aria-labelledby="name">
-    <div class="title__bar">
-      <span>Specification, personal record</span>
-      <span>Issue 2026-08-16 / supersedes 2026-01</span>
-    </div>
+<main>
 
-    <div class="title__main">
-      <div class="title__text">
-        <h1 class="name" id="name">Nicu<br>Constantin</h1>
-        <p class="designation">
-          <b>Senior AI engineer.</b> I build AI agents and the software around
-          them, from the first drawing to a product running in production.
-        </p>
+<section class="front band" aria-labelledby="name">
+  <div class="plate">
+    <div class="plate__face" id="face" role="img" aria-label="Engraved portrait of Nicu Constantin, cut as a copperplate frontispiece."></div>
+    <img class="plate__frame" src="assets/plate-frame.webp" alt="" width="1024" height="1024" fetchpriority="high" decoding="async">
+  </div>
+
+  <h1 class="name" id="name">Nicu Constantin</h1>
+  <p class="role">Senior AI engineer. Agents, Claude Code, automation.</p>
+
+  <p class="standfirst">I build AI agents and the software around them, from the first drawing to a product running in production. I do the work myself.</p>
+
+  <hr class="front__rule">
+
+  <a class="cartouche" id="mailbtn" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">
+    <svg class="cartouche__corner cartouche__corner--tl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    <svg class="cartouche__corner cartouche__corner--tr" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    <svg class="cartouche__corner cartouche__corner--bl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    <svg class="cartouche__corner cartouche__corner--br" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    Write to me
+  </a>
+
+  <nav class="spines" aria-label="Reference installations">
+    <a class="spine" href="#clevmail">ClevMail</a>
+    <a class="spine" href="#utcb">UTCB</a>
+    <a class="spine" href="#hub">Phone agent</a>
+    <a class="spine" href="#meetscribe">MeetScribe</a>
+    <a class="spine" href="#herbs">Pure Herbs</a>
+  </nav>
+</section>
+
+<section class="plate-sec band" id="particulars" aria-labelledby="particulars-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="particulars-t"><span class="plate-sec__no">Plate I.</span>The particulars</h2>
+    <p class="plate-sec__sub">Write to me directly. You get me, and not an account manager.</p>
+  </div>
+  <dl class="particulars">
+    <div><dt>Based in</dt><dd>Bucharest, Romania (EET)</dd></div>
+    <div><dt>Status</dt><dd>Available for work</dd></div>
+    <div><dt>Current</dt><dd>Founding engineer, DeviDevs</dd></div>
+    <div><dt>Languages</dt><dd>English, Romanian</dd></div>
+    <div><dt>Builds</dt><dd>Agents, SaaS, automation, integrations</dd></div>
+    <div><dt>Also tutors</dt><dd>Own groups, 2025 and 2026</dd></div>
+    <div><dt>Works</dt><dd>Architecture to deployed product</dd></div>
+    <div><dt>Engaged through</dt><dd>Direct contract or Upwork</dd></div>
+  </dl>
+</section>
+
+<section class="plate-sec band" id="argument" aria-labelledby="argument-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="argument-t"><span class="plate-sec__no">Plate II.</span>What I take on</h2>
+    <p class="plate-sec__sub">The scope of the work, and the second thing I sell.</p>
+  </div>
+  <div class="prose measure">
+    <p>I build agent systems that do real work. A multi-tenant SaaS that runs a client's email marketing. A phone agent that books into a live calendar. A scraping pipeline that finds and scores leads. A transcriber that never sends audio off the machine. Architecture to deployed product, usually alone, sometimes leading a small team.</p>
+    <p>A chat window answers questions. These systems read your data, call your APIs, decide what to do next, and write the result back where your business already uses it. Fig. 1 shows the shape of it.</p>
+    <p>The second thing I sell is teaching. My company runs an internship programme with the university where I studied, and two of its groups have been mine. What I teach is the layer under the tool: skills, deterministic hooks, subagents, MCP, context engineering. That layer moves between harnesses, which is why the course ran on opencode while my own work runs on Claude Code. If your team needs to work this way, that is the same job from the other side.</p>
+  </div>
+
+  <figure class="figure">
+    <p class="fig-tag">Fig. 1</p>
+    <svg class="figure__wide" viewBox="0 0 900 246" role="img" aria-labelledby="fig1-t fig1-d">
+      <title id="fig1-t">The operating principle</title>
+      <desc id="fig1-d">A request enters an agent, which decides what to do. The agent calls deterministic scripts, which execute. The scripts produce a working product. A dashed feedback path runs from the product back to the agent, labelled checked against reality.</desc>
+      <g fill="none" stroke="#3B3A36" stroke-width="1">
+        <rect x="4" y="28" width="192" height="100"/><rect x="9" y="33" width="182" height="90"/>
+        <rect x="236" y="28" width="192" height="100"/><rect x="241" y="33" width="182" height="90"/>
+        <rect x="468" y="28" width="192" height="100"/><rect x="473" y="33" width="182" height="90"/>
+        <rect x="700" y="28" width="192" height="100"/><rect x="705" y="33" width="182" height="90"/>
+      </g>
+      <g stroke="#D5D1C7" stroke-width="1">
+        <path d="M196 78h28"/><path d="M428 78h28"/><path d="M660 78h28"/>
+      </g>
+      <g fill="#D5D1C7">
+        <path d="M224 73.5 236 78l-12 4.5Z"/><path d="M456 73.5 468 78l-12 4.5Z"/><path d="M688 73.5 700 78l-12 4.5Z"/>
+      </g>
+      <g fill="#D5D1C7" font-family="EB Garamond,Georgia,serif" text-anchor="middle">
+        <text x="100" y="70" font-size="14.5" letter-spacing="1.5">WHAT YOU</text>
+        <text x="100" y="92" font-size="14.5" letter-spacing="1.5">ASKED FOR</text>
+        <text x="332" y="62" font-size="14.5" letter-spacing="1.5">THE AGENT DECIDES</text>
+        <text x="332" y="84" font-size="11.5" fill="#9D978D">plans, reads, chooses</text>
+        <text x="332" y="101" font-size="11.5" fill="#9D978D">the next step</text>
+        <text x="564" y="62" font-size="14.5" letter-spacing="1.5">SCRIPTS EXECUTE</text>
+        <text x="564" y="84" font-size="11.5" fill="#9D978D">same input, same output,</text>
+        <text x="564" y="101" font-size="11.5" fill="#9D978D">every single time</text>
+        <text x="796" y="70" font-size="14.5" letter-spacing="1.5">A PRODUCT</text>
+        <text x="796" y="92" font-size="14.5" letter-spacing="1.5">THAT RUNS</text>
+      </g>
+      <path d="M796 128v58H332v-46" fill="none" stroke="#8C2B21" stroke-width="1" stroke-dasharray="5 5"/>
+      <path d="M327.5 140 332 128l4.5 12Z" fill="#8C2B21"/>
+      <text x="564" y="212" font-size="12.5" fill="#CF5B41" font-family="EB Garamond,Georgia,serif" text-anchor="middle" letter-spacing="1.8">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
+      <path d="M4 234h888" stroke="#3B3A36" stroke-width="1"/>
+    </svg>
+    <svg class="figure__tall" viewBox="0 0 360 620" role="img" aria-labelledby="fig1t-t fig1t-d">
+      <title id="fig1t-t">The operating principle</title>
+      <desc id="fig1t-d">A request enters an agent, which decides what to do. The agent calls deterministic scripts, which execute. The scripts produce a working product. A dashed feedback path runs from the product back to the agent, labelled checked against reality.</desc>
+      <g fill="none" stroke="#3B3A36" stroke-width="1">
+        <rect x="30" y="8" width="300" height="92"/><rect x="35" y="13" width="290" height="82"/>
+        <rect x="30" y="158" width="300" height="92"/><rect x="35" y="163" width="290" height="82"/>
+        <rect x="30" y="308" width="300" height="92"/><rect x="35" y="313" width="290" height="82"/>
+        <rect x="30" y="458" width="300" height="92"/><rect x="35" y="463" width="290" height="82"/>
+      </g>
+      <g stroke="#D5D1C7" stroke-width="1">
+        <path d="M180 100v34"/><path d="M180 250v34"/><path d="M180 400v34"/>
+      </g>
+      <g fill="#D5D1C7">
+        <path d="M175.5 146 180 158l4.5-12Z"/><path d="M175.5 296 180 308l4.5-12Z"/><path d="M175.5 446 180 458l4.5-12Z"/>
+      </g>
+      <g fill="#D5D1C7" font-family="EB Garamond,Georgia,serif" text-anchor="middle">
+        <text x="180" y="46" font-size="15" letter-spacing="1.5">WHAT YOU</text>
+        <text x="180" y="70" font-size="15" letter-spacing="1.5">ASKED FOR</text>
+        <text x="180" y="192" font-size="15" letter-spacing="1.5">THE AGENT DECIDES</text>
+        <text x="180" y="216" font-size="12" fill="#9D978D">plans, reads, chooses</text>
+        <text x="180" y="234" font-size="12" fill="#9D978D">the next step</text>
+        <text x="180" y="342" font-size="15" letter-spacing="1.5">SCRIPTS EXECUTE</text>
+        <text x="180" y="366" font-size="12" fill="#9D978D">same input, same output,</text>
+        <text x="180" y="384" font-size="12" fill="#9D978D">every single time</text>
+        <text x="180" y="496" font-size="15" letter-spacing="1.5">A PRODUCT</text>
+        <text x="180" y="520" font-size="15" letter-spacing="1.5">THAT RUNS</text>
+      </g>
+      <path d="M180 550v28H12V204h12" fill="none" stroke="#8C2B21" stroke-width="1" stroke-dasharray="5 5"/>
+      <path d="M18 199.5 30 204l-12 4.5Z" fill="#8C2B21"/>
+      <text x="192" y="606" font-size="11.5" fill="#CF5B41" font-family="EB Garamond,Georgia,serif" text-anchor="middle" letter-spacing="1.2">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
+    </svg>
+    <figcaption>Fig. 1. The agent decides, the scripts execute, and the result is checked before it ships. Reliability lives in code. That is what makes the work below repeatable and not a lucky demo.</figcaption>
+  </figure>
+</section>
+
+<section class="plate-sec band" id="numbers" aria-labelledby="numbers-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="numbers-t"><span class="plate-sec__no">Plate III.</span>Verified performance</h2>
+    <p class="plate-sec__sub">Value, period, source. Nothing here is rounded up.</p>
+  </div>
+  <div class="records">
+    <article class="record">
+      <p class="record__value">10,000+ emails in about 3 months</p>
+      <div class="record__body"><p>Delivered for one cosmetics e-commerce brand through the flows, broadcasts and win-back sequences I built, at a 44 percent open rate over the period. The client describes the result herself, by name, in Plate IV.</p></div>
+      <p class="record__source">Source: ClevMail platform reporting, about 3 months in 2026.</p>
+    </article>
+    <article class="record">
+      <p class="record__value">More than 1,100 commits are mine</p>
+      <div class="record__body"><p>On the ClevMail repository, which I designed and wrote. That is over 99 percent of the delivered branch. The other two contributors have five commits between them.</p></div>
+      <p class="record__source">Source: git history on the delivered branch, counted 2026-08-26.</p>
+    </article>
+    <article class="record">
+      <p class="record__value">87 hours transcribed, zero API cost</p>
+      <div class="record__body"><p>95 recordings through a batch Whisper pipeline on a local GPU. Nothing went to an API, because this is material that must not leave the machine.</p></div>
+      <p class="record__source">Source: own systems, counted 2026-07-05.</p>
+    </article>
+  </div>
+</section>
+
+<section class="plate-sec band" id="works" aria-labelledby="works-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="works-t"><span class="plate-sec__no">Plate IV.</span>Reference installations</h2>
+    <p class="plate-sec__sub">Built and running. Team work is labelled team work.</p>
+  </div>
+  <div class="works">
+
+    <article class="work" id="clevmail">
+      <h3 class="work__title"><span class="work__no">IV.1</span>ClevMail</h3>
+      <p class="work__role">Primary builder</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>A multi-tenant email marketing platform where every client gets an AI agent that learns their business. Welcome, abandoned cart and post-purchase flows. Broadcast campaigns and a signup form builder with double opt-in. GDPR consent handled by tag, so a client only mails people who agreed. Bad addresses are switched off automatically.</p>
+        <p>I designed it and wrote almost all of it. It went self-service in production on 11 June 2026: 63 commits, 5 migrations, no merge regressions. Before public signup I ran an adversarial audit against my own product and closed an access-control hole on the reports endpoint. It is live, and the businesses on it are selling through it.</p>
       </div>
-      <figure class="plate">
-        <img src="portrait.jpg" width="300" height="300" alt="Nicu Constantin" loading="eager" decoding="async">
-        <figcaption>Nicu Constantin. I do the work myself.</figcaption>
-      </figure>
-    </div>
-
-    <div class="tblock">
-      <div class="tblock__cell">
-        <span class="tblock__k">Based in</span>
-        <span class="tblock__v">Bucharest, Romania (EET)</span>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Email marketing SaaS, one AI agent per tenant</dd></div>
+        <div><dt>Materials</dt><dd>Python, FastAPI, React, Postgres, Google Vertex AI (Gemini), Vercel, Render</dd></div>
+        <div><dt>Client says</dt><dd><a href="https://devidevs-agency.com/en/testimonials" rel="noopener">Oana Bratila, founder of Mokko</a>, in her own words</dd></div>
+        <div><dt>Public at</dt><dd><a href="https://clevmail.ro" rel="noopener">clevmail.ro</a>, in Romanian</dd></div>
+      </dl>
       </div>
-      <div class="tblock__cell">
-        <span class="tblock__k">Status</span>
-        <span class="tblock__v tblock__v--live">Available for work</span>
+    </article>
+
+    <article class="work" id="utcb">
+      <h3 class="work__title"><span class="work__no">IV.2</span>University internship programme</h3>
+      <p class="work__role">Tutor, my own groups</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>DeviDevs runs an internship partnership with the Technical University of Civil Engineering Bucharest, where I studied. The programme has taught more than 45 students across three editions. Two of those groups were mine: eleven students in 2025, and one group in the 2026 round.</p>
+        <p>Students arrive knowing how to write code and leave having shipped a working application with AI tooling, under sprints, code review and a real ticket board. Agile practice that was not a simulation. It is paid work under contract, and seven of the juniors asked to keep working with me after their group ended.</p>
       </div>
-      <div class="tblock__cell">
-        <span class="tblock__k">Current</span>
-        <span class="tblock__v">Founding engineer, DeviDevs</span>
+      <dl class="work__facts">
+        <div><dt>Role</dt><dd>Practice tutor, two groups of my own</dd></div>
+        <div><dt>Materials</dt><dd>Next.js, TypeScript, Supabase, Vercel, Render, Gemini CLI, opencode, BMAD, Jira</dd></div>
+        <div><dt>Programme</dt><dd>45+ students over 3 editions, 4 applications shipped live, 2 hired</dd></div>
+        <div><dt>On record at</dt><dd><a href="https://utcb.ro/cercetare/fondul-de-dezvoltare-institutionala/d7-corelarea-ofertei-educationale-cu-cererea-pietei-muncii-consilierea-si-orientarea-in-cariera/" rel="noopener">utcb.ro</a>, the university's own project report, in Romanian</dd></div>
+      </dl>
       </div>
-      <div class="tblock__cell">
-        <span class="tblock__k">Languages</span>
-        <span class="tblock__v">English, Romanian</span>
+    </article>
+
+    <article class="work" id="hub">
+      <h3 class="work__title"><span class="work__no">IV.3</span>Multichannel hub with a phone agent</h3>
+      <p class="work__role">Freelance build</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>Built for small businesses in Sweden. Every social and messaging channel landed in one hub, and the agent either answered on its own or wrote a draft for a human to approve, switchable per business.</p>
+        <p>It picked up the phone and spoke Swedish. Before it answered, it checked the real calendar, and it wrote the booking straight in. It behaved differently inside and outside working hours, and it answered from a company knowledge base that stayed current.</p>
       </div>
-
-      <div class="tblock__cell">
-        <span class="tblock__k">Builds</span>
-        <span class="tblock__v">Agents, SaaS, automation, integrations</span>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Multichannel inbox, voice agent, live calendar booking</dd></div>
+        <div><dt>Materials</dt><dd>Voice AI, telephony and messaging APIs, calendar API, per-client knowledge base</dd></div>
+        <div><dt>Result</dt><dd>Delivered under contract</dd></div>
+        <div><dt>Public at</dt><dd>Client system, not mine to publish. Walkthrough on request</dd></div>
+      </dl>
       </div>
-      <div class="tblock__cell">
-        <span class="tblock__k">Also tutors</span>
-        <span class="tblock__v">Own groups, 2025 and 2026</span>
+    </article>
+
+    <article class="work" id="meetscribe">
+      <h3 class="work__title"><span class="work__no">IV.4</span>MeetScribe</h3>
+      <p class="work__role">Sole builder</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>Meeting transcription that runs entirely on a local GPU. Nothing leaves the machine, which is the whole point: the recordings it handles are ones no cloud service should ever see.</p>
+        <p>It records both sides locally, then runs a high quality transcription pass when the session ends, then writes the summary and the action items. I use it in production for teaching sessions and business meetings.</p>
       </div>
-      <div class="tblock__cell">
-        <span class="tblock__k">Works solo or leads</span>
-        <span class="tblock__v">Architecture to deployed product</span>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Private real-time transcription and meeting notes</dd></div>
+        <div><dt>Materials</dt><dd>Python, faster-whisper, local GPU, Claude Code</dd></div>
+        <div><dt>Result</dt><dd>In daily use for meetings and teaching sessions</dd></div>
+        <div><dt>Public at</dt><dd>Private repository, demo on request</dd></div>
+      </dl>
       </div>
-      <div class="tblock__cell">
-        <span class="tblock__k">Engaged through</span>
-        <span class="tblock__v">Direct contract or Upwork</span>
+    </article>
+
+    <article class="work" id="herbs">
+      <h3 class="work__title"><span class="work__no">IV.5</span>Herbal supplements storefront</h3>
+      <p class="work__role">Sole developer</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>A full storefront rebuild on Sylius for a live shop with real revenue, under contract and on my own. Templates, product taxonomy, content architecture, Stripe payments, and a checkout that records consent properly.</p>
+        <p>The content moved into editable blocks so the owner changes his own copy without paying a developer for every comma.</p>
       </div>
-
-      <div class="tblock__cell issued">
-        <span class="issued__text">Write to me directly. You get me, and not an account manager.</span>
-        <span class="actions">
-        <a class="btn" href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">
-          <svg class="btn__ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M2 5v4a3 3 0 0 0 6 0V5" fill="none" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 8.4c.9 2.3 2 3.4 3.3 3.4a2.7 2.7 0 1 0 0-5.4c-1.5 0-2.6 1.2-3.3 3.4" fill="none" stroke="currentColor" stroke-width="1.7"/>
-          </svg>
-          Hire me on Upwork
-        </a>
-        <a class="btn btn--alt" id="mailbtn" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">
-          Email me
-        </a>
-        </span>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>E-commerce storefront redesign</dd></div>
+        <div><dt>Materials</dt><dd>Sylius, Symfony, PHP, Twig, Stripe</dd></div>
+        <div><dt>Result</dt><dd>Delivered and live for the client</dd></div>
+        <div><dt>Public at</dt><dd>Client site now runs a different theme. Screenshots on request</dd></div>
+      </dl>
       </div>
-    </div>
+    </article>
 
-    <div class="sheet__body" style="padding-top:0">
-      <figure class="fig">
-        <div class="fig__frame">
-          <svg class="fig__wide" viewBox="0 0 900 232" role="img" aria-labelledby="figtitle figdesc">
-            <title id="figtitle">How the work gets done</title>
-            <desc id="figdesc">A request enters an agent, which decides what to do. The agent calls
-              deterministic scripts, which execute. The scripts produce a working product. A dashed
-              feedback path runs from the product back to the agent, labelled checked against reality.</desc>
-
-            <!-- boxes -->
-            <rect class="dg-box" x="4" y="46" width="104" height="56"/>
-            <text class="dg-lbl" x="56" y="70" text-anchor="middle">WHAT YOU</text>
-            <text class="dg-lbl" x="56" y="82" text-anchor="middle">ASKED FOR</text>
-
-            <rect class="dg-box dg-box--key" x="188" y="34" width="184" height="80"/>
-            <text class="dg-lbl" x="280" y="66" text-anchor="middle">THE AGENT DECIDES</text>
-            <text class="dg-sub" x="280" y="82" text-anchor="middle">plans, reads, chooses</text>
-            <text class="dg-sub" x="280" y="94" text-anchor="middle">the next step</text>
-
-            <rect class="dg-box dg-box--key" x="424" y="34" width="184" height="80"/>
-            <text class="dg-lbl" x="516" y="66" text-anchor="middle">SCRIPTS EXECUTE</text>
-            <text class="dg-sub" x="516" y="82" text-anchor="middle">same input, same output,</text>
-            <text class="dg-sub" x="516" y="94" text-anchor="middle">every single time</text>
-
-            <rect class="dg-box" x="660" y="46" width="112" height="56"/>
-            <text class="dg-lbl" x="716" y="70" text-anchor="middle">A PRODUCT</text>
-            <text class="dg-lbl" x="716" y="82" text-anchor="middle">THAT RUNS</text>
-
-            <!-- signal path -->
-            <path class="dg-path" d="M108 74 H180"/>
-            <path class="dg-head" d="M180 69 l10 5 -10 5 z"/>
-            <path class="dg-path" d="M372 74 H416"/>
-            <path class="dg-head" d="M416 69 l10 5 -10 5 z"/>
-            <path class="dg-path" d="M608 74 H652"/>
-            <path class="dg-head" d="M652 69 l10 5 -10 5 z"/>
-
-            <!-- feedback path -->
-            <path class="dg-feedback" d="M716 102 V166 H280 V122"/>
-            <path class="dg-head--sig" d="M275 122 l5 -10 5 10 z"/>
-            <text class="dg-fbl" x="498" y="182" text-anchor="middle">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
-
-            <!-- travelling pulse -->
-            <circle class="dg-pulse" r="4.5" cx="0" cy="0"
-              style="offset-path:path('M108 74 H716 V166 H280 V122');offset-rotate:0deg"/>
-
-            <!-- sheet ticks -->
-            <path class="dg-path" d="M8 210 H892" stroke-width="1" stroke="#AEB6A8"/>
-            <text class="dg-sub" x="8" y="226">FIG. 1</text>
-            <text class="dg-sub" x="892" y="226" text-anchor="end">OPERATING PRINCIPLE</text>
-          </svg>
-
-          <!-- Same figure, reset for a narrow column, the way a sheet reprints it -->
-          <svg class="fig__tall" viewBox="0 0 320 408" role="img" aria-labelledby="figtitle2 figdesc2">
-            <title id="figtitle2">How the work gets done</title>
-            <desc id="figdesc2">A request enters an agent, which decides what to do. The agent calls
-              deterministic scripts, which execute. The scripts produce a working product. A dashed
-              feedback path runs from the product back to the agent, labelled checked against reality.</desc>
-
-            <rect class="dg-box" x="76" y="6" width="168" height="40"/>
-            <text class="dg-lbl2" x="160" y="24" text-anchor="middle">WHAT YOU</text>
-            <text class="dg-lbl2" x="160" y="37" text-anchor="middle">ASKED FOR</text>
-
-            <path class="dg-path" d="M160 46 V60"/>
-            <path class="dg-head" d="M155 60 l5 10 5 -10 z"/>
-
-            <rect class="dg-box dg-box--key" x="44" y="70" width="232" height="64"/>
-            <text class="dg-lbl2" x="160" y="92" text-anchor="middle">THE AGENT DECIDES</text>
-            <text class="dg-sub2" x="160" y="108" text-anchor="middle">plans, reads, chooses</text>
-            <text class="dg-sub2" x="160" y="121" text-anchor="middle">the next step</text>
-
-            <path class="dg-path" d="M160 134 V148"/>
-            <path class="dg-head" d="M155 148 l5 10 5 -10 z"/>
-
-            <rect class="dg-box dg-box--key" x="44" y="158" width="232" height="64"/>
-            <text class="dg-lbl2" x="160" y="180" text-anchor="middle">SCRIPTS EXECUTE</text>
-            <text class="dg-sub2" x="160" y="196" text-anchor="middle">same input, same output,</text>
-            <text class="dg-sub2" x="160" y="209" text-anchor="middle">every single time</text>
-
-            <path class="dg-path" d="M160 222 V236"/>
-            <path class="dg-head" d="M155 236 l5 10 5 -10 z"/>
-
-            <rect class="dg-box" x="76" y="246" width="168" height="40"/>
-            <text class="dg-lbl2" x="160" y="264" text-anchor="middle">A PRODUCT</text>
-            <text class="dg-lbl2" x="160" y="277" text-anchor="middle">THAT RUNS</text>
-
-            <path class="dg-feedback" d="M160 286 V318 H22 V102 H34"/>
-            <path class="dg-head--sig" d="M34 97 l10 5 -10 5 z"/>
-            <text class="dg-fbl2" x="176" y="338" text-anchor="middle">CHECKED AGAINST REALITY</text>
-            <text class="dg-fbl2" x="176" y="350" text-anchor="middle">BEFORE IT SHIPS</text>
-
-            <circle class="dg-pulse dg-pulse--tall" r="4" cx="0" cy="0"
-              style="offset-path:path('M160 26 V286 V318 H22 V102 H44');offset-rotate:0deg"/>
-
-            <path class="dg-path" d="M6 380 H314" stroke-width="1" stroke="#AEB6A8"/>
-            <text class="dg-sub2" x="6" y="396">FIG. 1</text>
-            <text class="dg-sub2" x="314" y="396" text-anchor="end">OPERATING PRINCIPLE</text>
-          </svg>
-        </div>
-        <figcaption class="fig__cap">
-          <b>Fig. 1. The operating principle.</b> The agent decides, the scripts execute, and the
-          result is checked before it ships. Reliability lives in code. That is what makes the work
-          below repeatable and not a lucky demo.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ========== 2. SCOPE ========== -->
-  <section class="sheet" id="c2" aria-labelledby="c2h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">2</span>
-        <h2 class="clause__title" id="c2h">Scope</h2>
-        <span class="clause__note">What I take on</span>
+    <article class="work" id="leads">
+      <h3 class="work__title"><span class="work__no">IV.6</span>Lead generation pipeline</h3>
+      <p class="work__role">Built it</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>Eight sources scraped, deduplicated, scored, and geocoded by a three pass vote, landing in a sheet the sales side actually opens. The kind of unglamorous system that replaces a person copying rows by hand.</p>
       </div>
-      <div class="prose">
-        <p>I build agent systems that do real work. A multi-tenant SaaS that runs a client's email
-        marketing. A phone agent that books into a live calendar. A scraping pipeline that finds and
-        scores leads. A transcriber that never sends audio off the machine. Architecture to deployed
-        product, usually alone, sometimes leading a small team.</p>
-        <p>A chat window answers questions. These systems read your data, call your APIs, decide what
-        to do next, and write the result back where your business already uses it. Fig. 1 shows the
-        shape of it.</p>
-        <p>The second thing I sell is teaching. My company runs an internship programme with the
-        university where I studied, and two of its groups have been mine. What I teach is the layer under the tool: skills,
-        deterministic hooks, subagents, MCP, context engineering. That layer moves between harnesses,
-        which is why the course ran on opencode while my own work runs on Claude Code. If your team
-        needs to work this way, that is the same job from the other side.</p>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Scrape, enrich, verify, score, deliver</dd></div>
+        <div><dt>Materials</dt><dd>Python, Playwright, Google Sheets API</dd></div>
+        <div><dt>Result</dt><dd>Qualified leads, verified before they reach a human</dd></div>
+        <div><dt>Public at</dt><dd>Private repository</dd></div>
+      </dl>
       </div>
-    </div>
-  </section>
+    </article>
 
-  <!-- ========== 3. VERIFIED PERFORMANCE ========== -->
-  <section class="sheet" id="c3" aria-labelledby="c3h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">3</span>
-        <h2 class="clause__title" id="c3h">Verified performance</h2>
-        <span class="clause__note">Value / period / source</span>
+    <article class="work" id="agency">
+      <h3 class="work__title"><span class="work__no">IV.7</span>DeviDevs agency site</h3>
+      <p class="work__role">Frontend, team product</p>
+      <div class="work__cols">
+      <div class="work__body">
+        <p>The site of the studio where I am founding engineer. I built the frontend. The product is the team's.</p>
       </div>
-      <ul class="meas">
-        <li class="meas__row">
-          <span class="meas__val">10,000+<span class="meas__unit">emails in about 3 months</span></span>
-          <span class="meas__src">Delivered for one cosmetics e-commerce brand through the flows,
-          broadcasts and win-back sequences I built, at a 44 percent open rate over the period. The
-          client describes the result herself, by name, in 4.1 below.</span>
-          <span class="meas__src"><b>Source:</b> ClevMail platform reporting, about 3 months in 2026.</span>
-        </li>
-        <li class="meas__row">
-          <span class="meas__val">763<span class="meas__unit">of 767 commits are mine</span></span>
-          <span class="meas__src">On the ClevMail repository, which I designed and wrote. The other
-          two contributors have four commits between them.</span>
-          <span class="meas__src"><b>Source:</b> git history, counted 2026-08-06.</span>
-        </li>
-        <li class="meas__row">
-          <span class="meas__val">87<span class="meas__unit">hours transcribed, zero API cost</span></span>
-          <span class="meas__src">95 recordings through a batch Whisper pipeline on a local GPU.
-          Nothing went to an API, because this is material that must not leave the machine.</span>
-          <span class="meas__src"><b>Source:</b> own systems, counted 2026-07-05.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========== 4. REFERENCE INSTALLATIONS ========== -->
-  <section class="sheet" id="c4" aria-labelledby="c4h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">4</span>
-        <h2 class="clause__title" id="c4h">Reference installations</h2>
-        <span class="clause__note">Built and running</span>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Bilingual marketing site</dd></div>
+        <div><dt>Materials</dt><dd>Next.js, TypeScript, React, Tailwind</dd></div>
+        <div><dt>Result</dt><dd>Live, English and Romanian</dd></div>
+        <div><dt>Public at</dt><dd><a href="https://devidevs-agency.com/en" rel="noopener">devidevs-agency.com/en</a></dd></div>
+      </dl>
       </div>
+    </article>
 
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.1</span>
-          <h3 class="ref__name">ClevMail</h3>
-          <span class="ref__role">Primary builder</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>A multi-tenant email marketing platform where every client gets an AI agent that learns
-            their business. Welcome, abandoned cart and post-purchase flows. Broadcast campaigns and a
-            signup form builder with double opt-in. GDPR consent handled by tag, so a client only mails
-            people who agreed. Bad addresses are switched off automatically.</p>
-            <p>I designed it and wrote almost all of it. It went self-service in production on 11 June
-            2026: 63 commits, 5 migrations, no merge regressions. Before public signup I ran an
-            adversarial audit against my own product and closed an access-control hole on the reports
-            endpoint. It is live, and the businesses on it are selling through it.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Email marketing SaaS, one AI agent per tenant</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, FastAPI, React, Postgres, Google Vertex AI (Gemini), Vercel, Render</span></div>
-            <div class="spec__row"><span class="spec__k">Client says</span><span class="spec__v"><a href="https://devidevs-agency.com/en/testimonials" rel="noopener">Oana Bratila, founder of Mokko</a>, in her own words</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://clevmail.ro" rel="noopener">clevmail.ro</a>, in Romanian</span></div>
-          </div>
-        </div>
-      </article>
+  </div>
+</section>
 
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.2</span>
-          <h3 class="ref__name">University internship program</h3>
-          <span class="ref__role">Tutor, my own groups</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>DeviDevs runs an internship partnership with the Technical University of Civil Engineering
-            Bucharest, where I studied. The programme has taught more than 45 students across three
-            editions. Two of those groups were mine: eleven students in 2025, and one group in the 2026
-            round.</p>
-            <p>Students arrive knowing how to write code and leave having shipped a working application
-            with AI tooling, under sprints, code review and a real ticket board. Agile practice that was
-            not a simulation. It is paid work under contract, and seven of the juniors asked to keep
-            working with me after their group ended.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Role</span><span class="spec__v">Practice tutor, two groups of my own</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Next.js, TypeScript, Supabase, Vercel, Render, Gemini CLI, opencode, BMAD, Jira</span></div>
-            <div class="spec__row"><span class="spec__k">Programme</span><span class="spec__v">45+ students over 3 editions, 4 applications shipped live, 2 hired</span></div>
-            <div class="spec__row"><span class="spec__k">On record at</span><span class="spec__v"><a href="https://utcb.ro/cercetare/fondul-de-dezvoltare-institutionala/d7-corelarea-ofertei-educationale-cu-cererea-pietei-muncii-consilierea-si-orientarea-in-cariera/" rel="noopener">utcb.ro</a>, the university's own project report, in Romanian</span></div>
-          </div>
-        </div>
-      </article>
+<section class="plate-sec band" id="materials" aria-labelledby="materials-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="materials-t"><span class="plate-sec__no">Plate V.</span>Materials</h2>
+    <p class="plate-sec__sub">Used in the work above, not a list of things I have heard of.</p>
+  </div>
+  <div class="materials">
+    <section><h3>Agents and AI</h3><p>Claude Code, opencode, Anthropic API, Google Vertex AI, agent architecture, retrieval, local Whisper, voice agents</p></section>
+    <section><h3>Backend</h3><p>Python, FastAPI, Flask, PHP, Symfony, Sylius, Node.js, Postgres, ClickHouse, REST APIs</p></section>
+    <section><h3>Frontend</h3><p>TypeScript, React, Next.js, Tailwind, HTML and CSS, interface design, Figma</p></section>
+    <section><h3>Running it</h3><p>Docker, GitHub Actions, Vercel, Render, Azure, Microsoft 365, PowerShell, Playwright, n8n</p></section>
+  </div>
+</section>
 
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.3</span>
-          <h3 class="ref__name">Multichannel hub with a phone agent</h3>
-          <span class="ref__role">Freelance build</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>Built for small businesses in Sweden. Every social and messaging channel landed in one
-            hub, and the agent either answered on its own or wrote a draft for a human to approve,
-            switchable per business.</p>
-            <p>It picked up the phone and spoke Swedish. Before it answered, it checked the real calendar,
-            and it wrote the booking straight in. It behaved differently inside and outside working
-            hours, and it answered from a company knowledge base that stayed current.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Multichannel inbox, voice agent, live calendar booking</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Voice AI, telephony and messaging APIs, calendar API, per-client knowledge base</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Delivered under contract</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Client system, not mine to publish. Walkthrough on request</span></div>
-          </div>
-        </div>
-      </article>
+<section class="plate-sec band" id="service" aria-labelledby="service-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="service-t"><span class="plate-sec__no">Plate VI.</span>Service record</h2>
+    <p class="plate-sec__sub">Most recent first.</p>
+  </div>
+  <div class="service">
+    <article class="post">
+      <span class="post__years">2024 to present</span>
+      <h3 class="post__title">Founding engineer</h3>
+      <p class="post__org">DeviDevs Technologies, Bucharest</p>
+      <p class="post__body">Primary builder of the company's SaaS product, plus client delivery on agents, automation and integration work. Freelance engagements run in parallel.</p>
+    </article>
+    <article class="post">
+      <span class="post__years">2023 to 2025</span>
+      <h3 class="post__title">Senior IT engineer, infrastructure and automation</h3>
+      <p class="post__org">Aviation, legal and travel clients</p>
+      <p class="post__body">Microsoft 365 for more than 1,000 users. Hybrid directory synchronisation, a cloud migration covering more than 800 users, provisioning automated end to end, and 70+ devices deployed with zero touch.</p>
+    </article>
+    <article class="post">
+      <span class="post__years">2020 to 2022</span>
+      <h3 class="post__title">E-commerce and web operations manager</h3>
+      <p class="post__org">Standart Park</p>
+      <p class="post__body">Ran the online sales operation end to end, from the storefront to fulfilment, and maintained the site itself.</p>
+    </article>
+    <article class="post">
+      <span class="post__years">2017 to 2020</span>
+      <h3 class="post__title">Supply facility supervisor</h3>
+      <p class="post__org">Same Day Delivery Solutions</p>
+      <p class="post__body">Started as an analyst and finished running the centre. Optimised fleet activity and delivery routes on operational data, and was the single point of contact between clients, subcontractors and internal teams.</p>
+    </article>
+  </div>
+</section>
 
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.4</span>
-          <h3 class="ref__name">MeetScribe</h3>
-          <span class="ref__role">Sole builder</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>Meeting transcription that runs entirely on a local GPU. Nothing leaves the machine, which
-            is the whole point: the recordings it handles are ones no cloud service should ever see.</p>
-            <p>It records both sides locally, then runs a high quality transcription pass when the
-            session ends, then writes the summary and the action items. I use it in production for
-            teaching sessions and business meetings.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Private real-time transcription and meeting notes</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, faster-whisper, local GPU, Claude Code</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">In daily use for meetings and teaching sessions</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Private repository, demo on request</span></div>
-          </div>
-        </div>
-      </article>
+<section class="plate-sec band" id="qualification" aria-labelledby="qualification-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="qualification-t"><span class="plate-sec__no">Plate VII.</span>Qualification</h2>
+    <p class="plate-sec__sub">Where the engineering came from.</p>
+  </div>
+  <div class="prose measure">
+    <p>Automation and applied informatics: control systems, signals, and the habit of drawing a system before building it. Fig. 1 on Plate II comes straight out of that training. An agent with a feedback path is a control loop.</p>
+    <p>I am back in the same faculty now, on the other side of the room.</p>
+  </div>
+  <dl class="particulars" style="margin-top:1.6rem">
+    <div><dt>Studied</dt><dd>Automation and Applied Informatics</dd></div>
+    <div><dt>Institution</dt><dd>Technical University of Civil Engineering Bucharest</dd></div>
+    <div><dt>Years</dt><dd>2013 to 2017</dd></div>
+    <div><dt>Back there as</dt><dd>Practice tutor, my own groups in 2025 and 2026</dd></div>
+  </dl>
+</section>
 
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.5</span>
-          <h3 class="ref__name">Herbal supplements storefront</h3>
-          <span class="ref__role">Sole developer</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>A full storefront rebuild on Sylius for a live shop with real revenue, under contract and
-            on my own. Templates, product taxonomy, content architecture, Stripe payments, and a
-            checkout that records consent properly.</p>
-            <p>The content moved into editable blocks so the owner changes his own copy without paying a
-            developer for every comma.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">E-commerce storefront redesign</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Sylius, Symfony, PHP, Twig, Stripe</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Delivered and live for the client</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Client site now runs a different theme. Screenshots on request</span></div>
-          </div>
-        </div>
-      </article>
+<section class="plate-sec band" id="conditions" aria-labelledby="conditions-t">
+  <div class="plate-sec__head">
+    <h2 class="plate-sec__title" id="conditions-t"><span class="plate-sec__no">Plate VIII.</span>Conditions of issue</h2>
+    <p class="plate-sec__sub">Read before you judge the repositories.</p>
+  </div>
+  <ol class="conditions">
+    <li><p>The code on this account belongs to clients and to a company, so most of it is private. The contribution graph is the real work. Ask for a walkthrough or a screen share and I will show you the running system.</p></li>
+    <li><p>Client names are withheld until the client agrees. Every figure on Plate III comes from a system I can open in front of you.</p></li>
+    <li><p>Team work is labelled team work and solo work is labelled solo. Where I wrote almost all of something, Plate III gives the commit count.</p></li>
+  </ol>
+</section>
 
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.6</span>
-          <h3 class="ref__name">Lead generation pipeline</h3>
-          <span class="ref__role">Built it</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>Eight sources scraped, deduplicated, scored, and geocoded by a three pass vote, landing in
-            a sheet the sales side actually opens. The kind of unglamorous system that replaces a person
-            copying rows by hand.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Scrape, enrich, verify, score, deliver</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Python, Playwright, Google Sheets API</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Qualified leads, verified before they reach a human</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v spec__v--none">Private repository</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="ref">
-        <div class="ref__head">
-          <span class="ref__no">4.7</span>
-          <h3 class="ref__name">DeviDevs agency site</h3>
-          <span class="ref__role">Frontend, team product</span>
-        </div>
-        <div class="ref__grid">
-          <div class="ref__desc">
-            <p>The site of the studio where I am founding engineer. I built the frontend. The product is
-            the team's.</p>
-          </div>
-          <div class="spec">
-            <div class="spec__row"><span class="spec__k">Function</span><span class="spec__v">Bilingual marketing site</span></div>
-            <div class="spec__row"><span class="spec__k">Materials</span><span class="spec__v">Next.js, TypeScript, React, Tailwind</span></div>
-            <div class="spec__row"><span class="spec__k">Result</span><span class="spec__v">Live, English and Romanian</span></div>
-            <div class="spec__row"><span class="spec__k">Public at</span><span class="spec__v"><a href="https://devidevs-agency.com/en" rel="noopener">devidevs-agency.com/en</a></span></div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ========== 5. MATERIALS ========== -->
-  <section class="sheet" id="c5" aria-labelledby="c5h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">5</span>
-        <h2 class="clause__title" id="c5h">Materials</h2>
-        <span class="clause__note">Used in the work above</span>
-      </div>
-      <div class="mat">
-        <div class="mat__group">
-          <span class="mat__k">Agents and AI</span>
-          <ul class="mat__list">
-            <li>Claude Code</li><li>opencode</li><li>Anthropic API</li><li>Google Vertex AI</li><li>Agent architecture</li>
-            <li>Retrieval</li><li>Local Whisper</li><li>Voice agents</li>
-          </ul>
-        </div>
-        <div class="mat__group">
-          <span class="mat__k">Backend</span>
-          <ul class="mat__list">
-            <li>Python</li><li>FastAPI</li><li>Flask</li><li>PHP</li><li>Symfony</li><li>Sylius</li>
-            <li>Node.js</li><li>Postgres</li><li>ClickHouse</li><li>REST APIs</li>
-          </ul>
-        </div>
-        <div class="mat__group">
-          <span class="mat__k">Frontend</span>
-          <ul class="mat__list">
-            <li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind</li><li>HTML and CSS</li>
-            <li>Interface design</li><li>Figma</li>
-          </ul>
-        </div>
-        <div class="mat__group">
-          <span class="mat__k">Running it</span>
-          <ul class="mat__list">
-            <li>Docker</li><li>GitHub Actions</li><li>Vercel</li><li>Render</li><li>Azure</li>
-            <li>Microsoft 365</li><li>PowerShell</li><li>Playwright</li><li>n8n</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 6. SERVICE RECORD ========== -->
-  <section class="sheet" id="c6" aria-labelledby="c6h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">6</span>
-        <h2 class="clause__title" id="c6h">Service record</h2>
-        <span class="clause__note">Most recent first</span>
-      </div>
-      <ul class="rec">
-        <li class="rec__item">
-          <span class="rec__when">2024 to present</span>
-          <span class="rec__what">Founding engineer</span>
-          <span class="rec__where">DeviDevs Technologies, Bucharest</span>
-          <span class="rec__detail">Primary builder of the company's SaaS product, plus client delivery
-          on agents, automation and integration work. Freelance engagements run in parallel.</span>
-        </li>
-        <li class="rec__item">
-          <span class="rec__when">2023 to 2025</span>
-          <span class="rec__what">Senior IT engineer, infrastructure and automation</span>
-          <span class="rec__where">Aviation, legal and travel clients</span>
-          <span class="rec__detail">Microsoft 365 for more than 1,000 users. Hybrid directory
-          synchronisation, a cloud migration covering more than 800 users, provisioning automated end to
-          end, and 70+ devices deployed with zero touch.</span>
-        </li>
-        <li class="rec__item">
-          <span class="rec__when">2020 to 2022</span>
-          <span class="rec__what">E-commerce and web operations manager</span>
-          <span class="rec__where">Standart Park</span>
-          <span class="rec__detail">Ran the online sales operation end to end, from the storefront to
-          fulfilment, and maintained the site itself.</span>
-        </li>
-        <li class="rec__item">
-          <span class="rec__when">2017 to 2020</span>
-          <span class="rec__what">Supply facility supervisor</span>
-          <span class="rec__where">Same Day Delivery Solutions</span>
-          <span class="rec__detail">Started as an analyst and finished running the centre. Optimised
-          fleet activity and delivery routes on operational data, and was the single point of contact
-          between clients, subcontractors and internal teams.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========== 7. QUALIFICATION ========== -->
-  <section class="sheet" id="c7" aria-labelledby="c7h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">7</span>
-        <h2 class="clause__title" id="c7h">Qualification</h2>
-        <span class="clause__note">Where the engineering came from</span>
-      </div>
-      <div class="ref__grid">
-        <div class="ref__desc">
-          <p>Automation and applied informatics: control systems, signals, and the habit of drawing a
-          system before building it. Fig. 1 on sheet 1 comes straight out of that training. An agent
-          with a feedback path is a control loop.</p>
-          <p>I am back in the same faculty now, on the other side of the room.</p>
-        </div>
-        <div class="spec">
-          <div class="spec__row"><span class="spec__k">Studied</span><span class="spec__v">Automation and Applied Informatics</span></div>
-          <div class="spec__row"><span class="spec__k">Institution</span><span class="spec__v">Technical University of Civil Engineering Bucharest</span></div>
-          <div class="spec__row"><span class="spec__k">Years</span><span class="spec__v">2013 to 2017</span></div>
-          <div class="spec__row"><span class="spec__k">Back there as</span><span class="spec__v">Practice tutor, my own groups in 2025 and 2026</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 8. CONDITIONS OF ISSUE ========== -->
-  <section class="sheet" id="c8" aria-labelledby="c8h">
-    <div class="sheet__body">
-      <div class="clause__head">
-        <span class="clause__no">8</span>
-        <h2 class="clause__title" id="c8h">Conditions of issue</h2>
-        <span class="clause__note">Read before you judge the repos</span>
-      </div>
-      <ul class="cond">
-        <li><span class="cond__mk">8.1</span><span>The code on this account belongs to clients and to a
-          company, so most of it is private. The contribution graph is the real work. Ask for a
-          walkthrough or a screen share and I will show you the running system.</span></li>
-        <li><span class="cond__mk">8.2</span><span>Client names are withheld until the client agrees.
-          Every figure in clause 3 comes from a system I can open in front of you.</span></li>
-        <li><span class="cond__mk">8.3</span><span>Team work is labelled team work and solo work is
-          labelled solo. Where I wrote almost all of something, clause 3 gives the commit count.</span></li>
-      </ul>
-
-      <div class="close">
-        <p class="close__line">Tell me what you need built.</p>
-        <ul class="links">
-          <li><a id="maillink" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">Email</a></li>
-          <li><a href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a></li>
-          <li><a href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/cnick26" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
 </main>
 
-<footer class="foot">
-  <span>Nicu Constantin, Bucharest</span>
-  <span>Issue 2026-08-16</span>
+<footer class="colophon band">
+  <svg class="fleuron" viewBox="0 0 120 22" aria-hidden="true" focusable="false">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M0 11h34"/><path d="M86 11h34"/>
+      <path d="M46 11c0-5 4-8 8-6s2 8-3 9c5 1 8-2 9-6"/>
+      <path d="M74 11c0-5-4-8-8-6s-2 8 3 9c-5 1-8-2-9-6"/>
+    </g>
+    <circle cx="60" cy="11" r="1.6" fill="currentColor"/>
+  </svg>
+  <p class="colophon__line">Tell me what you need built.</p>
+  <a class="cartouche" id="maillink" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">
+    <svg class="cartouche__corner cartouche__corner--tl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    <svg class="cartouche__corner cartouche__corner--tr" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    <svg class="cartouche__corner cartouche__corner--bl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    <svg class="cartouche__corner cartouche__corner--br" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
+    Write to me
+  </a>
+  <div class="colophon__links">
+    <a class="spine" href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a>
+    <a class="spine" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a>
+    <a class="spine" href="https://github.com/cnick26" rel="noopener">GitHub</a>
+  </div>
+  <p class="imprint"><span>Nicu Constantin</span><span>Bucharest</span><span>Issue 2026-08-26</span></p>
 </footer>
 
 <script>
@@ -1099,31 +787,50 @@ a{color:inherit}
 })();
 
 (function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.rail__index a'));
-  var sheets = Array.prototype.slice.call(document.querySelectorAll('.sheet'));
-  if (!('IntersectionObserver' in window)) {
-    sheets.forEach(function(s){ s.classList.add('is-in'); });
-    return;
+  // The plate follows the cursor. Thirteen engraved frames in one strip, index 6 is
+  // frontal. With no JavaScript, no pointer, or reduced motion, frame 6 is what stays.
+  var face = document.getElementById('face');
+  if (!face) return;
+  var FRAMES = 13, LAST = FRAMES - 1, MID = (FRAMES - 1) / 2;
+  if (!window.matchMedia) return;
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var current = MID, target = MID, ticking = false;
+
+  function paint(){
+    ticking = false;
+    var next = Math.round(target);
+    if (next === current) return;
+    current = next;
+    face.style.setProperty('--frame', String(current));
   }
 
-  // Sheets settle onto the field once, then stay put.
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) { e.target.classList.add('is-in'); reveal.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
-  sheets.forEach(function(s){ reveal.observe(s); });
+  function onMove(e){
+    var r = face.getBoundingClientRect();
+    if (!r.width) return;
+    var cx = r.left + r.width / 2;
+    var cy = r.top + r.height / 2;
+    var dx = e.clientX - cx;
+    var dy = e.clientY - cy;
+    // Reach: the sweep completes about one and a half plate widths out to either side.
+    var reach = r.width * 1.5;
+    var t = Math.max(-1, Math.min(1, dx / reach));
+    // A cursor far above or below the plate pulls the head back towards frontal.
+    var fade = 1 / (1 + Math.pow(dy / (r.height * 2.2), 2));
+    target = MID + t * MID * fade;
+    target = Math.max(0, Math.min(LAST, target));
+    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+  }
 
-  // Clause index follows the sheet you are reading.
-  var spy = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      links.forEach(function(a){
-        a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false');
-      });
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-  sheets.forEach(function(s){ spy.observe(s); });
+  function onLeave(){
+    target = MID;
+    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+  }
+
+  window.addEventListener('pointermove', onMove, { passive: true });
+  document.addEventListener('pointerleave', onLeave);
+  window.addEventListener('blur', onLeave);
 })();
 </script>
 </body>
