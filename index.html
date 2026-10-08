@@ -11,376 +11,312 @@
 <meta property="og:url" content="https://cnick26.github.io/">
 <meta property="og:title" content="Nicu Constantin, Senior AI Engineer">
 <meta property="og:description" content="I build AI agents and take them to production, and I train teams to build the same way. Bucharest, Romania.">
-<meta property="og:image" content="https://cnick26.github.io/og.png">
+<meta property="og:image" content="https://cnick26.github.io/og.png?v=2026-10-08">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nicu Constantin, senior AI engineer, Bucharest.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nicu Constantin, Senior AI Engineer">
 <meta name="twitter:description" content="I build AI agents and take them to production, and I train teams to build the same way.">
-<meta name="twitter:image" content="https://cnick26.github.io/og.png">
-<meta name="theme-color" content="#141513">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141513'/%3E%3Crect x='3.5' y='3.5' width='25' height='25' fill='none' stroke='%23D5D1C7'/%3E%3Crect x='6.5' y='6.5' width='19' height='19' fill='none' stroke='%23D5D1C7' stroke-width='0.6'/%3E%3Cpath d='M6.5 24.5h19' stroke='%238C2B21' stroke-width='1.6'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='12' fill='%23D5D1C7' text-anchor='middle'%3ENC%3C/text%3E%3C/svg%3E">
+<meta name="twitter:image" content="https://cnick26.github.io/og.png?v=2026-10-08">
+<meta name="theme-color" content="#F5F0E6">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F0E6'/%3E%3Ctext x='16' y='20' font-family='Georgia,serif' font-size='13' fill='%232A231C' text-anchor='middle'%3ENC%3C/text%3E%3Cpath d='M8 25h16' stroke='%23565B22' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..800&family=EB+Garamond:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   THE AUTHOR'S FRONTISPIECE
-   Tokens read off the approved comp, .impeccable/mocks/comp-1-centred.png.
-   Square corners everywhere. No elevation, no shadow, no glow.
-   ============================================================ */
+/* Light, warm paper. One accent: the olive of the leaves behind him.
+   Contrast on --paper: ink 13.6, ink-2 5.9, olive 6.3. On --paper-2: 12.4, 5.3, 5.8. */
 :root{
-  --ground:#141513;
-  --ground-2:#1D1E1D;
-  --rule:#3B3A36;
-  --ink:#D5D1C7;
-  --ink-2:#9D978D;
-  --signal:#8C2B21;      /* printer's vermilion, rules and marks only */
-  --signal-ink:#CF5B41;  /* the same red opened up until it clears 4.5:1 on the ground */
-  --measure:34rem;
-  --band:min(100% - 2.5rem, 60rem);
-  --display:"Bodoni Moda",Georgia,"Times New Roman",serif;
-  --text:"EB Garamond",Georgia,"Times New Roman",serif;
+  --paper:#F5F0E6;
+  --paper-2:#ECE5D7;
+  --rule:#D6CCBA;
+  --rule-2:#B9AC97;
+  --ink:#2A231C;
+  --ink-2:#675A4C;
+  --olive:#565B22;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Schibsted Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --pad:clamp(1.25rem,4vw,3rem);
+  --band:min(100% - 2 * var(--pad),76rem);
+  --rail:15rem;
+  --gap:clamp(2.5rem,5vw,5rem);
+  --measure:36rem;
 }
-
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{
   margin:0;
-  background-color:var(--ground);
-  background-image:url(assets/paper.webp);
-  background-repeat:repeat;
-  background-size:340px 340px;
+  background:var(--paper);
   color:var(--ink);
-  font-family:var(--text);
-  font-size:clamp(1.02rem,.96rem + .3vw,1.15rem);
-  line-height:1.62;
-  font-variant-ligatures:common-ligatures;
+  font-family:var(--serif);
+  font-size:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  line-height:1.6;
+  font-optical-sizing:auto;
+  font-variant-numeric:lining-nums;
   text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
 }
 img,svg{display:block;max-width:100%}
-a{color:inherit}
-h1,h2,h3,h4{margin:0;font-weight:inherit}
+h1,h2,h3,h4{margin:0;font-weight:400}
 p{margin:0}
 ul,ol{margin:0;padding:0;list-style:none}
-:focus-visible{outline:2px solid var(--signal-ink);outline-offset:3px}
+dl,dd{margin:0}
+figure{margin:0}
+::selection{background:var(--olive);color:var(--paper)}
+
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--olive);text-decoration-thickness:1px;text-underline-offset:.22em}
+a:hover{text-decoration-color:var(--ink);text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
 .band{width:var(--band);margin-inline:auto}
-.measure{max-width:var(--measure)}
 
-/* ---------- running head ---------- */
-.head{
-  border-bottom:1px solid var(--rule);
+/* shared small label voice */
+.lbl,dt,.head__in,.materials h3,.post__years,.work__role,.imprint,.conditions li::before{
+  font-family:var(--sans);
+  font-size:.8125rem;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+  font-variant-numeric:lining-nums;
 }
-.head__in{
-  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
-  padding:.85rem 0;
-  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);
-}
+/* Tabular figures only where years line up in a column. On every label they
+   also made the comma tabular, which left a visible gap before it. */
+.post__years{font-variant-numeric:tabular-nums lining-nums}
+
+.skip{position:absolute;left:-9999px;top:.5rem}
+.skip:focus{left:1rem;z-index:10;background:var(--paper);padding:.5rem .75rem}
+
+/* running head */
+.head{border-bottom:1px solid var(--rule)}
+.head__in{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.95rem 0}
 .head__in span:last-child{text-align:right}
 
-.skip{position:absolute;left:-9999px}
-.skip:focus{position:static;display:inline-block;margin:.6rem 0 0 1rem;color:var(--ink)}
-
-/* ---------- frontispiece ---------- */
-.front{padding:clamp(2.2rem,6vw,4.5rem) 0 clamp(2.6rem,7vw,5rem);text-align:center}
-
-.plate{
-  position:relative;
-  width:min(78vw,26rem);
-  margin:0 auto clamp(1.4rem,4vw,2.4rem);
-  aspect-ratio:1;
+/* first screen */
+.hero{display:grid;gap:1.75rem;padding-bottom:clamp(3rem,8vw,5.5rem)}
+.hero__photo{margin-inline:calc(-1 * var(--pad))}
+.hero__photo img{
+  width:100%;height:auto;
+  aspect-ratio:1 / 1;
+  max-height:74svh;
+  object-fit:cover;object-position:56% 20%;
+  background:var(--paper-2);
 }
-.plate__face{
-  position:absolute;
-  left:19.92%;top:19.92%;width:60.16%;height:60.16%;
-  background-image:url(assets/portrait-frames.webp);
-  background-repeat:no-repeat;
-  /* 13 frames laid out in one horizontal strip */
-  background-size:1300% 100%;
-  background-position:calc(var(--frame,6) * (100% / 12)) 0;
-}
-.plate__frame{position:absolute;inset:0;width:100%;height:100%}
-
+.hero__text{display:flex;flex-direction:column;gap:2rem}
+.hero__top,.hero__low{display:flex;flex-direction:column}
+.hero__low{gap:1.5rem}
 .name{
-  font-family:var(--display);
-  font-weight:500;
-  font-optical-sizing:none;
-  font-variation-settings:"opsz" 15,"wght" 560;
-  font-size:clamp(2.1rem,8.4vw,4.6rem);
-  line-height:.98;
-  letter-spacing:.045em;
-  text-transform:uppercase;
-  margin-bottom:.5rem;
+  font-family:var(--serif);
+  font-weight:400;
+  font-variation-settings:"opsz" 72;
+  font-size:clamp(2.875rem,1.6rem + 5vw,6rem);
+  line-height:.96;
+  letter-spacing:-.025em;
+  text-wrap:balance;
 }
 .role{
-  color:var(--signal-ink);
-  font-size:clamp(.95rem,.9rem + .25vw,1.08rem);
-  letter-spacing:.015em;
+  margin-top:1rem;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:clamp(1rem,.95rem + .2vw,1.125rem);
+  line-height:1.4;
+  color:var(--olive);
 }
 .standfirst{
-  margin:1.5rem auto 0;
-  max-width:31rem;
-  color:var(--ink-2);
-  font-size:1.05rem;
+  max-width:30rem;
+  font-size:clamp(1.25rem,1.1rem + .5vw,1.5rem);
+  line-height:1.42;
+  text-wrap:pretty;
 }
-.front__rule{
-  width:min(100%,31rem);
-  margin:clamp(1.6rem,4vw,2.4rem) auto;
-  border:0;border-top:1px solid var(--rule);
-}
-
-/* ---------- cartouche, the one action ---------- */
-.cartouche{
-  position:relative;
-  display:inline-block;
-  padding:.95rem 2.5rem;
-  color:var(--ink);
+.hero__rule{margin:0;border:0;border-top:1px solid var(--rule);width:100%}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  align-self:flex-start;
+  min-height:3.25rem;padding:0 1.9rem;
+  background:var(--olive);color:var(--paper);
+  font-family:var(--sans);font-weight:600;font-size:1rem;letter-spacing:.01em;
   text-decoration:none;
-  font-size:.78rem;
-  letter-spacing:.26em;
-  text-transform:uppercase;
-  border:1px solid var(--ink);
-  background:transparent;
-  transition:color .18s linear,background-color .18s linear;
+  border-radius:2px;
+  transition:background-color .16s linear;
 }
-.cartouche::before{
-  content:"";position:absolute;inset:4px;border:1px solid var(--ink);opacity:.55;
+.btn:hover{background:var(--ink);color:var(--paper);text-decoration:none}
+.links{display:flex;flex-wrap:wrap;gap:0 1.4rem}
+.links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--sans);font-size:.9375rem;font-weight:500;
 }
-.cartouche__corner{position:absolute;width:15px;height:15px;color:var(--ink)}
-.cartouche__corner--tl{top:-1px;left:-1px}
-.cartouche__corner--tr{top:-1px;right:-1px;transform:scaleX(-1)}
-.cartouche__corner--bl{bottom:-1px;left:-1px;transform:scaleY(-1)}
-.cartouche__corner--br{bottom:-1px;right:-1px;transform:scale(-1)}
-.cartouche:hover,.cartouche:focus-visible{background:var(--ink);color:var(--ground)}
-.cartouche:hover .cartouche__corner,.cartouche:focus-visible .cartouche__corner{color:var(--ground)}
-
-/* ---------- spine labels ---------- */
-.spines{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;
-  margin-top:clamp(1.6rem,4vw,2.4rem);
+@media (min-width:40em) and (max-width:55.99em){
+  .hero{padding-top:2rem}
+  .hero__photo{margin-inline:0}
+  .hero__photo img{aspect-ratio:4 / 3;max-height:70svh;object-position:52% 22%}
 }
-.spine{
-  position:relative;
-  display:block;
-  padding:.5rem 1.1rem;
-  border:1px solid var(--rule);
-  color:var(--ink-2);
-  text-decoration:none;
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
-  transition:color .18s linear,border-color .18s linear;
-}
-.spine::before{content:"";position:absolute;inset:3px;border:1px solid var(--rule);opacity:.5}
-.spine:hover,.spine:focus-visible{color:var(--ink);border-color:var(--ink)}
-
-/* ---------- plates, the sections ---------- */
-.plate-sec{padding:clamp(2.8rem,7vw,4.6rem) 0;border-top:1px solid var(--rule)}
-.plate-sec__head{margin-bottom:clamp(1.6rem,4vw,2.4rem)}
-.plate-sec__no{
-  font-family:var(--text);
-  font-size:max(11.5px,.44em);letter-spacing:.2em;color:var(--signal-ink);
-  text-transform:uppercase;
-  margin-right:.85em;vertical-align:.16em;
-  font-variation-settings:normal;
-}
-.plate-sec__title{
-  font-family:var(--display);
-  font-weight:500;
-  font-optical-sizing:none;
-  font-variation-settings:"opsz" 14,"wght" 520;
-  font-size:clamp(1.55rem,4.2vw,2.35rem);
-  line-height:1.1;
-  letter-spacing:.01em;
-}
-.plate-sec__sub{
-  margin-top:.5rem;color:var(--ink-2);font-style:italic;font-size:1rem;
-}
-.prose p + p{margin-top:1.05rem}
-.prose{color:var(--ink)}
-
-/* ---------- particulars ---------- */
-.particulars{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:0 3rem;
-  border-top:1px solid var(--rule);
-}
-.particulars div{
-  padding:.85rem 0;
-  border-bottom:1px solid var(--rule);
-  display:flex;gap:1.5rem;align-items:baseline;justify-content:space-between;
-}
-.particulars dt,.particulars .k{
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
-  flex:0 0 auto;
-}
-.particulars dd,.particulars .v{margin:0;text-align:right}
-@media (min-width:46em){
-  .particulars{grid-template-columns:1fr 1fr}
+@media (min-width:56em){
+  .hero{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    column-gap:var(--gap);
+    padding-top:clamp(2rem,3.5vw,3rem);
+  }
+  .hero__photo{grid-column:2;grid-row:1;margin:0}
+  .hero__photo img{aspect-ratio:4 / 5;max-height:max(30rem,calc(100svh - 8.5rem));object-position:55% 30%}
+  .hero__text{grid-column:1;grid-row:1;justify-content:space-between;padding-top:.5rem}
 }
 
-/* ---------- figure ---------- */
-.figure{margin:clamp(1.8rem,4vw,2.6rem) 0 0;border-top:1px solid var(--rule);padding-top:1.4rem}
+/* sections */
+.sec{padding:clamp(3rem,8vw,6rem) 0;border-top:1px solid var(--rule)}
+.sec__head{margin-bottom:clamp(1.75rem,4vw,2.5rem)}
+.sec__no{
+  display:block;margin-bottom:.8rem;
+  font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--olive);
+}
+.sec__title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.875rem,1.4rem + 1.6vw,2.75rem);
+  line-height:1.08;letter-spacing:-.015em;
+  text-wrap:balance;
+}
+.sec__sub{margin-top:.8rem;max-width:24rem;font-style:italic;color:var(--ink-2);font-size:1.0625rem;line-height:1.5;text-wrap:pretty}
+.prose{max-width:var(--measure)}
+.prose p+p{margin-top:1.1rem}
+p{text-wrap:pretty}
+@media (min-width:64em){
+  .sec{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);column-gap:var(--gap);align-items:start}
+  .sec__head{grid-column:1;margin-bottom:0}
+  .sec>*:not(.sec__head){grid-column:2}
+  .sec>.span{grid-column:1 / -1}
+  .sec>.works{margin-top:clamp(1.75rem,3vw,2.5rem)}
+  .works__also{padding-left:calc(var(--rail) + var(--gap))}
+}
+
+/* particulars */
+.particulars{display:grid;grid-template-columns:minmax(0,1fr);column-gap:3rem;border-top:1px solid var(--rule)}
+.particulars>div{
+  display:grid;grid-template-columns:8.75rem minmax(0,1fr);gap:1rem;align-items:baseline;
+  padding:.8rem 0;border-bottom:1px solid var(--rule);
+}
+@media (min-width:46em){.particulars{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.after-prose{margin-top:2rem}
+
+/* figure */
+.figure{margin-top:clamp(2.5rem,5vw,3.75rem);padding-top:1.25rem;border-top:1px solid var(--rule)}
+.fig-tag{margin-bottom:1.5rem}
 .figure svg{width:100%;height:auto}
-.figure__tall{display:none}
-@media (max-width:44em){
-  .figure__wide{display:none}
-  .figure__tall{display:block;max-width:22rem;margin-inline:auto}
+.figure__wide{display:none}
+.figure__tall{max-width:24rem;margin-inline:auto}
+.figure figcaption{margin-top:1.5rem;max-width:var(--measure);font-style:italic;color:var(--ink-2)}
+@media (min-width:64em){
+  .figure__wide{display:block}
+  .figure__tall{display:none}
+  .figure figcaption{margin-left:calc(var(--rail) + var(--gap))}
 }
-.figure figcaption{
-  margin-top:1rem;color:var(--ink-2);font-size:.95rem;font-style:italic;max-width:var(--measure);
-}
-.fig-tag{
-  font-family:var(--text);
-  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);
-  margin-bottom:.8rem;
-}
+.fx-box{fill:var(--paper-2);stroke:var(--rule-2);stroke-width:1}
+.fx-line{fill:none;stroke:var(--ink);stroke-width:1.25}
+.fx-head{fill:var(--ink)}
+.fx-loop{fill:none;stroke:var(--olive);stroke-width:1.25;stroke-dasharray:6 5}
+.fx-loophead{fill:var(--olive)}
+.fx-t{fill:var(--ink);font-family:var(--serif);font-weight:500}
+.fx-s{fill:var(--ink-2);font-family:var(--serif);font-style:italic}
+.fx-a{fill:var(--olive);font-family:var(--sans);font-weight:600}
 
-/* ---------- verified numbers ---------- */
+/* verified numbers */
 .records{border-top:1px solid var(--rule)}
-.record{padding:1.6rem 0;border-bottom:1px solid var(--rule)}
+.record{padding:1.6rem 0 1.75rem;border-bottom:1px solid var(--rule)}
 .record__value{
-  font-family:var(--display);
-  font-weight:500;
-  font-optical-sizing:none;
-  font-variation-settings:"opsz" 14,"wght" 520;
-  font-size:clamp(1.5rem,4vw,2.1rem);
-  line-height:1.15;
-  margin-bottom:.55rem;
+  margin-bottom:.75rem;
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.625rem,1.3rem + 1.2vw,2.375rem);
+  line-height:1.12;letter-spacing:-.01em;
+  text-wrap:balance;
 }
-.record__body{max-width:var(--measure);color:var(--ink)}
-.record__source{
-  margin-top:.7rem;
-  color:var(--signal-ink);
-  font-size:.82rem;letter-spacing:.02em;
+.record__body{max-width:var(--measure)}
+.record__source{margin-top:.9rem;font-family:var(--sans);font-size:.9375rem;font-weight:500;line-height:1.45;color:var(--olive)}
+@media (min-width:64em){
+  .record{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);column-gap:3rem;align-items:start}
+  .record__value{grid-column:1 / -1}
+  .record__source{margin-top:.2rem}
 }
 
-/* ---------- works ---------- */
+/* works */
 .works{border-top:1px solid var(--rule)}
-.work{padding:2rem 0;border-bottom:1px solid var(--rule)}
+.work{padding:clamp(1.75rem,4vw,2.5rem) 0;border-bottom:1px solid var(--rule);scroll-margin-top:1rem}
 .work__no{
-  font-family:var(--text);
-  font-size:max(11.5px,.46em);letter-spacing:.2em;color:var(--ink-2);text-transform:uppercase;
-  margin-right:.9em;vertical-align:.16em;
-  font-variation-settings:normal;
-}
-.work__title{
-  font-family:var(--display);font-weight:500;
-  font-optical-sizing:none;font-variation-settings:"opsz" 14,"wght" 520;
-  font-size:clamp(1.35rem,3.4vw,1.85rem);line-height:1.15;
-}
-.work__role{
-  margin-top:.35rem;color:var(--signal-ink);
-  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-}
-.work__body{margin-top:1rem;max-width:var(--measure)}
-.work__body p + p{margin-top:1rem}
-.work__facts{margin-top:1.3rem;border-top:1px solid var(--rule)}
-.work__facts > div{
-  display:grid;grid-template-columns:9rem 1fr;gap:1rem;
-  padding:.6rem 0;border-bottom:1px solid var(--rule);
-}
-.work__facts dt{
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
-  padding-top:.28rem;
-}
-.work__facts dd{margin:0}
-@media (max-width:34em){
-  .work__facts > div{grid-template-columns:1fr;gap:.15rem}
-}
-/* Catalogue entry: the prose keeps its measure and the facts sit beside it,
-   so the band is filled instead of leaving half the plate empty. */
-@media (min-width:62em){
-  .work__cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:0 3rem;align-items:start;margin-top:1.1rem}
-  .work__cols .work__body{margin-top:0}
-  .work__cols .work__facts{margin-top:0;border-top:1px solid var(--rule)}
-  .work__cols .work__facts > div{grid-template-columns:7rem 1fr;gap:.8rem}
-}
-
-/* ---------- materials ---------- */
-.materials{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));
-  gap:0;border-top:1px solid var(--rule);
-}
-.materials section{padding:1.3rem 0;border-bottom:1px solid var(--rule)}
-@media (min-width:46em){
-  .materials section:nth-child(odd){padding-right:2rem}
-  .materials section:nth-child(even){padding-left:2rem}
-}
-.materials h3{
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
-  margin-bottom:.6rem;
-}
-.materials p{color:var(--ink)}
-
-/* ---------- service record ---------- */
-.service{border-top:1px solid var(--rule)}
-.post{padding:1.5rem 0;border-bottom:1px solid var(--rule)}
-.post__years{
-  font-size:.72rem;letter-spacing:.2em;color:var(--ink-2);text-transform:uppercase;
   display:block;margin-bottom:.45rem;
+  font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.08em;
+  color:var(--olive);font-variant-numeric:tabular-nums;
 }
-@media (min-width:62em){
-  .post{display:grid;grid-template-columns:11rem 1fr;gap:0 2.5rem}
-  .post__years{grid-row:1 / span 3;margin-bottom:0;padding-top:.42rem}
+.work__title{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,1.25rem + .9vw,1.875rem);line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.work__role{margin-top:.55rem}
+.work__body{margin-top:1.1rem;max-width:var(--measure)}
+.work__body p+p{margin-top:1rem}
+.work__facts{margin-top:1.4rem;border-top:1px solid var(--rule)}
+.work__facts>div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
+.work__facts dt{padding-top:.3rem}
+.work__facts dd{line-height:1.5}
+@media (max-width:33.99em){.work__facts>div{grid-template-columns:minmax(0,1fr);gap:.15rem}}
+@media (min-width:64em){
+  .work{display:grid;grid-template-columns:var(--rail) minmax(0,1.1fr) minmax(0,1fr);column-gap:var(--gap);align-items:start}
+  .work__body,.work__facts{margin-top:0}
+  .work__facts>div{grid-template-columns:6.75rem minmax(0,1fr);gap:.9rem}
+}
+
+.works__also{padding-block:1.1rem 1.25rem;border-bottom:1px solid var(--rule);color:var(--ink-2);font-style:italic}
+
+/* materials */
+.materials{display:grid;grid-template-columns:minmax(0,1fr);column-gap:3rem;border-top:1px solid var(--rule)}
+.materials section{padding:1.3rem 0 1.45rem;border-bottom:1px solid var(--rule)}
+.materials h3{margin-bottom:.5rem}
+@media (min-width:46em){.materials{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
+/* service record */
+.service{border-top:1px solid var(--rule)}
+.post{padding:1.45rem 0 1.6rem;border-bottom:1px solid var(--rule)}
+.post__years{display:block;margin-bottom:.45rem}
+.post__title{font-family:var(--serif);font-weight:400;font-size:1.375rem;line-height:1.25}
+.post__org{margin-top:.25rem;font-style:italic;color:var(--ink-2)}
+.post__body{margin-top:.65rem;max-width:var(--measure)}
+@media (min-width:48em){
+  .post{display:grid;grid-template-columns:9.5rem minmax(0,1fr);column-gap:2rem}
+  .post__years{grid-row:1 / span 3;margin:0;padding-top:.4rem}
   .post__title,.post__org,.post__body{grid-column:2}
 }
-.post__title{font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1.2}
-.post__org{margin-top:.2rem;color:var(--signal-ink);font-size:.94rem;font-style:italic}
-.post__body{margin-top:.7rem;max-width:var(--measure);color:var(--ink-2)}
 
-/* ---------- conditions ---------- */
+/* conditions */
 .conditions{border-top:1px solid var(--rule);counter-reset:cond}
-.conditions li{
-  display:grid;grid-template-columns:3.4rem 1fr;gap:1rem;
-  padding:1rem 0;border-bottom:1px solid var(--rule);
-  max-width:calc(var(--measure) + 4.4rem);
-}
-.conditions li::before{
-  counter-increment:cond;content:"VIII." counter(cond);
-  font-size:.72rem;letter-spacing:.14em;color:var(--ink-2);padding-top:.35rem;
-}
+.conditions li{display:grid;grid-template-columns:4.25rem minmax(0,1fr);gap:1rem;padding:1rem 0 1.15rem;border-bottom:1px solid var(--rule)}
+.conditions li::before{counter-increment:cond;content:"VIII." counter(cond);padding-top:.3rem;color:var(--olive);font-weight:600}
+.conditions p{max-width:var(--measure)}
 
-/* ---------- colophon ---------- */
-.colophon{
-  border-top:1px solid var(--rule);
-  padding:clamp(2.8rem,7vw,4.4rem) 0 clamp(2.4rem,6vw,3.4rem);
-  text-align:center;
-}
+/* colophon */
+.colophon{border-top:1px solid var(--rule);padding:clamp(3rem,8vw,6rem) 0 2rem}
 .colophon__line{
-  font-family:var(--display);
-  font-optical-sizing:none;font-variation-settings:"opsz" 14,"wght" 520;
-  font-size:clamp(1.4rem,4vw,2rem);
-  font-weight:500;
-  margin-bottom:1.9rem;
+  margin-bottom:1.75rem;
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem,1.5rem + 2vw,3.25rem);
+  line-height:1.08;letter-spacing:-.02em;
+  text-wrap:balance;
 }
-.colophon__links{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin:1.8rem 0 2rem;
-}
-.fleuron{width:7.5rem;height:auto;margin:0 auto 1.4rem;color:var(--rule)}
+.colophon__in{display:flex;flex-direction:column}
+.colophon .links{margin-top:1.25rem}
 .imprint{
-  color:var(--ink-2);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
-  display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;
+  display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;
+  margin-top:clamp(3rem,7vw,5rem);padding-top:1.25rem;border-top:1px solid var(--rule);
 }
-
-/* ---------- prose links ---------- */
-.prose a,.work__facts a,.conditions a{
-  color:var(--ink);
-  text-decoration:underline;
-  text-decoration-color:var(--signal);
-  text-decoration-thickness:1px;
-  text-underline-offset:.22em;
+@media (min-width:64em){
+  .colophon{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);column-gap:var(--gap)}
+  .colophon__in{grid-column:2}
+  .imprint{grid-column:1 / -1}
 }
-.prose a:hover,.work__facts a:hover,.conditions a:hover{text-decoration-color:var(--ink)}
 
 @media (prefers-reduced-motion:reduce){
-  *{animation:none !important;transition:none !important}
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="corner" viewBox="0 0 15 15"><path fill="currentColor" d="M0 0h15v1.3H1.3V15H0Z"/><path fill="currentColor" d="M3.4 3.4h4.6v.95H4.35v3.65h-.95Z"/><circle fill="currentColor" cx="5.6" cy="5.6" r=".95"/></symbol></svg>
 
 <a class="skip" href="#argument">Skip to the text</a>
 
@@ -393,40 +329,35 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 <main>
 
-<section class="front band" aria-labelledby="name">
-  <div class="plate">
-    <div class="plate__face" id="face" role="img" aria-label="Engraved portrait of Nicu Constantin, cut as a copperplate frontispiece."></div>
-    <img class="plate__frame" src="assets/plate-frame.webp" alt="" width="1024" height="1024" fetchpriority="high" decoding="async">
+<section class="hero band" aria-labelledby="name">
+  <div class="hero__photo">
+    <img src="assets/nick-960.webp" srcset="assets/nick-640.webp 640w, assets/nick-960.webp 960w, assets/nick-1280.webp 1280w" sizes="(min-width:76em) 36rem, (min-width:56em) 45vw, 100vw" width="960" height="1200" alt="Nicu Constantin on a café terrace, in warm light, wearing a black t-shirt." fetchpriority="high" decoding="async">
   </div>
-
-  <h1 class="name" id="name">Nicu Constantin</h1>
-  <p class="role">Senior AI engineer. Agents, Claude Code, automation.</p>
-
-  <p class="standfirst">I build AI agents and the software around them, from the first drawing to a product running in production. I do the work myself.</p>
-
-  <hr class="front__rule">
-
-  <a class="cartouche" id="mailbtn" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">
-    <svg class="cartouche__corner cartouche__corner--tl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    <svg class="cartouche__corner cartouche__corner--tr" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    <svg class="cartouche__corner cartouche__corner--bl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    <svg class="cartouche__corner cartouche__corner--br" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    Write to me
-  </a>
-
-  <nav class="spines" aria-label="Reference installations">
-    <a class="spine" href="#clevmail">ClevMail</a>
-    <a class="spine" href="#utcb">UTCB</a>
-    <a class="spine" href="#hub">Phone agent</a>
-    <a class="spine" href="#meetscribe">MeetScribe</a>
-    <a class="spine" href="#herbs">Pure Herbs</a>
-  </nav>
+  <div class="hero__text">
+    <div class="hero__top">
+      <h1 class="name" id="name">Nicu Constantin</h1>
+      <p class="role">Senior AI engineer. Agents, Claude Code, automation.</p>
+    </div>
+    <div class="hero__low">
+      <p class="standfirst">I build AI agents and the software around them, from the first drawing to a product running in production. I do the work myself.</p>
+      <hr class="hero__rule">
+      <a class="btn" id="mailbtn" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">Write to me</a>
+      <nav class="links" aria-label="Reference installations">
+        <a href="#clevmail">ClevMail</a>
+        <a href="#expert-trade">Expert Trade</a>
+        <a href="#utcb">UTCB</a>
+        <a href="#hub">Phone agent</a>
+        <a href="#meetscribe">MeetScribe</a>
+        <a href="#herbs">Pure Herbs</a>
+      </nav>
+    </div>
+  </div>
 </section>
 
-<section class="plate-sec band" id="particulars" aria-labelledby="particulars-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="particulars-t"><span class="plate-sec__no">Plate I.</span>The particulars</h2>
-    <p class="plate-sec__sub">Write to me directly. You get me, and not an account manager.</p>
+<section class="sec band" id="particulars" aria-labelledby="particulars-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="particulars-t"><span class="sec__no">Plate I.</span> The particulars</h2>
+    <p class="sec__sub">Write to me directly. You get me, and not an account manager.</p>
   </div>
   <dl class="particulars">
     <div><dt>Based in</dt><dd>Bucharest, Romania (EET)</dd></div>
@@ -440,90 +371,80 @@ ul,ol{margin:0;padding:0;list-style:none}
   </dl>
 </section>
 
-<section class="plate-sec band" id="argument" aria-labelledby="argument-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="argument-t"><span class="plate-sec__no">Plate II.</span>What I take on</h2>
-    <p class="plate-sec__sub">The scope of the work, and the second thing I sell.</p>
+<section class="sec band" id="argument" aria-labelledby="argument-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="argument-t"><span class="sec__no">Plate II.</span> What I take on</h2>
+    <p class="sec__sub">The scope of the work, and the second thing I sell.</p>
   </div>
-  <div class="prose measure">
+  <div class="prose">
     <p>I build agent systems that do real work. A multi-tenant SaaS that runs a client's email marketing. A phone agent that books into a live calendar. A scraping pipeline that finds and scores leads. A transcriber that never sends audio off the machine. Architecture to deployed product, usually alone, sometimes leading a small team.</p>
     <p>A chat window answers questions. These systems read your data, call your APIs, decide what to do next, and write the result back where your business already uses it. Fig. 1 shows the shape of it.</p>
     <p>The second thing I sell is teaching. My company runs an internship programme with the university where I studied, and two of its groups have been mine. What I teach is the layer under the tool: skills, deterministic hooks, subagents, MCP, context engineering. That layer moves between harnesses, which is why the course ran on opencode while my own work runs on Claude Code. If your team needs to work this way, that is the same job from the other side.</p>
   </div>
 
-  <figure class="figure">
-    <p class="fig-tag">Fig. 1</p>
-    <svg class="figure__wide" viewBox="0 0 900 246" role="img" aria-labelledby="fig1-t fig1-d">
+  <figure class="figure span">
+    <p class="fig-tag lbl">Fig. 1</p>
+    <svg class="figure__wide" viewBox="0 0 1200 262" role="img" aria-labelledby="fig1-t fig1-d">
       <title id="fig1-t">The operating principle</title>
       <desc id="fig1-d">A request enters an agent, which decides what to do. The agent calls deterministic scripts, which execute. The scripts produce a working product. A dashed feedback path runs from the product back to the agent, labelled checked against reality.</desc>
-      <g fill="none" stroke="#3B3A36" stroke-width="1">
-        <rect x="4" y="28" width="192" height="100"/><rect x="9" y="33" width="182" height="90"/>
-        <rect x="236" y="28" width="192" height="100"/><rect x="241" y="33" width="182" height="90"/>
-        <rect x="468" y="28" width="192" height="100"/><rect x="473" y="33" width="182" height="90"/>
-        <rect x="700" y="28" width="192" height="100"/><rect x="705" y="33" width="182" height="90"/>
+      <rect class="fx-box" x="0.5" y="20.5" width="263" height="131"/>
+      <rect class="fx-box" x="312.5" y="20.5" width="263" height="131"/>
+      <rect class="fx-box" x="624.5" y="20.5" width="263" height="131"/>
+      <rect class="fx-box" x="936.5" y="20.5" width="263" height="131"/>
+      <path class="fx-line" d="M264 86h36M576 86h36M888 86h36"/>
+      <path class="fx-head" d="M298 80.5 312 86l-14 5.5ZM610 80.5 624 86l-14 5.5ZM922 80.5 936 86l-14 5.5Z"/>
+      <g text-anchor="middle">
+        <text class="fx-t" x="132" y="80" font-size="18" letter-spacing="1.4">WHAT YOU</text>
+        <text class="fx-t" x="132" y="106" font-size="18" letter-spacing="1.4">ASKED FOR</text>
+        <text class="fx-t" x="444" y="70" font-size="18" letter-spacing="1.4">THE AGENT DECIDES</text>
+        <text class="fx-s" x="444" y="100" font-size="17">plans, reads, chooses</text>
+        <text class="fx-s" x="444" y="121" font-size="17">the next step</text>
+        <text class="fx-t" x="756" y="70" font-size="18" letter-spacing="1.4">SCRIPTS EXECUTE</text>
+        <text class="fx-s" x="756" y="100" font-size="17">same input, same output,</text>
+        <text class="fx-s" x="756" y="121" font-size="17">every single time</text>
+        <text class="fx-t" x="1068" y="80" font-size="18" letter-spacing="1.4">A PRODUCT</text>
+        <text class="fx-t" x="1068" y="106" font-size="18" letter-spacing="1.4">THAT RUNS</text>
       </g>
-      <g stroke="#D5D1C7" stroke-width="1">
-        <path d="M196 78h28"/><path d="M428 78h28"/><path d="M660 78h28"/>
-      </g>
-      <g fill="#D5D1C7">
-        <path d="M224 73.5 236 78l-12 4.5Z"/><path d="M456 73.5 468 78l-12 4.5Z"/><path d="M688 73.5 700 78l-12 4.5Z"/>
-      </g>
-      <g fill="#D5D1C7" font-family="EB Garamond,Georgia,serif" text-anchor="middle">
-        <text x="100" y="70" font-size="14.5" letter-spacing="1.5">WHAT YOU</text>
-        <text x="100" y="92" font-size="14.5" letter-spacing="1.5">ASKED FOR</text>
-        <text x="332" y="62" font-size="14.5" letter-spacing="1.5">THE AGENT DECIDES</text>
-        <text x="332" y="84" font-size="11.5" fill="#9D978D">plans, reads, chooses</text>
-        <text x="332" y="101" font-size="11.5" fill="#9D978D">the next step</text>
-        <text x="564" y="62" font-size="14.5" letter-spacing="1.5">SCRIPTS EXECUTE</text>
-        <text x="564" y="84" font-size="11.5" fill="#9D978D">same input, same output,</text>
-        <text x="564" y="101" font-size="11.5" fill="#9D978D">every single time</text>
-        <text x="796" y="70" font-size="14.5" letter-spacing="1.5">A PRODUCT</text>
-        <text x="796" y="92" font-size="14.5" letter-spacing="1.5">THAT RUNS</text>
-      </g>
-      <path d="M796 128v58H332v-46" fill="none" stroke="#8C2B21" stroke-width="1" stroke-dasharray="5 5"/>
-      <path d="M327.5 140 332 128l4.5 12Z" fill="#8C2B21"/>
-      <text x="564" y="212" font-size="12.5" fill="#CF5B41" font-family="EB Garamond,Georgia,serif" text-anchor="middle" letter-spacing="1.8">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
-      <path d="M4 234h888" stroke="#3B3A36" stroke-width="1"/>
+      <path class="fx-loop" d="M1068 152v62H444v-48"/>
+      <path class="fx-loophead" d="M438.5 166 444 152l5.5 14Z"/>
+      <text class="fx-a" x="756" y="246" font-size="16" letter-spacing="1.6" text-anchor="middle">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
     </svg>
-    <svg class="figure__tall" viewBox="0 0 360 620" role="img" aria-labelledby="fig1t-t fig1t-d">
+    <svg class="figure__tall" viewBox="0 0 360 676" role="img" aria-labelledby="fig1t-t fig1t-d">
       <title id="fig1t-t">The operating principle</title>
       <desc id="fig1t-d">A request enters an agent, which decides what to do. The agent calls deterministic scripts, which execute. The scripts produce a working product. A dashed feedback path runs from the product back to the agent, labelled checked against reality.</desc>
-      <g fill="none" stroke="#3B3A36" stroke-width="1">
-        <rect x="30" y="8" width="300" height="92"/><rect x="35" y="13" width="290" height="82"/>
-        <rect x="30" y="158" width="300" height="92"/><rect x="35" y="163" width="290" height="82"/>
-        <rect x="30" y="308" width="300" height="92"/><rect x="35" y="313" width="290" height="82"/>
-        <rect x="30" y="458" width="300" height="92"/><rect x="35" y="463" width="290" height="82"/>
+      <rect class="fx-box" x="36.5" y="8.5" width="287" height="99"/>
+      <rect class="fx-box" x="36.5" y="168.5" width="287" height="99"/>
+      <rect class="fx-box" x="36.5" y="328.5" width="287" height="99"/>
+      <rect class="fx-box" x="36.5" y="488.5" width="287" height="99"/>
+      <path class="fx-line" d="M180 108v46M180 268v46M180 428v46"/>
+      <path class="fx-head" d="M174.5 154 180 168l5.5-14ZM174.5 314 180 328l5.5-14ZM174.5 474 180 488l5.5-14Z"/>
+      <g text-anchor="middle">
+        <text class="fx-t" x="180" y="53" font-size="18" letter-spacing="1.4">WHAT YOU</text>
+        <text class="fx-t" x="180" y="78" font-size="18" letter-spacing="1.4">ASKED FOR</text>
+        <text class="fx-t" x="180" y="205" font-size="18" letter-spacing="1.4">THE AGENT DECIDES</text>
+        <text class="fx-s" x="180" y="232" font-size="15">plans, reads, chooses</text>
+        <text class="fx-s" x="180" y="252" font-size="15">the next step</text>
+        <text class="fx-t" x="180" y="365" font-size="18" letter-spacing="1.4">SCRIPTS EXECUTE</text>
+        <text class="fx-s" x="180" y="392" font-size="15">same input, same output,</text>
+        <text class="fx-s" x="180" y="412" font-size="15">every single time</text>
+        <text class="fx-t" x="180" y="533" font-size="18" letter-spacing="1.4">A PRODUCT</text>
+        <text class="fx-t" x="180" y="558" font-size="18" letter-spacing="1.4">THAT RUNS</text>
       </g>
-      <g stroke="#D5D1C7" stroke-width="1">
-        <path d="M180 100v34"/><path d="M180 250v34"/><path d="M180 400v34"/>
+      <path class="fx-loop" d="M180 588v26H14V218h8"/>
+      <path class="fx-loophead" d="M22 212.5 36 218l-14 5.5Z"/>
+      <g text-anchor="middle">
+        <text class="fx-a" x="187" y="644" font-size="14" letter-spacing="1.2">CHECKED AGAINST REALITY</text>
+        <text class="fx-a" x="187" y="666" font-size="14" letter-spacing="1.2">BEFORE IT SHIPS</text>
       </g>
-      <g fill="#D5D1C7">
-        <path d="M175.5 146 180 158l4.5-12Z"/><path d="M175.5 296 180 308l4.5-12Z"/><path d="M175.5 446 180 458l4.5-12Z"/>
-      </g>
-      <g fill="#D5D1C7" font-family="EB Garamond,Georgia,serif" text-anchor="middle">
-        <text x="180" y="46" font-size="15" letter-spacing="1.5">WHAT YOU</text>
-        <text x="180" y="70" font-size="15" letter-spacing="1.5">ASKED FOR</text>
-        <text x="180" y="192" font-size="15" letter-spacing="1.5">THE AGENT DECIDES</text>
-        <text x="180" y="216" font-size="12" fill="#9D978D">plans, reads, chooses</text>
-        <text x="180" y="234" font-size="12" fill="#9D978D">the next step</text>
-        <text x="180" y="342" font-size="15" letter-spacing="1.5">SCRIPTS EXECUTE</text>
-        <text x="180" y="366" font-size="12" fill="#9D978D">same input, same output,</text>
-        <text x="180" y="384" font-size="12" fill="#9D978D">every single time</text>
-        <text x="180" y="496" font-size="15" letter-spacing="1.5">A PRODUCT</text>
-        <text x="180" y="520" font-size="15" letter-spacing="1.5">THAT RUNS</text>
-      </g>
-      <path d="M180 550v28H12V204h12" fill="none" stroke="#8C2B21" stroke-width="1" stroke-dasharray="5 5"/>
-      <path d="M18 199.5 30 204l-12 4.5Z" fill="#8C2B21"/>
-      <text x="192" y="606" font-size="11.5" fill="#CF5B41" font-family="EB Garamond,Georgia,serif" text-anchor="middle" letter-spacing="1.2">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
     </svg>
     <figcaption>Fig. 1. The agent decides, the scripts execute, and the result is checked before it ships. Reliability lives in code. That is what makes the work below repeatable and not a lucky demo.</figcaption>
   </figure>
 </section>
 
-<section class="plate-sec band" id="numbers" aria-labelledby="numbers-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="numbers-t"><span class="plate-sec__no">Plate III.</span>Verified performance</h2>
-    <p class="plate-sec__sub">Value, period, source. Nothing here is rounded up.</p>
+<section class="sec band" id="numbers" aria-labelledby="numbers-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="numbers-t"><span class="sec__no">Plate III.</span> Verified performance</h2>
+    <p class="sec__sub">Value, period, source. Nothing here is rounded up.</p>
   </div>
   <div class="records">
     <article class="record">
@@ -544,17 +465,18 @@ ul,ol{margin:0;padding:0;list-style:none}
   </div>
 </section>
 
-<section class="plate-sec band" id="works" aria-labelledby="works-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="works-t"><span class="plate-sec__no">Plate IV.</span>Reference installations</h2>
-    <p class="plate-sec__sub">Built and running. Team work is labelled team work.</p>
+<section class="sec band" id="works" aria-labelledby="works-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="works-t"><span class="sec__no">Plate IV.</span> Reference installations</h2>
+    <p class="sec__sub">Built and running. Team work is labelled team work.</p>
   </div>
-  <div class="works">
+  <div class="works span">
 
     <article class="work" id="clevmail">
-      <h3 class="work__title"><span class="work__no">IV.1</span>ClevMail</h3>
-      <p class="work__role">Primary builder</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.1</span> ClevMail</h3>
+        <p class="work__role">Primary builder</p>
+      </header>
       <div class="work__body">
         <p>A multi-tenant email marketing platform where every client gets an AI agent that learns their business. Welcome, abandoned cart and post-purchase flows. Broadcast campaigns and a signup form builder with double opt-in. GDPR consent handled by tag, so a client only mails people who agreed. Bad addresses are switched off automatically.</p>
         <p>I designed it and wrote almost all of it. It went self-service in production on 11 June 2026: 63 commits, 5 migrations, no merge regressions. Before public signup I ran an adversarial audit against my own product and closed an access-control hole on the reports endpoint. It is live, and the businesses on it are selling through it.</p>
@@ -565,13 +487,30 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Client says</dt><dd><a href="https://devidevs-agency.com/en/testimonials" rel="noopener">Oana Bratila, founder of Mokko</a>, in her own words</dd></div>
         <div><dt>Public at</dt><dd><a href="https://clevmail.ro" rel="noopener">clevmail.ro</a>, in Romanian</dd></div>
       </dl>
+    </article>
+
+    <article class="work" id="expert-trade">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.2</span> Expert Trade</h3>
+        <p class="work__role">Built and installed, for a DeviDevs client</p>
+      </header>
+      <div class="work__body">
+        <p>Expert Trade sells chemicals and laboratory products and bids in public tenders. On 7 July 2026 I installed Claude Code with a memory system in their office, then built the tools for that work: decoding a supplier's catalogue codes, drafting offers, putting tender documents together.</p>
+        <p>What it taught me: the value was not in commands. It was in what the system remembered, and in judgment applied case by case. So from then on, what I built there started on its own or from a plain sentence.</p>
       </div>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Memory, rules and tools for offers and public tenders</dd></div>
+        <div><dt>Materials</dt><dd>Claude Code, a memory system, Microsoft 365 connector, custom tools</dd></div>
+        <div><dt>Installed</dt><dd>7 July 2026. The pilot stage ran to 30 September 2026</dd></div>
+        <div><dt>Public at</dt><dd>On the client's own machine. Nothing published</dd></div>
+      </dl>
     </article>
 
     <article class="work" id="utcb">
-      <h3 class="work__title"><span class="work__no">IV.2</span>University internship programme</h3>
-      <p class="work__role">Tutor, my own groups</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.3</span> University internship programme</h3>
+        <p class="work__role">Tutor, my own groups</p>
+      </header>
       <div class="work__body">
         <p>DeviDevs runs an internship partnership with the Technical University of Civil Engineering Bucharest, where I studied. The programme has taught more than 45 students across three editions. Two of those groups were mine: eleven students in 2025, and one group in the 2026 round.</p>
         <p>Students arrive knowing how to write code and leave having shipped a working application with AI tooling, under sprints, code review and a real ticket board. Agile practice that was not a simulation. It is paid work under contract, and seven of the juniors asked to keep working with me after their group ended.</p>
@@ -582,13 +521,13 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Programme</dt><dd>45+ students over 3 editions, 4 applications shipped live, 2 hired</dd></div>
         <div><dt>On record at</dt><dd><a href="https://utcb.ro/cercetare/fondul-de-dezvoltare-institutionala/d7-corelarea-ofertei-educationale-cu-cererea-pietei-muncii-consilierea-si-orientarea-in-cariera/" rel="noopener">utcb.ro</a>, the university's own project report, in Romanian</dd></div>
       </dl>
-      </div>
     </article>
 
     <article class="work" id="hub">
-      <h3 class="work__title"><span class="work__no">IV.3</span>Multichannel hub with a phone agent</h3>
-      <p class="work__role">Freelance build</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.4</span> Multichannel hub with a phone agent</h3>
+        <p class="work__role">Freelance build</p>
+      </header>
       <div class="work__body">
         <p>Built for small businesses in Sweden. Every social and messaging channel landed in one hub, and the agent either answered on its own or wrote a draft for a human to approve, switchable per business.</p>
         <p>It picked up the phone and spoke Swedish. Before it answered, it checked the real calendar, and it wrote the booking straight in. It behaved differently inside and outside working hours, and it answered from a company knowledge base that stayed current.</p>
@@ -599,13 +538,28 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Result</dt><dd>Delivered under contract</dd></div>
         <div><dt>Public at</dt><dd>Client system, not mine to publish. Walkthrough on request</dd></div>
       </dl>
+    </article>
+
+    <article class="work" id="second-brains">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.5</span> Second brains for business owners</h3>
+        <p class="work__role">Delivered, mostly under NDA</p>
+      </header>
+      <div class="work__body">
+        <p>For people who run companies: a second brain, meaning a working memory of the business that the AI reads before it acts, plus the rules and the operational side around it. It is close to the system I run my own work on. I built one for Expert Trade, above. The others are under NDA.</p>
       </div>
+      <dl class="work__facts">
+        <div><dt>Function</dt><dd>Second brain, rules and operations</dd></div>
+        <div><dt>Result</dt><dd>Delivered</dd></div>
+        <div><dt>Public at</dt><dd>Under NDA, apart from Expert Trade. No names, no details</dd></div>
+      </dl>
     </article>
 
     <article class="work" id="meetscribe">
-      <h3 class="work__title"><span class="work__no">IV.4</span>MeetScribe</h3>
-      <p class="work__role">Sole builder</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.6</span> MeetScribe</h3>
+        <p class="work__role">Sole builder</p>
+      </header>
       <div class="work__body">
         <p>Meeting transcription that runs entirely on a local GPU. Nothing leaves the machine, which is the whole point: the recordings it handles are ones no cloud service should ever see.</p>
         <p>It records both sides locally, then runs a high quality transcription pass when the session ends, then writes the summary and the action items. I use it in production for teaching sessions and business meetings.</p>
@@ -616,13 +570,13 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Result</dt><dd>In daily use for meetings and teaching sessions</dd></div>
         <div><dt>Public at</dt><dd>Private repository, demo on request</dd></div>
       </dl>
-      </div>
     </article>
 
     <article class="work" id="herbs">
-      <h3 class="work__title"><span class="work__no">IV.5</span>Herbal supplements storefront</h3>
-      <p class="work__role">Sole developer</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.7</span> Herbal supplements storefront</h3>
+        <p class="work__role">Sole developer</p>
+      </header>
       <div class="work__body">
         <p>A full storefront rebuild on Sylius for a live shop with real revenue, under contract and on my own. Templates, product taxonomy, content architecture, Stripe payments, and a checkout that records consent properly.</p>
         <p>The content moved into editable blocks so the owner changes his own copy without paying a developer for every comma.</p>
@@ -633,13 +587,13 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Result</dt><dd>Delivered and live for the client</dd></div>
         <div><dt>Public at</dt><dd>Client site now runs a different theme. Screenshots on request</dd></div>
       </dl>
-      </div>
     </article>
 
     <article class="work" id="leads">
-      <h3 class="work__title"><span class="work__no">IV.6</span>Lead generation pipeline</h3>
-      <p class="work__role">Built it</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.8</span> Lead generation pipeline</h3>
+        <p class="work__role">Built it</p>
+      </header>
       <div class="work__body">
         <p>Eight sources scraped, deduplicated, scored, and geocoded by a three pass vote, landing in a sheet the sales side actually opens. The kind of unglamorous system that replaces a person copying rows by hand.</p>
       </div>
@@ -649,13 +603,13 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Result</dt><dd>Qualified leads, verified before they reach a human</dd></div>
         <div><dt>Public at</dt><dd>Private repository</dd></div>
       </dl>
-      </div>
     </article>
 
     <article class="work" id="agency">
-      <h3 class="work__title"><span class="work__no">IV.7</span>DeviDevs agency site</h3>
-      <p class="work__role">Frontend, team product</p>
-      <div class="work__cols">
+      <header>
+        <h3 class="work__title"><span class="work__no">IV.9</span> DeviDevs agency site</h3>
+        <p class="work__role">Frontend, team product</p>
+      </header>
       <div class="work__body">
         <p>The site of the studio where I am founding engineer. I built the frontend. The product is the team's.</p>
       </div>
@@ -665,16 +619,17 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><dt>Result</dt><dd>Live, English and Romanian</dd></div>
         <div><dt>Public at</dt><dd><a href="https://devidevs-agency.com/en" rel="noopener">devidevs-agency.com/en</a></dd></div>
       </dl>
-      </div>
     </article>
+
+    <p class="works__also">Also delivered, under NDA: agents for legal work, for four clients.</p>
 
   </div>
 </section>
 
-<section class="plate-sec band" id="materials" aria-labelledby="materials-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="materials-t"><span class="plate-sec__no">Plate V.</span>Materials</h2>
-    <p class="plate-sec__sub">Used in the work above, not a list of things I have heard of.</p>
+<section class="sec band" id="materials" aria-labelledby="materials-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="materials-t"><span class="sec__no">Plate V.</span> Materials</h2>
+    <p class="sec__sub">Used in the work above, not a list of things I have heard of.</p>
   </div>
   <div class="materials">
     <section><h3>Agents and AI</h3><p>Claude Code, opencode, Anthropic API, Google Vertex AI, agent architecture, retrieval, local Whisper, voice agents</p></section>
@@ -684,10 +639,10 @@ ul,ol{margin:0;padding:0;list-style:none}
   </div>
 </section>
 
-<section class="plate-sec band" id="service" aria-labelledby="service-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="service-t"><span class="plate-sec__no">Plate VI.</span>Service record</h2>
-    <p class="plate-sec__sub">Most recent first.</p>
+<section class="sec band" id="service" aria-labelledby="service-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="service-t"><span class="sec__no">Plate VI.</span> Service record</h2>
+    <p class="sec__sub">Most recent first.</p>
   </div>
   <div class="service">
     <article class="post">
@@ -717,16 +672,16 @@ ul,ol{margin:0;padding:0;list-style:none}
   </div>
 </section>
 
-<section class="plate-sec band" id="qualification" aria-labelledby="qualification-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="qualification-t"><span class="plate-sec__no">Plate VII.</span>Qualification</h2>
-    <p class="plate-sec__sub">Where the engineering came from.</p>
+<section class="sec band" id="qualification" aria-labelledby="qualification-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="qualification-t"><span class="sec__no">Plate VII.</span> Qualification</h2>
+    <p class="sec__sub">Where the engineering came from.</p>
   </div>
-  <div class="prose measure">
+  <div class="prose">
     <p>Automation and applied informatics: control systems, signals, and the habit of drawing a system before building it. Fig. 1 on Plate II comes straight out of that training. An agent with a feedback path is a control loop.</p>
     <p>I am back in the same faculty now, on the other side of the room.</p>
   </div>
-  <dl class="particulars" style="margin-top:1.6rem">
+  <dl class="particulars after-prose">
     <div><dt>Studied</dt><dd>Automation and Applied Informatics</dd></div>
     <div><dt>Institution</dt><dd>Technical University of Civil Engineering Bucharest</dd></div>
     <div><dt>Years</dt><dd>2013 to 2017</dd></div>
@@ -734,10 +689,10 @@ ul,ol{margin:0;padding:0;list-style:none}
   </dl>
 </section>
 
-<section class="plate-sec band" id="conditions" aria-labelledby="conditions-t">
-  <div class="plate-sec__head">
-    <h2 class="plate-sec__title" id="conditions-t"><span class="plate-sec__no">Plate VIII.</span>Conditions of issue</h2>
-    <p class="plate-sec__sub">Read before you judge the repositories.</p>
+<section class="sec band" id="conditions" aria-labelledby="conditions-t">
+  <div class="sec__head">
+    <h2 class="sec__title" id="conditions-t"><span class="sec__no">Plate VIII.</span> Conditions of issue</h2>
+    <p class="sec__sub">Read before you judge the repositories.</p>
   </div>
   <ol class="conditions">
     <li><p>The code on this account belongs to clients and to a company, so most of it is private. The contribution graph is the real work. Ask for a walkthrough or a screen share and I will show you the running system.</p></li>
@@ -749,28 +704,16 @@ ul,ol{margin:0;padding:0;list-style:none}
 </main>
 
 <footer class="colophon band">
-  <svg class="fleuron" viewBox="0 0 120 22" aria-hidden="true" focusable="false">
-    <g fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M0 11h34"/><path d="M86 11h34"/>
-      <path d="M46 11c0-5 4-8 8-6s2 8-3 9c5 1 8-2 9-6"/>
-      <path d="M74 11c0-5-4-8-8-6s-2 8 3 9c-5 1-8-2-9-6"/>
-    </g>
-    <circle cx="60" cy="11" r="1.6" fill="currentColor"/>
-  </svg>
-  <p class="colophon__line">Tell me what you need built.</p>
-  <a class="cartouche" id="maillink" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">
-    <svg class="cartouche__corner cartouche__corner--tl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    <svg class="cartouche__corner cartouche__corner--tr" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    <svg class="cartouche__corner cartouche__corner--bl" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    <svg class="cartouche__corner cartouche__corner--br" aria-hidden="true" focusable="false"><use href="#corner"/></svg>
-    Write to me
-  </a>
-  <div class="colophon__links">
-    <a class="spine" href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a>
-    <a class="spine" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a>
-    <a class="spine" href="https://github.com/cnick26" rel="noopener">GitHub</a>
+  <div class="colophon__in">
+    <p class="colophon__line">Tell me what you need built.</p>
+    <a class="btn" id="maillink" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">Write to me</a>
+    <div class="links">
+      <a href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a>
+      <a href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/cnick26" rel="noopener">GitHub</a>
+    </div>
   </div>
-  <p class="imprint"><span>Nicu Constantin</span><span>Bucharest</span><span>Issue 2026-08-26</span></p>
+  <p class="imprint"><span>Nicu Constantin</span><span>Bucharest</span><span>Issue 2026-10-08</span></p>
 </footer>
 
 <script>
@@ -784,53 +727,6 @@ ul,ol{margin:0;padding:0;list-style:none}
     var el = document.getElementById(id);
     if (el) { el.setAttribute('href', href); el.removeAttribute('rel'); }
   });
-})();
-
-(function(){
-  // The plate follows the cursor. Thirteen engraved frames in one strip, index 6 is
-  // frontal. With no JavaScript, no pointer, or reduced motion, frame 6 is what stays.
-  var face = document.getElementById('face');
-  if (!face) return;
-  var FRAMES = 13, LAST = FRAMES - 1, MID = (FRAMES - 1) / 2;
-  if (!window.matchMedia) return;
-  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  var current = MID, target = MID, ticking = false;
-
-  function paint(){
-    ticking = false;
-    var next = Math.round(target);
-    if (next === current) return;
-    current = next;
-    face.style.setProperty('--frame', String(current));
-  }
-
-  function onMove(e){
-    var r = face.getBoundingClientRect();
-    if (!r.width) return;
-    var cx = r.left + r.width / 2;
-    var cy = r.top + r.height / 2;
-    var dx = e.clientX - cx;
-    var dy = e.clientY - cy;
-    // Reach: the sweep completes about one and a half plate widths out to either side.
-    var reach = r.width * 1.5;
-    var t = Math.max(-1, Math.min(1, dx / reach));
-    // A cursor far above or below the plate pulls the head back towards frontal.
-    var fade = 1 / (1 + Math.pow(dy / (r.height * 2.2), 2));
-    target = MID + t * MID * fade;
-    target = Math.max(0, Math.min(LAST, target));
-    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
-  }
-
-  function onLeave(){
-    target = MID;
-    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
-  }
-
-  window.addEventListener('pointermove', onMove, { passive: true });
-  document.addEventListener('pointerleave', onLeave);
-  window.addEventListener('blur', onLeave);
 })();
 </script>
 </body>
