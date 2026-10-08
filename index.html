@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nicu Constantin, Senior AI Engineer. Agents and automation.</title>
-<meta name="description" content="Senior AI engineer in Bucharest. I build AI agents and take them to production, and I train teams to build the same way. Every number here has a source.">
+<title>Nicu Constantin, Senior AI Engineer. AI agents in production.</title>
+<meta name="description" content="Senior AI engineer in Bucharest. I build AI agents that do real work in production, and the systems that keep them reliable, measurable and affordable.">
 <meta name="author" content="Nicu Constantin">
 <link rel="canonical" href="https://cnick26.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://cnick26.github.io/">
 <meta property="og:title" content="Nicu Constantin, Senior AI Engineer">
-<meta property="og:description" content="I build AI agents and take them to production, and I train teams to build the same way. Bucharest, Romania.">
-<meta property="og:image" content="https://cnick26.github.io/og.png?v=2026-10-08">
+<meta property="og:description" content="I build AI agents that do real work in production, and the systems that keep them reliable, measurable and affordable.">
+<meta property="og:image" content="https://cnick26.github.io/og.png?v=2026-10-08b">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nicu Constantin, senior AI engineer, Bucharest.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nicu Constantin, Senior AI Engineer">
-<meta name="twitter:description" content="I build AI agents and take them to production, and I train teams to build the same way.">
-<meta name="twitter:image" content="https://cnick26.github.io/og.png?v=2026-10-08">
+<meta name="twitter:description" content="I build AI agents that do real work in production, and the systems that keep them reliable, measurable and affordable.">
+<meta name="twitter:image" content="https://cnick26.github.io/og.png?v=2026-10-08b">
 <meta name="theme-color" content="#F5F0E6">
 <meta name="color-scheme" content="light">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F0E6'/%3E%3Ctext x='16' y='20' font-family='Georgia,serif' font-size='13' fill='%232A231C' text-anchor='middle'%3ENC%3C/text%3E%3Cpath d='M8 25h16' stroke='%23565B22' stroke-width='1.6'/%3E%3C/svg%3E">
@@ -27,26 +27,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
 <style>
 /* Light, warm paper. One accent: the olive of the leaves behind him.
-   Contrast on --paper: ink 13.6, ink-2 5.9, olive 6.3. On --paper-2: 12.4, 5.3, 5.8. */
+   Contrast on --paper: ink 13.64, ink-2 5.88, olive 6.34. */
 :root{
   --paper:#F5F0E6;
   --paper-2:#ECE5D7;
   --rule:#D6CCBA;
-  --rule-2:#B9AC97;
   --ink:#2A231C;
   --ink-2:#675A4C;
   --olive:#565B22;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"Schibsted Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
   --pad:clamp(1.25rem,4vw,3rem);
-  --band:min(100% - 2 * var(--pad),76rem);
-  --rail:15rem;
-  --gap:clamp(2.5rem,5vw,5rem);
+  --band:min(100% - 2 * var(--pad),68rem);
+  --rail:13rem;
+  --gap:clamp(2.5rem,5vw,4.5rem);
   --measure:36rem;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{
   margin:0;
   background:var(--paper);
@@ -59,12 +57,10 @@ body{
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
-img,svg{display:block;max-width:100%}
-h1,h2,h3,h4{margin:0;font-weight:400}
-p{margin:0}
-ul,ol{margin:0;padding:0;list-style:none}
-dl,dd{margin:0}
-figure{margin:0}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-weight:400}
+p{margin:0;text-wrap:pretty}
+ul{margin:0;padding:0;list-style:none}
 ::selection{background:var(--olive);color:var(--paper)}
 
 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--olive);text-decoration-thickness:1px;text-underline-offset:.22em}
@@ -73,66 +69,31 @@ a:hover{text-decoration-color:var(--ink);text-decoration-thickness:2px}
 
 .band{width:var(--band);margin-inline:auto}
 
-/* shared small label voice */
-.lbl,dt,.head__in,.materials h3,.post__years,.work__role,.imprint,.conditions li::before{
-  font-family:var(--sans);
-  font-size:.8125rem;
-  font-weight:500;
-  line-height:1.4;
-  letter-spacing:.07em;
-  text-transform:uppercase;
-  color:var(--ink-2);
-  font-variant-numeric:lining-nums;
-}
-/* Tabular figures only where years line up in a column. On every label they
-   also made the comma tabular, which left a visible gap before it. */
-.post__years{font-variant-numeric:tabular-nums lining-nums}
-
-.skip{position:absolute;left:-9999px;top:.5rem}
-.skip:focus{left:1rem;z-index:10;background:var(--paper);padding:.5rem .75rem}
-
-/* running head */
-.head{border-bottom:1px solid var(--rule)}
-.head__in{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.95rem 0}
-.head__in span:last-child{text-align:right}
-
-/* first screen */
-.hero{display:grid;gap:1.75rem;padding-bottom:clamp(3rem,8vw,5.5rem)}
+/* first screen: the photo, the name, one sentence, one action */
+.hero{display:grid;gap:1.75rem;padding-bottom:clamp(3rem,7vw,5rem)}
 .hero__photo{margin-inline:calc(-1 * var(--pad))}
 .hero__photo img{
   width:100%;height:auto;
   aspect-ratio:1 / 1;
-  max-height:74svh;
+  max-height:70svh;
   object-fit:cover;object-position:56% 20%;
   background:var(--paper-2);
 }
-.hero__text{display:flex;flex-direction:column;gap:2rem}
-.hero__top,.hero__low{display:flex;flex-direction:column}
-.hero__low{gap:1.5rem}
+.hero__text{display:flex;flex-direction:column;gap:1.75rem}
 .name{
   font-family:var(--serif);
   font-weight:400;
   font-variation-settings:"opsz" 72;
-  font-size:clamp(2.875rem,1.6rem + 5vw,6rem);
+  font-size:clamp(2.875rem,1.6rem + 5vw,5.75rem);
   line-height:.96;
   letter-spacing:-.025em;
   text-wrap:balance;
-}
-.role{
-  margin-top:1rem;
-  font-family:var(--sans);
-  font-weight:500;
-  font-size:clamp(1rem,.95rem + .2vw,1.125rem);
-  line-height:1.4;
-  color:var(--olive);
 }
 .standfirst{
   max-width:30rem;
   font-size:clamp(1.25rem,1.1rem + .5vw,1.5rem);
   line-height:1.42;
-  text-wrap:pretty;
 }
-.hero__rule{margin:0;border:0;border-top:1px solid var(--rule);width:100%}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   align-self:flex-start;
@@ -144,574 +105,122 @@ a:hover{text-decoration-color:var(--ink);text-decoration-thickness:2px}
   transition:background-color .16s linear;
 }
 .btn:hover{background:var(--ink);color:var(--paper);text-decoration:none}
-.links{display:flex;flex-wrap:wrap;gap:0 1.4rem}
-.links a{
-  display:inline-flex;align-items:center;min-height:44px;
-  font-family:var(--sans);font-size:.9375rem;font-weight:500;
-}
 @media (min-width:40em) and (max-width:55.99em){
   .hero{padding-top:2rem}
   .hero__photo{margin-inline:0}
-  .hero__photo img{aspect-ratio:4 / 3;max-height:70svh;object-position:52% 22%}
+  .hero__photo img{aspect-ratio:4 / 3;max-height:66svh;object-position:52% 22%}
 }
 @media (min-width:56em){
   .hero{
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
     column-gap:var(--gap);
+    align-items:center;
     padding-top:clamp(2rem,3.5vw,3rem);
   }
   .hero__photo{grid-column:2;grid-row:1;margin:0}
-  .hero__photo img{aspect-ratio:4 / 5;max-height:max(30rem,calc(100svh - 8.5rem));object-position:55% 30%}
-  .hero__text{grid-column:1;grid-row:1;justify-content:space-between;padding-top:.5rem}
+  .hero__photo img{aspect-ratio:4 / 5;max-height:max(30rem,calc(100svh - 6rem));object-position:55% 30%}
+  .hero__text{grid-column:1;grid-row:1}
 }
 
 /* sections */
-.sec{padding:clamp(3rem,8vw,6rem) 0;border-top:1px solid var(--rule)}
-.sec__head{margin-bottom:clamp(1.75rem,4vw,2.5rem)}
-.sec__no{
-  display:block;margin-bottom:.8rem;
-  font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--olive);
-}
+.sec{padding:clamp(2.75rem,7vw,4.5rem) 0;border-top:1px solid var(--rule)}
 .sec__title{
+  margin-bottom:clamp(1.5rem,3.5vw,2.25rem);
   font-family:var(--serif);font-weight:400;
-  font-size:clamp(1.875rem,1.4rem + 1.6vw,2.75rem);
+  font-size:clamp(1.75rem,1.35rem + 1.4vw,2.5rem);
   line-height:1.08;letter-spacing:-.015em;
-  text-wrap:balance;
 }
-.sec__sub{margin-top:.8rem;max-width:24rem;font-style:italic;color:var(--ink-2);font-size:1.0625rem;line-height:1.5;text-wrap:pretty}
-.prose{max-width:var(--measure)}
-.prose p+p{margin-top:1.1rem}
-p{text-wrap:pretty}
 @media (min-width:64em){
   .sec{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);column-gap:var(--gap);align-items:start}
-  .sec__head{grid-column:1;margin-bottom:0}
-  .sec>*:not(.sec__head){grid-column:2}
-  .sec>.span{grid-column:1 / -1}
-  .sec>.works{margin-top:clamp(1.75rem,3vw,2.5rem)}
-  .works__also{padding-left:calc(var(--rail) + var(--gap))}
+  .sec__title{margin-bottom:0}
 }
 
-/* particulars */
-.particulars{display:grid;grid-template-columns:minmax(0,1fr);column-gap:3rem;border-top:1px solid var(--rule)}
-.particulars>div{
-  display:grid;grid-template-columns:8.75rem minmax(0,1fr);gap:1rem;align-items:baseline;
-  padding:.8rem 0;border-bottom:1px solid var(--rule);
-}
-@media (min-width:46em){.particulars{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-.after-prose{margin-top:2rem}
-
-/* figure */
-.figure{margin-top:clamp(2.5rem,5vw,3.75rem);padding-top:1.25rem;border-top:1px solid var(--rule)}
-.fig-tag{margin-bottom:1.5rem}
-.figure svg{width:100%;height:auto}
-.figure__wide{display:none}
-.figure__tall{max-width:24rem;margin-inline:auto}
-.figure figcaption{margin-top:1.5rem;max-width:var(--measure);font-style:italic;color:var(--ink-2)}
-@media (min-width:64em){
-  .figure__wide{display:block}
-  .figure__tall{display:none}
-  .figure figcaption{margin-left:calc(var(--rail) + var(--gap))}
-}
-.fx-box{fill:var(--paper-2);stroke:var(--rule-2);stroke-width:1}
-.fx-line{fill:none;stroke:var(--ink);stroke-width:1.25}
-.fx-head{fill:var(--ink)}
-.fx-loop{fill:none;stroke:var(--olive);stroke-width:1.25;stroke-dasharray:6 5}
-.fx-loophead{fill:var(--olive)}
-.fx-t{fill:var(--ink);font-family:var(--serif);font-weight:500}
-.fx-s{fill:var(--ink-2);font-family:var(--serif);font-style:italic}
-.fx-a{fill:var(--olive);font-family:var(--sans);font-weight:600}
-
-/* verified numbers */
-.records{border-top:1px solid var(--rule)}
-.record{padding:1.6rem 0 1.75rem;border-bottom:1px solid var(--rule)}
-.record__value{
-  margin-bottom:.75rem;
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(1.625rem,1.3rem + 1.2vw,2.375rem);
-  line-height:1.12;letter-spacing:-.01em;
-  text-wrap:balance;
-}
-.record__body{max-width:var(--measure)}
-.record__source{margin-top:.9rem;font-family:var(--sans);font-size:.9375rem;font-weight:500;line-height:1.45;color:var(--olive)}
-@media (min-width:64em){
-  .record{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);column-gap:3rem;align-items:start}
-  .record__value{grid-column:1 / -1}
-  .record__source{margin-top:.2rem}
+/* what I do */
+.does{border-top:1px solid var(--rule)}
+.does li{padding:1.4rem 0 1.5rem;border-bottom:1px solid var(--rule)}
+.does h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.25rem,1.15rem + .4vw,1.45rem);line-height:1.25}
+.does p{margin-top:.55rem;max-width:var(--measure)}
+.does .proof{
+  margin-top:.75rem;
+  font-family:var(--sans);font-size:.9375rem;font-weight:500;line-height:1.5;
+  color:var(--olive);
 }
 
-/* works */
-.works{border-top:1px solid var(--rule)}
-.work{padding:clamp(1.75rem,4vw,2.5rem) 0;border-bottom:1px solid var(--rule);scroll-margin-top:1rem}
-.work__no{
-  display:block;margin-bottom:.45rem;
-  font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.08em;
-  color:var(--olive);font-variant-numeric:tabular-nums;
-}
-.work__title{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,1.25rem + .9vw,1.875rem);line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
-.work__role{margin-top:.55rem}
-.work__body{margin-top:1.1rem;max-width:var(--measure)}
-.work__body p+p{margin-top:1rem}
-.work__facts{margin-top:1.4rem;border-top:1px solid var(--rule)}
-.work__facts>div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
-.work__facts dt{padding-top:.3rem}
-.work__facts dd{line-height:1.5}
-@media (max-width:33.99em){.work__facts>div{grid-template-columns:minmax(0,1fr);gap:.15rem}}
-@media (min-width:64em){
-  .work{display:grid;grid-template-columns:var(--rail) minmax(0,1.1fr) minmax(0,1fr);column-gap:var(--gap);align-items:start}
-  .work__body,.work__facts{margin-top:0}
-  .work__facts>div{grid-template-columns:6.75rem minmax(0,1fr);gap:.9rem}
-}
+/* background */
+.bg{border-top:1px solid var(--rule)}
+.bg li{padding:.95rem 0;border-bottom:1px solid var(--rule);max-width:calc(var(--measure) + 6rem)}
 
-.works__also{padding-block:1.1rem 1.25rem;border-bottom:1px solid var(--rule);color:var(--ink-2);font-style:italic}
-
-/* materials */
-.materials{display:grid;grid-template-columns:minmax(0,1fr);column-gap:3rem;border-top:1px solid var(--rule)}
-.materials section{padding:1.3rem 0 1.45rem;border-bottom:1px solid var(--rule)}
-.materials h3{margin-bottom:.5rem}
-@media (min-width:46em){.materials{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-
-/* service record */
-.service{border-top:1px solid var(--rule)}
-.post{padding:1.45rem 0 1.6rem;border-bottom:1px solid var(--rule)}
-.post__years{display:block;margin-bottom:.45rem}
-.post__title{font-family:var(--serif);font-weight:400;font-size:1.375rem;line-height:1.25}
-.post__org{margin-top:.25rem;font-style:italic;color:var(--ink-2)}
-.post__body{margin-top:.65rem;max-width:var(--measure)}
-@media (min-width:48em){
-  .post{display:grid;grid-template-columns:9.5rem minmax(0,1fr);column-gap:2rem}
-  .post__years{grid-row:1 / span 3;margin:0;padding-top:.4rem}
-  .post__title,.post__org,.post__body{grid-column:2}
-}
-
-/* conditions */
-.conditions{border-top:1px solid var(--rule);counter-reset:cond}
-.conditions li{display:grid;grid-template-columns:4.25rem minmax(0,1fr);gap:1rem;padding:1rem 0 1.15rem;border-bottom:1px solid var(--rule)}
-.conditions li::before{counter-increment:cond;content:"VIII." counter(cond);padding-top:.3rem;color:var(--olive);font-weight:600}
-.conditions p{max-width:var(--measure)}
-
-/* colophon */
-.colophon{border-top:1px solid var(--rule);padding:clamp(3rem,8vw,6rem) 0 2rem}
-.colophon__line{
-  margin-bottom:1.75rem;
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(2rem,1.5rem + 2vw,3.25rem);
-  line-height:1.08;letter-spacing:-.02em;
-  text-wrap:balance;
-}
-.colophon__in{display:flex;flex-direction:column}
-.colophon .links{margin-top:1.25rem}
-.imprint{
-  display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;
-  margin-top:clamp(3rem,7vw,5rem);padding-top:1.25rem;border-top:1px solid var(--rule);
-}
-@media (min-width:64em){
-  .colophon{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);column-gap:var(--gap)}
-  .colophon__in{grid-column:2}
-  .imprint{grid-column:1 / -1}
+/* contact */
+.contact p{max-width:var(--measure)}
+.links{display:flex;flex-wrap:wrap;gap:0 1.4rem;margin-top:1rem}
+.links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--sans);font-size:.9375rem;font-weight:500;
 }
 
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  *,*::before,*::after{animation:none !important;transition:none !important}
 }
 </style>
 </head>
 <body>
 
-<a class="skip" href="#argument">Skip to the text</a>
-
-<header class="head">
-  <div class="band head__in">
-    <span>Nicu Constantin</span>
-    <span>Bucharest, Romania</span>
-  </div>
-</header>
-
 <main>
 
 <section class="hero band" aria-labelledby="name">
   <div class="hero__photo">
-    <img src="assets/nick-960.webp" srcset="assets/nick-640.webp 640w, assets/nick-960.webp 960w, assets/nick-1280.webp 1280w" sizes="(min-width:76em) 36rem, (min-width:56em) 45vw, 100vw" width="960" height="1200" alt="Nicu Constantin on a café terrace, in warm light, wearing a black t-shirt." fetchpriority="high" decoding="async">
+    <img src="assets/nick-960.webp" srcset="assets/nick-640.webp 640w, assets/nick-960.webp 960w, assets/nick-1280.webp 1280w" sizes="(min-width:76em) 32rem, (min-width:56em) 45vw, 100vw" width="960" height="1200" alt="Nicu Constantin on a café terrace, in warm light, dressed in black." fetchpriority="high" decoding="async">
   </div>
   <div class="hero__text">
-    <div class="hero__top">
-      <h1 class="name" id="name">Nicu Constantin</h1>
-      <p class="role">Senior AI engineer. Agents, Claude Code, automation.</p>
+    <h1 class="name" id="name">Nicu Constantin</h1>
+    <p class="standfirst">I build AI agents that do real work in production, and the systems that keep them reliable, measurable and affordable.</p>
+    <a class="btn" href="mailto:cniconstantin@gmail.com?subject=Project%20enquiry">Write to me</a>
+  </div>
+</section>
+
+<section class="sec band" aria-labelledby="does-t">
+  <h2 class="sec__title" id="does-t">What I do</h2>
+  <ul class="does">
+    <li>
+      <h3>Agents in production</h3>
+      <p>ClevMail, a multi-tenant email marketing SaaS I built almost entirely myself, gave each client an AI agent that drafted campaigns and queued them for the client's approval. The agent's autonomy was enforced in code, with a fallback chain across models and telemetry per provider and task.</p>
+      <p class="proof">More than 2,000 of its 2,055 commits are mine, counted 8 October 2026.</p>
+    </li>
+    <li>
+      <h3>Second brains for companies</h3>
+      <p>A working memory of the business that its AI reads before it acts, plus the rules and tools around it.</p>
+      <p class="proof">Delivered for Expert Trade (chemicals, lab supplies, public tenders). Also under NDA: AI agents for legal work, built for four clients.</p>
+    </li>
+    <li>
+      <h3>Teams of agents that run every day</h3>
+      <p>My own setup: an orchestrator, coordinators that plan and review, and workers that execute, each on the model that fits the job. Cost is measured per role, and checks stop a bad action before it runs.</p>
+      <p class="proof">Decided on measured cost: over eight days, a longer cache for the worker agents would have added $247 at API prices to save at most $44, so it stayed off.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="sec band" aria-labelledby="bg-t">
+  <h2 class="sec__title" id="bg-t">Background</h2>
+  <ul class="bg">
+    <li>Founding engineer at DeviDevs, an AI agency, 2024 to now.</li>
+    <li>IT infrastructure and automation at BSD, an IT outsourcing firm, for clients including Carrefour and eMAG, 2023 to 2025.</li>
+    <li>Internship tutor for the Automation and Applied Informatics programme, and a member of the faculty council, at the Technical University of Civil Engineering Bucharest.</li>
+  </ul>
+</section>
+
+<section class="sec band contact" aria-labelledby="contact-t">
+  <h2 class="sec__title" id="contact-t">Contact</h2>
+  <div>
+    <p>Bucharest, Romania. Email me at <a href="mailto:cniconstantin@gmail.com">cniconstantin@gmail.com</a>, or find me here:</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/cnick26" rel="noopener">GitHub</a>
+      <a href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a>
     </div>
-    <div class="hero__low">
-      <p class="standfirst">I build AI agents and the software around them, from the first drawing to a product running in production. I do the work myself.</p>
-      <hr class="hero__rule">
-      <a class="btn" id="mailbtn" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">Write to me</a>
-      <nav class="links" aria-label="Reference installations">
-        <a href="#clevmail">ClevMail</a>
-        <a href="#expert-trade">Expert Trade</a>
-        <a href="#utcb">UTCB</a>
-        <a href="#hub">Phone agent</a>
-        <a href="#meetscribe">MeetScribe</a>
-        <a href="#herbs">Pure Herbs</a>
-      </nav>
-    </div>
   </div>
-</section>
-
-<section class="sec band" id="particulars" aria-labelledby="particulars-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="particulars-t"><span class="sec__no">Plate I.</span> The particulars</h2>
-    <p class="sec__sub">Write to me directly. You get me, and not an account manager.</p>
-  </div>
-  <dl class="particulars">
-    <div><dt>Based in</dt><dd>Bucharest, Romania (EET)</dd></div>
-    <div><dt>Status</dt><dd>Available for work</dd></div>
-    <div><dt>Current</dt><dd>Founding engineer, DeviDevs</dd></div>
-    <div><dt>Languages</dt><dd>English, Romanian</dd></div>
-    <div><dt>Builds</dt><dd>Agents, SaaS, automation, integrations</dd></div>
-    <div><dt>Also tutors</dt><dd>Own groups, 2025 and 2026</dd></div>
-    <div><dt>Works</dt><dd>Architecture to deployed product</dd></div>
-    <div><dt>Engaged through</dt><dd>Direct contract or Upwork</dd></div>
-  </dl>
-</section>
-
-<section class="sec band" id="argument" aria-labelledby="argument-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="argument-t"><span class="sec__no">Plate II.</span> What I take on</h2>
-    <p class="sec__sub">The scope of the work, and the second thing I sell.</p>
-  </div>
-  <div class="prose">
-    <p>I build agent systems that do real work. A multi-tenant SaaS that runs a client's email marketing. A phone agent that books into a live calendar. A scraping pipeline that finds leads. A transcriber that never sends audio off the machine. Architecture to deployed product, usually alone, sometimes leading a small team.</p>
-    <p>A chat window answers questions. These systems read your data, call your APIs, decide what to do next, and write the result back where your business already uses it. Fig. 1 shows the shape of it.</p>
-    <p>The second thing I sell is teaching. My company runs an internship programme with the university where I studied, and two of its groups have been mine. What I teach is the layer under the tool: skills, deterministic hooks, subagents, MCP, context engineering. That layer moves between harnesses, which is why the course ran on opencode while my own work runs on Claude Code. If your team needs to work this way, that is the same job from the other side.</p>
-  </div>
-
-  <figure class="figure span">
-    <p class="fig-tag lbl">Fig. 1</p>
-    <svg class="figure__wide" viewBox="0 0 1200 262" role="img" aria-labelledby="fig1-t fig1-d">
-      <title id="fig1-t">The operating principle</title>
-      <desc id="fig1-d">A request enters an agent, which decides what to do. The agent calls deterministic scripts, which execute. The scripts produce a working product. A dashed feedback path runs from the product back to the agent, labelled checked against reality.</desc>
-      <rect class="fx-box" x="0.5" y="20.5" width="263" height="131"/>
-      <rect class="fx-box" x="312.5" y="20.5" width="263" height="131"/>
-      <rect class="fx-box" x="624.5" y="20.5" width="263" height="131"/>
-      <rect class="fx-box" x="936.5" y="20.5" width="263" height="131"/>
-      <path class="fx-line" d="M264 86h36M576 86h36M888 86h36"/>
-      <path class="fx-head" d="M298 80.5 312 86l-14 5.5ZM610 80.5 624 86l-14 5.5ZM922 80.5 936 86l-14 5.5Z"/>
-      <g text-anchor="middle">
-        <text class="fx-t" x="132" y="80" font-size="18" letter-spacing="1.4">WHAT YOU</text>
-        <text class="fx-t" x="132" y="106" font-size="18" letter-spacing="1.4">ASKED FOR</text>
-        <text class="fx-t" x="444" y="70" font-size="18" letter-spacing="1.4">THE AGENT DECIDES</text>
-        <text class="fx-s" x="444" y="100" font-size="17">plans, reads, chooses</text>
-        <text class="fx-s" x="444" y="121" font-size="17">the next step</text>
-        <text class="fx-t" x="756" y="70" font-size="18" letter-spacing="1.4">SCRIPTS EXECUTE</text>
-        <text class="fx-s" x="756" y="100" font-size="17">same input, same output,</text>
-        <text class="fx-s" x="756" y="121" font-size="17">every single time</text>
-        <text class="fx-t" x="1068" y="80" font-size="18" letter-spacing="1.4">A PRODUCT</text>
-        <text class="fx-t" x="1068" y="106" font-size="18" letter-spacing="1.4">THAT RUNS</text>
-      </g>
-      <path class="fx-loop" d="M1068 152v62H444v-48"/>
-      <path class="fx-loophead" d="M438.5 166 444 152l5.5 14Z"/>
-      <text class="fx-a" x="756" y="246" font-size="16" letter-spacing="1.6" text-anchor="middle">CHECKED AGAINST REALITY BEFORE IT SHIPS</text>
-    </svg>
-    <svg class="figure__tall" viewBox="0 0 360 676" role="img" aria-labelledby="fig1t-t fig1t-d">
-      <title id="fig1t-t">The operating principle</title>
-      <desc id="fig1t-d">A request enters an agent, which decides what to do. The agent calls deterministic scripts, which execute. The scripts produce a working product. A dashed feedback path runs from the product back to the agent, labelled checked against reality.</desc>
-      <rect class="fx-box" x="36.5" y="8.5" width="287" height="99"/>
-      <rect class="fx-box" x="36.5" y="168.5" width="287" height="99"/>
-      <rect class="fx-box" x="36.5" y="328.5" width="287" height="99"/>
-      <rect class="fx-box" x="36.5" y="488.5" width="287" height="99"/>
-      <path class="fx-line" d="M180 108v46M180 268v46M180 428v46"/>
-      <path class="fx-head" d="M174.5 154 180 168l5.5-14ZM174.5 314 180 328l5.5-14ZM174.5 474 180 488l5.5-14Z"/>
-      <g text-anchor="middle">
-        <text class="fx-t" x="180" y="53" font-size="18" letter-spacing="1.4">WHAT YOU</text>
-        <text class="fx-t" x="180" y="78" font-size="18" letter-spacing="1.4">ASKED FOR</text>
-        <text class="fx-t" x="180" y="205" font-size="18" letter-spacing="1.4">THE AGENT DECIDES</text>
-        <text class="fx-s" x="180" y="232" font-size="15">plans, reads, chooses</text>
-        <text class="fx-s" x="180" y="252" font-size="15">the next step</text>
-        <text class="fx-t" x="180" y="365" font-size="18" letter-spacing="1.4">SCRIPTS EXECUTE</text>
-        <text class="fx-s" x="180" y="392" font-size="15">same input, same output,</text>
-        <text class="fx-s" x="180" y="412" font-size="15">every single time</text>
-        <text class="fx-t" x="180" y="533" font-size="18" letter-spacing="1.4">A PRODUCT</text>
-        <text class="fx-t" x="180" y="558" font-size="18" letter-spacing="1.4">THAT RUNS</text>
-      </g>
-      <path class="fx-loop" d="M180 588v26H14V218h8"/>
-      <path class="fx-loophead" d="M22 212.5 36 218l-14 5.5Z"/>
-      <g text-anchor="middle">
-        <text class="fx-a" x="187" y="644" font-size="14" letter-spacing="1.2">CHECKED AGAINST REALITY</text>
-        <text class="fx-a" x="187" y="666" font-size="14" letter-spacing="1.2">BEFORE IT SHIPS</text>
-      </g>
-    </svg>
-    <figcaption>Fig. 1. The agent decides, the scripts execute, and the result is checked before it ships. Reliability lives in code. That is what makes the work below repeatable and not a lucky demo.</figcaption>
-  </figure>
-</section>
-
-<section class="sec band" id="numbers" aria-labelledby="numbers-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="numbers-t"><span class="sec__no">Plate III.</span> Verified performance</h2>
-    <p class="sec__sub">Value, period, source. Nothing here is rounded up.</p>
-  </div>
-  <div class="records">
-    <article class="record">
-      <p class="record__value">10,000+ emails in about 3 months</p>
-      <div class="record__body"><p>Delivered for one handmade jewellery and accessories e-commerce brand through the flows, broadcasts and win-back sequences I built, at an open rate of about 44 percent over the period. The client describes the result herself, by name, in Plate IV.</p></div>
-      <p class="record__source">Source: ClevMail platform reporting, about 3 months in 2026.</p>
-    </article>
-    <article class="record">
-      <p class="record__value">More than 1,100 commits are mine</p>
-      <div class="record__body"><p>On the ClevMail repository, which I designed and wrote. That is over 99 percent of the delivered branch. The other two contributors have five commits between them.</p></div>
-      <p class="record__source">Source: git history on the delivered branch, counted 2026-08-26.</p>
-    </article>
-    <article class="record">
-      <p class="record__value">Transcription on a local GPU, zero API cost</p>
-      <div class="record__body"><p>Recordings go through a batch Whisper pipeline on a local GPU. Nothing goes to an API, because this is material that must not leave the machine.</p></div>
-      <p class="record__source">Source: own systems.</p>
-    </article>
-  </div>
-</section>
-
-<section class="sec band" id="works" aria-labelledby="works-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="works-t"><span class="sec__no">Plate IV.</span> Reference installations</h2>
-    <p class="sec__sub">Built and running. Team work is labelled team work.</p>
-  </div>
-  <div class="works span">
-
-    <article class="work" id="clevmail">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.1</span> ClevMail</h3>
-        <p class="work__role">Primary builder</p>
-      </header>
-      <div class="work__body">
-        <p>A multi-tenant email marketing platform where every client gets an AI agent that learns their business. Welcome, abandoned cart and post-purchase flows. Broadcast campaigns and a signup form builder with double opt-in. GDPR consent handled by tag, so a client only mails people who agreed. Bad addresses are switched off automatically.</p>
-        <p>I designed it and wrote almost all of it. It went self-service in production on 11 June 2026: 63 commits, 5 migrations, no merge regressions. Before public signup I ran an adversarial audit against my own product and closed an access-control hole on the reports endpoint. It is live, and the businesses on it are selling through it.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>Email marketing SaaS, one AI agent per tenant</dd></div>
-        <div><dt>Materials</dt><dd>Python, FastAPI, React, Postgres, Google Vertex AI (Gemini), Vercel, Render</dd></div>
-        <div><dt>Client says</dt><dd><a href="https://devidevs-agency.com/en/testimonials" rel="noopener">Oana Bratila, founder of Mokko</a>, in her own words</dd></div>
-        <div><dt>Public at</dt><dd><a href="https://clevmail.ro" rel="noopener">clevmail.ro</a>, in Romanian</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="expert-trade">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.2</span> Expert Trade</h3>
-        <p class="work__role">Built and installed, for a DeviDevs client</p>
-      </header>
-      <div class="work__body">
-        <p>Expert Trade sells chemicals and laboratory products and bids in public tenders. On 7 July 2026 I installed Claude Code with a memory system in their office, then built the tools for that work: decoding a supplier's catalogue codes, drafting offers, putting tender documents together.</p>
-        <p>What it taught me: the value was not in commands. It was in what the system remembered, and in judgment applied case by case. So from then on, what I built there started on its own or from a plain sentence.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>Memory, rules and tools for offers and public tenders</dd></div>
-        <div><dt>Materials</dt><dd>Claude Code, a memory system, Microsoft 365 connector, custom tools</dd></div>
-        <div><dt>Installed</dt><dd>7 July 2026. The pilot stage ran to 30 September 2026</dd></div>
-        <div><dt>Public at</dt><dd>On the client's own machine. Nothing published</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="utcb">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.3</span> University internship programme</h3>
-        <p class="work__role">Tutor, my own groups</p>
-      </header>
-      <div class="work__body">
-        <p>DeviDevs runs an internship partnership with the Technical University of Civil Engineering Bucharest, where I studied. The programme has taught more than 45 students across three editions. Two of those groups were mine: eleven students in 2025, and one group in the 2026 round.</p>
-        <p>Students arrive knowing how to write code and leave having shipped a working application with AI tooling, under sprints, code review and a real ticket board. Agile practice that was not a simulation. It is paid work under contract, and seven of the juniors asked to keep working with me after their group ended.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Role</dt><dd>Practice tutor, two groups of my own</dd></div>
-        <div><dt>Materials</dt><dd>Next.js, TypeScript, Supabase, Vercel, Render, Gemini CLI, opencode, BMAD, Jira</dd></div>
-        <div><dt>Programme</dt><dd>45+ students over 3 editions, 4 applications shipped live, 2 hired</dd></div>
-        <div><dt>On record at</dt><dd><a href="https://utcb.ro/cercetare/fondul-de-dezvoltare-institutionala/d7-corelarea-ofertei-educationale-cu-cererea-pietei-muncii-consilierea-si-orientarea-in-cariera/" rel="noopener">utcb.ro</a>, the university's own project report, in Romanian</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="hub">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.4</span> Multichannel hub with a phone agent</h3>
-        <p class="work__role">Freelance build</p>
-      </header>
-      <div class="work__body">
-        <p>Built for small businesses in Sweden. Every social and messaging channel landed in one hub, and the agent either answered on its own or wrote a draft for a human to approve, switchable per business.</p>
-        <p>It picked up the phone and spoke Swedish. Before it answered, it checked the real calendar, and it wrote the booking straight in. It behaved differently inside and outside working hours, and it answered from a company knowledge base that stayed current.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>Multichannel inbox, voice agent, live calendar booking</dd></div>
-        <div><dt>Materials</dt><dd>Voice AI, telephony and messaging APIs, calendar API, per-client knowledge base</dd></div>
-        <div><dt>Result</dt><dd>Delivered under contract</dd></div>
-        <div><dt>Public at</dt><dd>Client system, not mine to publish. Walkthrough on request</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="second-brains">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.5</span> Second brains for business owners</h3>
-        <p class="work__role">Delivered, mostly under NDA</p>
-      </header>
-      <div class="work__body">
-        <p>For people who run companies: a second brain, meaning a working memory of the business that the AI reads before it acts, plus the rules and the operational side around it. It is close to the system I run my own work on. I built one for Expert Trade, above. The others are under NDA.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>Second brain, rules and operations</dd></div>
-        <div><dt>Result</dt><dd>Delivered</dd></div>
-        <div><dt>Public at</dt><dd>Under NDA, apart from Expert Trade. No names, no details</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="meetscribe">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.6</span> MeetScribe</h3>
-        <p class="work__role">Sole builder</p>
-      </header>
-      <div class="work__body">
-        <p>Meeting transcription that runs entirely on a local GPU. Nothing leaves the machine, which is the whole point: the recordings it handles are ones no cloud service should ever see.</p>
-        <p>It records both sides locally, then runs a high quality transcription pass when the session ends, then writes the summary and the action items. I use it in production for teaching sessions and business meetings.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>Private real-time transcription and meeting notes</dd></div>
-        <div><dt>Materials</dt><dd>Python, faster-whisper, local GPU, Claude Code</dd></div>
-        <div><dt>Result</dt><dd>In daily use for meetings and teaching sessions</dd></div>
-        <div><dt>Public at</dt><dd>Private repository, demo on request</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="herbs">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.7</span> Herbal supplements storefront</h3>
-        <p class="work__role">Sole developer</p>
-      </header>
-      <div class="work__body">
-        <p>A full storefront rebuild on Sylius for a live shop with real revenue, under contract and on my own. Templates, product taxonomy, content architecture, Stripe payments, and a checkout that records consent properly.</p>
-        <p>The content moved into editable blocks so the owner changes his own copy without paying a developer for every comma.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>E-commerce storefront redesign</dd></div>
-        <div><dt>Materials</dt><dd>Sylius, Symfony, PHP, Twig, Stripe</dd></div>
-        <div><dt>Result</dt><dd>Delivered and live for the client</dd></div>
-        <div><dt>Public at</dt><dd>Client site now runs a different theme. Screenshots on request</dd></div>
-      </dl>
-    </article>
-
-    <article class="work" id="agency">
-      <header>
-        <h3 class="work__title"><span class="work__no">IV.8</span> DeviDevs agency site</h3>
-        <p class="work__role">Frontend, team product</p>
-      </header>
-      <div class="work__body">
-        <p>The site of the studio where I am founding engineer. I built the frontend. The product is the team's.</p>
-      </div>
-      <dl class="work__facts">
-        <div><dt>Function</dt><dd>Bilingual marketing site</dd></div>
-        <div><dt>Materials</dt><dd>Next.js, TypeScript, React, Tailwind</dd></div>
-        <div><dt>Result</dt><dd>Live, English and Romanian</dd></div>
-        <div><dt>Public at</dt><dd><a href="https://devidevs-agency.com/en" rel="noopener">devidevs-agency.com/en</a></dd></div>
-      </dl>
-    </article>
-
-    <p class="works__also">Also delivered, under NDA: agents for legal work, for four clients.</p>
-
-  </div>
-</section>
-
-<section class="sec band" id="materials" aria-labelledby="materials-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="materials-t"><span class="sec__no">Plate V.</span> Materials</h2>
-    <p class="sec__sub">Used in the work above, not a list of things I have heard of.</p>
-  </div>
-  <div class="materials">
-    <section><h3>Agents and AI</h3><p>Claude Code, opencode, Anthropic API, Google Vertex AI, agent architecture, retrieval, local Whisper, voice agents</p></section>
-    <section><h3>Backend</h3><p>Python, FastAPI, Flask, PHP, Symfony, Sylius, Node.js, Postgres, ClickHouse, REST APIs</p></section>
-    <section><h3>Frontend</h3><p>TypeScript, React, Next.js, Tailwind, HTML and CSS, interface design, Figma</p></section>
-    <section><h3>Running it</h3><p>Docker, GitHub Actions, Vercel, Render, Azure, Microsoft 365, PowerShell, Playwright, n8n</p></section>
-  </div>
-</section>
-
-<section class="sec band" id="service" aria-labelledby="service-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="service-t"><span class="sec__no">Plate VI.</span> Service record</h2>
-    <p class="sec__sub">Most recent first.</p>
-  </div>
-  <div class="service">
-    <article class="post">
-      <span class="post__years">2024 to present</span>
-      <h3 class="post__title">Founding engineer</h3>
-      <p class="post__org">DeviDevs Technologies, Bucharest</p>
-      <p class="post__body">Primary builder of the company's SaaS product, plus client delivery on agents, automation and integration work. Freelance engagements run in parallel.</p>
-    </article>
-    <article class="post">
-      <span class="post__years">2023 to 2025</span>
-      <h3 class="post__title">Senior IT engineer, infrastructure and automation</h3>
-      <p class="post__org">Aviation, legal and travel clients</p>
-      <p class="post__body">Microsoft 365 for more than 1,000 users. Hybrid directory synchronisation, a cloud migration covering more than 800 users, provisioning automated end to end, and 70+ devices deployed with zero touch.</p>
-    </article>
-    <article class="post">
-      <span class="post__years">2020 to 2022</span>
-      <h3 class="post__title">E-commerce and web operations manager</h3>
-      <p class="post__org">Standart Park</p>
-      <p class="post__body">Ran the online sales operation end to end, from the storefront to fulfilment, and maintained the site itself.</p>
-    </article>
-    <article class="post">
-      <span class="post__years">2017 to 2020</span>
-      <h3 class="post__title">Supply facility supervisor</h3>
-      <p class="post__org">Same Day Delivery Solutions</p>
-      <p class="post__body">Started as an analyst and finished running the centre. Optimised fleet activity and delivery routes on operational data, and was the single point of contact between clients, subcontractors and internal teams.</p>
-    </article>
-  </div>
-</section>
-
-<section class="sec band" id="qualification" aria-labelledby="qualification-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="qualification-t"><span class="sec__no">Plate VII.</span> Qualification</h2>
-    <p class="sec__sub">Where the engineering came from.</p>
-  </div>
-  <div class="prose">
-    <p>Automation and applied informatics: control systems, signals, and the habit of drawing a system before building it. Fig. 1 on Plate II comes straight out of that training. An agent with a feedback path is a control loop.</p>
-    <p>I am back in the same faculty now, on the other side of the room.</p>
-  </div>
-  <dl class="particulars after-prose">
-    <div><dt>Studied</dt><dd>Automation and Applied Informatics</dd></div>
-    <div><dt>Institution</dt><dd>Technical University of Civil Engineering Bucharest</dd></div>
-    <div><dt>Years</dt><dd>2013 to 2017</dd></div>
-    <div><dt>Back there as</dt><dd>Practice tutor, my own groups in 2025 and 2026</dd></div>
-  </dl>
-</section>
-
-<section class="sec band" id="conditions" aria-labelledby="conditions-t">
-  <div class="sec__head">
-    <h2 class="sec__title" id="conditions-t"><span class="sec__no">Plate VIII.</span> Conditions of issue</h2>
-    <p class="sec__sub">Read before you judge the repositories.</p>
-  </div>
-  <ol class="conditions">
-    <li><p>The code on this account belongs to clients and to a company, so most of it is private. The contribution graph is the real work. Ask for a walkthrough or a screen share and I will show you the running system.</p></li>
-    <li><p>Client names are withheld until the client agrees. Every figure on Plate III comes from a system I can open in front of you.</p></li>
-    <li><p>Team work is labelled team work and solo work is labelled solo. Where I wrote almost all of something, Plate III gives the commit count.</p></li>
-  </ol>
 </section>
 
 </main>
 
-<footer class="colophon band">
-  <div class="colophon__in">
-    <p class="colophon__line">Tell me what you need built.</p>
-    <a class="btn" id="maillink" href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">Write to me</a>
-    <div class="links">
-      <a href="https://www.upwork.com/freelancers/~0174a2a7406f7f767e" rel="noopener">Upwork</a>
-      <a href="https://www.linkedin.com/in/nicu-constantin/" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/cnick26" rel="noopener">GitHub</a>
-    </div>
-  </div>
-  <p class="imprint"><span>Nicu Constantin</span><span>Bucharest</span><span>Issue 2026-10-08</span></p>
-</footer>
-
-<script>
-(function(){
-  // The address is assembled here so a harvester reading the raw HTML does not get it.
-  // Without JavaScript both links still work: they fall back to the LinkedIn profile.
-  var user = ['cni','constantin'].join('');
-  var host = ['gmail','com'].join('.');
-  var href = 'mail' + 'to:' + user + '@' + host + '?subject=Project%20enquiry';
-  ['mailbtn','maillink'].forEach(function(id){
-    var el = document.getElementById(id);
-    if (el) { el.setAttribute('href', href); el.removeAttribute('rel'); }
-  });
-})();
-</script>
 </body>
 </html>
